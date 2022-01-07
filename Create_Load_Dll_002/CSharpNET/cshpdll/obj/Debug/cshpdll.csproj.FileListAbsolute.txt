@@ -1,0 +1,5 @@
+E:\Aprog\Orien\FlashC#\WalkerPlayer\CSharpToDelphi\Create_Load_Dll_002\CSharpNET\cshpdll\bin\Debug\cshpdll.dll
+E:\Aprog\Orien\FlashC#\WalkerPlayer\CSharpToDelphi\Create_Load_Dll_002\CSharpNET\cshpdll\bin\Debug\cshpdll.pdb
+E:\Aprog\Orien\FlashC#\WalkerPlayer\CSharpToDelphi\Create_Load_Dll_002\CSharpNET\cshpdll\obj\Debug\cshpdll.csproj.CoreCompileInputs.cache
+E:\Aprog\Orien\FlashC#\WalkerPlayer\CSharpToDelphi\Create_Load_Dll_002\CSharpNET\cshpdll\obj\Debug\cshpdll.dll
+E:\Aprog\Orien\FlashC#\WalkerPlayer\CSharpToDelphi\Create_Load_Dll_002\CSharpNET\cshpdll\obj\Debug\cshpdll.pdb
