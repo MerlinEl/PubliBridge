@@ -278,7 +278,7 @@ object Form1: TForm1
         'Grass.swf')
     end
     object CbxSwfPaths: TComboBox
-      Left = 101
+      Left = 106
       Top = 129
       Width = 716
       Height = 21
@@ -291,6 +291,9 @@ object Form1: TForm1
       Items.Strings = (
         
           'E:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_005\CSharpNET' +
+          '\cshpdll\resources\'
+        
+          'C:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_005\CSharpNET' +
           '\cshpdll\resources\')
     end
   end

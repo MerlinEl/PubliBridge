@@ -2,7 +2,7 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Call CSharpDll Methods:'
-  ClientHeight = 758
+  ClientHeight = 783
   ClientWidth = 837
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -31,7 +31,7 @@ object Form1: TForm1
       object BtnMin: TButton
         Left = 12
         Top = 17
-        Width = 209
+        Width = 119
         Height = 25
         Caption = 'Min(valA, valB)'
         TabOrder = 0
@@ -40,7 +40,7 @@ object Form1: TForm1
       object BtnMax: TButton
         Left = 12
         Top = 48
-        Width = 209
+        Width = 119
         Height = 25
         Caption = 'Max(valA, valB)'
         TabOrder = 1
@@ -57,9 +57,9 @@ object Form1: TForm1
       object BtnSayHello: TButton
         Left = 18
         Top = 50
-        Width = 209
+        Width = 119
         Height = 25
-        Caption = 'SayHello(str)'
+        Caption = 'CombineStrings(a, b)'
         TabOrder = 0
         OnClick = BtnSayHelloClick
       end
@@ -74,7 +74,7 @@ object Form1: TForm1
       object BtnShowGalleryPanel: TButton
         Left = 12
         Top = 22
-        Width = 209
+        Width = 125
         Height = 25
         Caption = 'ShowGalleryPanel()'
         TabOrder = 0
@@ -83,11 +83,20 @@ object Form1: TForm1
       object Button2: TButton
         Left = 12
         Top = 53
-        Width = 209
+        Width = 125
         Height = 25
         Caption = 'ShowSWFPanel()'
         TabOrder = 1
         OnClick = BtnShowSWFPanel
+      end
+      object BtnLoadFlFromPath: TButton
+        Left = 156
+        Top = 53
+        Width = 125
+        Height = 25
+        Caption = 'ShowSWFPanel(fpath)'
+        TabOrder = 2
+        OnClick = BtnLoadFlFromPathClick
       end
     end
   end
@@ -121,7 +130,7 @@ object Form1: TForm1
         Height = 25
         Caption = 'SayHello(str)'
         TabOrder = 1
-        OnClick = BtnInstClick
+        OnClick = Button3Click
       end
       object BtnLoadClass: TButton
         Left = 240
@@ -143,7 +152,7 @@ object Form1: TForm1
       object BtnInstShowSWFPanel: TButton
         Left = 12
         Top = 53
-        Width = 209
+        Width = 141
         Height = 25
         Caption = 'ShowSWFPanel()'
         TabOrder = 0
@@ -152,11 +161,20 @@ object Form1: TForm1
       object BtnInstShowGalleryPanel: TButton
         Left = 12
         Top = 22
-        Width = 209
+        Width = 141
         Height = 25
         Caption = 'ShowGalleryPanel()'
         TabOrder = 1
         OnClick = BtnInstShowGalleryPanelClick
+      end
+      object BtnInstLoadFile: TButton
+        Left = 172
+        Top = 53
+        Width = 141
+        Height = 25
+        Caption = 'ShowSWFPanel(fpath)'
+        TabOrder = 2
+        OnClick = BtnInstLoadFileClick
       end
     end
   end
@@ -180,8 +198,8 @@ object Form1: TForm1
     Left = 8
     Top = 606
     Width = 825
-    Height = 147
-    Caption = 'Edit:'
+    Height = 171
+    Caption = 'Parameters:'
     TabOrder = 3
     object lbl1: TLabel
       Left = 40
@@ -207,9 +225,16 @@ object Form1: TForm1
     object lbl3: TLabel
       Left = 40
       Top = 107
-      Width = 26
+      Width = 48
       Height = 13
-      Caption = 'fpath'
+      Caption = 'SWF files:'
+    end
+    object lbl4: TLabel
+      Left = 40
+      Top = 134
+      Width = 41
+      Height = 13
+      Caption = 'SWF dir:'
     end
     object EdtValA: TEdit
       Left = 101
@@ -221,7 +246,7 @@ object Form1: TForm1
     end
     object EdtValB: TEdit
       Left = 101
-      Top = 41
+      Top = 44
       Width = 121
       Height = 21
       TabOrder = 1
@@ -229,21 +254,44 @@ object Form1: TForm1
     end
     object EdtName: TEdit
       Left = 101
-      Top = 68
+      Top = 75
       Width = 121
       Height = 21
       TabOrder = 2
       Text = 'Mr.Rene'
     end
-    object EdtFpath: TEdit
+    object CbxSwfNames: TComboBox
       Left = 101
-      Top = 105
+      Top = 102
+      Width = 121
+      Height = 21
+      Style = csDropDownList
+      ItemIndex = 0
+      TabOrder = 3
+      Text = 'bluebirdie00.swf'
+      Items.Strings = (
+        'bluebirdie00.swf'
+        'Basic_Fire.swf'
+        'Basic_Particles.swf'
+        'Ellipse.swf'
+        'Fibo.swf'
+        'Grass.swf')
+    end
+    object CbxSwfPaths: TComboBox
+      Left = 101
+      Top = 129
       Width = 716
       Height = 21
-      TabOrder = 3
+      Style = csDropDownList
+      ItemIndex = 0
+      TabOrder = 4
       Text = 
         'E:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_005\CSharpNET' +
-        '\cshpdll\resources\AnimatedRipple3D.swf'
+        '\cshpdll\resources\'
+      Items.Strings = (
+        
+          'E:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_005\CSharpNET' +
+          '\cshpdll\resources\')
     end
   end
 end

@@ -2,7 +2,7 @@ program delphtest;
 
 uses
   Vcl.Forms,
-  Unit1 in 'E:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_005\Delphi\Unit1.pas' {Form1};
+  Unit1 in 'C:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_005\Delphi\Unit1.pas' {Form1};
 
 {$R *.res}
 
