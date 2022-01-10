@@ -2,7 +2,7 @@
 <BorlandProject>
 	<Transactions>
     <Transaction>1899.12.30 00:00:00.000.206,=C:\Users\Orien Star\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.620,E:\Aprog\Orien\FlashC#\WalkerPlayer\CSharpToDelphi\Create_Load_Dll_001\delphtest.dproj=C:\Users\Orien Star\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.620,C:\Users\Orien Star\Documents\Embarcadero\Studio\Projects\Project1.dproj=E:\Aprog\Orien\FlashC#\WalkerPlayer\CSharpToDelphi\Create_Load_Dll_001\delphtest.dproj</Transaction>
   </Transactions>
 	<ProjectSortOrder AutoSort="0" SortType="0">
     <File Path="Unit1.pas"/>

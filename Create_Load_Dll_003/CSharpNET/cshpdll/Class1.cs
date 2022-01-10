@@ -3,32 +3,47 @@ using System;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 //https://docs.microsoft.com/en-us/dotnet/
-namespace cshpdll {
-    public class Class1 {
+namespace cshpdll
+{
+    public class Class1
+    {
 
         //[DllExport("add", CallingConvention = CallingConvention.Cdecl)]
         [DllExport]
         public static int Plus(int left, int right) => left + right;
-      
+
         [DllExport]
-        public static int Min(int X, int Y) {
+        public static int Min(int X, int Y)
+        {
             MessageBox.Show(String.Format("cshpdll > Receive: Min({0}, {1})", X, Y), "CSharp MessageBox:");
             return Math.Min(X, Y);
         }
 
         [DllExport]
         public static int Max(int X, int Y) => Math.Max(X, Y);
-        
+
         [DllExport]
         public static void ShowMsgBoxInt(int msg) => MessageBox.Show("Msg len:" + msg, "CSharp MessageBox:");
-       
+
+        [DllExport]
+        public static Class1 GetInstance()
+        {
+            return new Class1();
+        }
+
+        public int inc(int a)
+        {
+            return a + 1;
+        }
+
         [DllExport]
         //public static void ShowMsgBoxStr(String msg) =>  MessageBox.Show(msg, "CSharp MessageBox:");
         //public static void ShowMsgBoxStr([MarshalAs(UnmanagedType.LPStr)] string msg) =>  MessageBox.Show(msg, "CSharp MessageBox:");
         public static void ShowMsgBoxStr(IntPtr msg) => MessageBox.Show(Marshal.PtrToStringAnsi(msg), "CSharp MessageBox:");
 
         [DllExport]
-        public static int SayHello(string userName) {
+        public static int SayHello(string userName)
+        {
 
             //return "DLL say: Hello " + userName + "!";
             return userName.Length;
@@ -37,8 +52,8 @@ namespace cshpdll {
         [DllExport]
         public static void ShowGalleryPanel() => new ImageGalleryForm().Show();
 
-        [DllExport]
-        public static void ShowSWFPanel() => new SWFLoader().Show();
+        //[DllExport]
+        //public static void ShowSWFPanel() => new SWFLoader().Show();
     }
 }
 

@@ -1,0 +1,146 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Call CSharpDll Methods:'
+  ClientHeight = 491
+  ClientWidth = 1181
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnCreate = OnFormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label2: TLabel
+    Left = 8
+    Top = 292
+    Width = 42
+    Height = 13
+    Caption = 'Console:'
+  end
+  object Label4: TLabel
+    Left = 899
+    Top = 116
+    Width = 48
+    Height = 13
+    Caption = 'Use Name'
+  end
+  object Label1: TLabel
+    Left = 252
+    Top = 31
+    Width = 21
+    Height = 13
+    Caption = 'valA'
+  end
+  object Label3: TLabel
+    Left = 315
+    Top = 31
+    Width = 20
+    Height = 13
+    Caption = 'valB'
+  end
+  object GroupBox1: TGroupBox
+    Left = 96
+    Top = 150
+    Width = 409
+    Height = 89
+    Caption = 'Math'
+    TabOrder = 11
+  end
+  object Panel1: TPanel
+    Left = 8
+    Top = 311
+    Width = 409
+    Height = 9
+    Caption = 'Panel1'
+    TabOrder = 4
+  end
+  object TxtConsole: TMemo
+    Left = 8
+    Top = 345
+    Width = 409
+    Height = 138
+    ReadOnly = True
+    TabOrder = 5
+  end
+  object BtnSayHello: TButton
+    Left = 632
+    Top = 104
+    Width = 209
+    Height = 25
+    Caption = 'SayHello(userName)'
+    TabOrder = 6
+    OnClick = BtnSayHelloClick
+  end
+  object EdtName: TEdit
+    Left = 868
+    Top = 135
+    Width = 121
+    Height = 21
+    TabOrder = 7
+    Text = 'Mr.John'
+  end
+  object BtnMsgBox: TButton
+    Left = 632
+    Top = 135
+    Width = 209
+    Height = 25
+    Caption = 'MessageBox.Show(str)'
+    TabOrder = 8
+    OnClick = BtnShowMsgStrClick
+  end
+  object Button1: TButton
+    Left = 632
+    Top = 166
+    Width = 209
+    Height = 25
+    Caption = 'MessageBox.Show(int)'
+    TabOrder = 9
+    OnClick = BtnShowMsgIntClick
+  end
+  object BtnShowPanel: TButton
+    Left = 632
+    Top = 214
+    Width = 209
+    Height = 25
+    Caption = 'ShowPanel()'
+    TabOrder = 10
+  end
+  object BtnMin: TButton
+    Left = 20
+    Top = 25
+    Width = 209
+    Height = 25
+    Caption = 'Math.Min(valA, valB)'
+    TabOrder = 0
+    OnClick = BtnMinClick
+  end
+  object EdtValA: TEdit
+    Left = 252
+    Top = 49
+    Width = 57
+    Height = 21
+    TabOrder = 1
+    Text = '5'
+  end
+  object EdtValB: TEdit
+    Left = 315
+    Top = 49
+    Width = 65
+    Height = 21
+    TabOrder = 2
+    Text = '10'
+  end
+  object BtnMax: TButton
+    Left = 20
+    Top = 56
+    Width = 209
+    Height = 25
+    Caption = 'Math.Max(valA, valB)'
+    TabOrder = 3
+    OnClick = BtnMaxClick
+  end
+end
