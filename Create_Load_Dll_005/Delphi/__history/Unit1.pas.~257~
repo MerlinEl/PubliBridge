@@ -39,9 +39,11 @@ type
     EdtValA: TEdit;
     GroupBox8: TGroupBox;
     lbl3: TLabel;
-    EdtFpath: TEdit;
     BtnLoadFlFromPath: TButton;
     BtnInstLoadFile: TButton;
+    CbxSwfNames: TComboBox;
+    lbl4: TLabel;
+    CbxSwfPaths: TComboBox;
     procedure BtnMinClick(Sender: TObject);
     procedure BtnMaxClick(Sender: TObject);
     procedure BtnSayHelloClick(Sender: TObject);
@@ -157,7 +159,7 @@ end;
 
 procedure TForm1.BtnInstLoadFileClick(Sender: TObject);
 begin
-   WPlayer.IShowSWFPanelWithPath('@'+EdtFpath.Text);
+   WPlayer.IShowSWFPanelWithPath(CbxSwfPaths.Text + CbxSwfNames.Text);
 end;
 
 procedure TForm1.BtnInstPlusClick(Sender: TObject);
@@ -180,13 +182,14 @@ end;
 
 procedure TForm1.BtnLoadFlFromPathClick(Sender: TObject);
 begin
-  ShowSWFPanelWithPath(EdtFpath.Text);
+
+  ShowSWFPanelWithPath(CbxSwfPaths.Text + CbxSwfNames.Text);
 end;
 
 
 procedure TForm1.BtnInstAddClick(Sender: TObject);
 begin
-  Log(WPlayer.IAdd().ToString());
+  Log('Add:'+WPlayer.IAdd().ToString());
 end;
 
 procedure TForm1.BtnSayHelloClick(Sender: TObject);

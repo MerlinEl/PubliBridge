@@ -237,7 +237,7 @@ object Form1: TForm1
       Caption = 'SWF dir:'
     end
     object EdtValA: TEdit
-      Left = 101
+      Left = 106
       Top = 14
       Width = 121
       Height = 21
@@ -245,7 +245,7 @@ object Form1: TForm1
       Text = '5'
     end
     object EdtValB: TEdit
-      Left = 101
+      Left = 106
       Top = 44
       Width = 121
       Height = 21
@@ -253,7 +253,7 @@ object Form1: TForm1
       Text = '10'
     end
     object EdtName: TEdit
-      Left = 101
+      Left = 106
       Top = 75
       Width = 121
       Height = 21
@@ -261,7 +261,7 @@ object Form1: TForm1
       Text = 'Mr.Rene'
     end
     object CbxSwfNames: TComboBox
-      Left = 101
+      Left = 106
       Top = 102
       Width = 121
       Height = 21
@@ -275,7 +275,10 @@ object Form1: TForm1
         'Basic_Particles.swf'
         'Ellipse.swf'
         'Fibo.swf'
-        'Grass.swf')
+        'Grass.swf'
+        '68b.swf'
+        '73b.swf'
+        'test_05.swf')
     end
     object CbxSwfPaths: TComboBox
       Left = 106

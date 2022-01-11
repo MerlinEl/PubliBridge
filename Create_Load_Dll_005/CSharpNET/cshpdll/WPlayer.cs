@@ -71,8 +71,7 @@ namespace cshpdll
         public void IShowSWFPanelWithPath(string fpath) {
 
             WLoader wl = new WLoader();
-            wl.SetPath(fpath);
-            wl.LoadFileFromEditBox();
+            wl.LoadFile(fpath);
             wl.Show();
         }
     }
