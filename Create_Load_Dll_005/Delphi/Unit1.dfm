@@ -283,7 +283,7 @@ object Form1: TForm1
     object CbxSwfPaths: TComboBox
       Left = 106
       Top = 129
-      Width = 716
+      Width = 632
       Height = 21
       Style = csDropDownList
       ItemIndex = 0
@@ -291,6 +291,7 @@ object Form1: TForm1
       Text = 
         'E:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_005\CSharpNET' +
         '\cshpdll\resources\'
+      OnChange = OnDirectoryChanged
       Items.Strings = (
         
           'E:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_005\CSharpNET' +
@@ -298,6 +299,15 @@ object Form1: TForm1
         
           'C:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_005\CSharpNET' +
           '\cshpdll\resources\')
+    end
+    object BtnBrowseDir: TButton
+      Left = 744
+      Top = 128
+      Width = 73
+      Height = 25
+      Caption = 'Add Dir...'
+      TabOrder = 5
+      OnClick = BtnBrowseDirClick
     end
   end
 end

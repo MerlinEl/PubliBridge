@@ -6,7 +6,7 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
-  System.Classes, Vcl.Graphics, StrUtils, Math,
+  System.Classes, Vcl.Graphics, StrUtils, Math, IOUtils,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls,
   Vcl.ButtonGroup;
 
@@ -44,6 +44,7 @@ type
     CbxSwfNames: TComboBox;
     lbl4: TLabel;
     CbxSwfPaths: TComboBox;
+    BtnBrowseDir: TButton;
     procedure BtnMinClick(Sender: TObject);
     procedure BtnMaxClick(Sender: TObject);
     procedure BtnSayHelloClick(Sender: TObject);
@@ -57,6 +58,8 @@ type
     procedure BtnLoadFlFromPathClick(Sender: TObject);
     procedure Button3Click(Sender: TObject);
     procedure BtnInstLoadFileClick(Sender: TObject);
+    procedure BtnBrowseDirClick(Sender: TObject);
+    procedure OnDirectoryChanged(Sender: TObject);
 
   private
     { Private declarations }
@@ -139,6 +142,22 @@ procedure Log(Str: String);
 begin
   Form1.TxtConsole.Lines.Append(Str);
 end;
+procedure FillSWFList(dir:string);
+var path : string;
+begin
+  if not DirectoryExists(dir)then
+    ShowMessage('Directory not found.\n' + dir)
+  else begin
+    Log('Fill SWF List from dir:'+dir);
+    Form1.CbxSwfNames.Clear();
+    begin
+      for path in TDirectory.GetFiles(dir, '*.swf')  do
+          Form1.CbxSwfNames.Items.Add(extractfilename(path));
+    end;
+      if Form1.CbxSwfNames.Items.Count > 0 then
+        Form1.CbxSwfNames.ItemIndex := 0;
+  end;
+end;
 
 // ..............................//
 // Events
@@ -187,6 +206,23 @@ begin
 end;
 
 
+procedure TForm1.BtnBrowseDirClick(Sender: TObject);
+begin
+ with TFileOpenDialog.Create(nil) do
+  try
+    Options := [fdoPickFolders];
+      if Execute then begin
+        CbxSwfPaths.Items.BeginUpdate();
+        CbxSwfPaths.Items.Add(FileName + '\');
+        CbxSwfPaths.Items.EndUpdate();
+        CbxSwfPaths.ItemIndex := CbxSwfPaths.Items.Count -1;
+        FillSWFList(CbxSwfPaths.Text);
+      end;
+  finally
+    Free;
+  end;
+end;
+
 procedure TForm1.BtnInstAddClick(Sender: TObject);
 begin
   Log('Add:'+WPlayer.IAdd().ToString());
@@ -195,6 +231,11 @@ end;
 procedure TForm1.BtnSayHelloClick(Sender: TObject);
 begin
   Log(CombineStrings('Ahoj', 'Dalibore.'));
+end;
+
+procedure TForm1.OnDirectoryChanged(Sender: TObject);
+begin
+  FillSWFList(CbxSwfPaths.Text);
 end;
 
 procedure TForm1.OnFormCreate(Sender: TObject);
