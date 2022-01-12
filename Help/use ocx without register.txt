@@ -1,0 +1,2 @@
+https://docs.microsoft.com/en-us/previous-versions/dotnet/articles/ms973913(v=msdn.10)?redirectedfrom=MSDN
+https://stackoverflow.com/questions/234726/use-ocx-without-registering-it
