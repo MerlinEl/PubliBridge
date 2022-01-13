@@ -1,6 +1,0 @@
-C:\Users\merli\source\repos\TestDLLForDelphiV2\TestDLLForDelphiV2\bin\Debug\TestDLLForDelphiV2.dll
-C:\Users\merli\source\repos\TestDLLForDelphiV2\TestDLLForDelphiV2\bin\Debug\TestDLLForDelphiV2.pdb
-C:\Users\merli\source\repos\TestDLLForDelphiV2\TestDLLForDelphiV2\obj\Debug\TestDLLForDelphiV2.csproj.CoreCompileInputs.cache
-C:\Users\merli\source\repos\TestDLLForDelphiV2\TestDLLForDelphiV2\obj\Debug\TestDLLForDelphiV2.dll
-C:\Users\merli\source\repos\TestDLLForDelphiV2\TestDLLForDelphiV2\obj\Debug\TestDLLForDelphiV2.pdb
-C:\Users\merli\source\repos\TestDLLForDelphiV2\TestDLLForDelphiV2\obj\Debug\TestDLLForDelphiV2.csproj.AssemblyReference.cache

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-//[assembly: System.Reflection.AssemblyVersion("1.0.0.1")]
+//[assembly: System.Reflection.AssemblyVersion("1.0.0.0")]
 [assembly: System.Windows.Forms.AxHost.TypeLibraryTimeStamp("01/12/2022 14:38:20")]
 
 namespace AxShockwaveFlashObjects {

@@ -75,7 +75,7 @@ namespace cshpdll
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 233F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 111F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 108F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 110F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 112F));
             this.tableLayoutPanel2.Controls.Add(this.CbxFiles, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.BtnStop, 6, 0);
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
@@ -108,7 +108,7 @@ namespace cshpdll
             "68b.swf",
             "73b.swf",
             "test_05.swf"});
-            this.CbxFiles.Location = new System.Drawing.Point(476, 3);
+            this.CbxFiles.Location = new System.Drawing.Point(474, 3);
             this.CbxFiles.Name = "CbxFiles";
             this.CbxFiles.Size = new System.Drawing.Size(227, 21);
             this.CbxFiles.TabIndex = 15;
@@ -116,9 +116,9 @@ namespace cshpdll
             // BtnStop
             // 
             this.BtnStop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnStop.Location = new System.Drawing.Point(928, 3);
+            this.BtnStop.Location = new System.Drawing.Point(926, 3);
             this.BtnStop.Name = "BtnStop";
-            this.BtnStop.Size = new System.Drawing.Size(105, 22);
+            this.BtnStop.Size = new System.Drawing.Size(107, 22);
             this.BtnStop.TabIndex = 4;
             this.BtnStop.Text = "Stop";
             this.BtnStop.UseVisualStyleBackColor = true;
@@ -130,7 +130,7 @@ namespace cshpdll
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 28);
+            this.label1.Size = new System.Drawing.Size(49, 28);
             this.label1.TabIndex = 10;
             this.label1.Text = "SWF Dir:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -138,7 +138,7 @@ namespace cshpdll
             // BtnPlay
             // 
             this.BtnPlay.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnPlay.Location = new System.Drawing.Point(820, 3);
+            this.BtnPlay.Location = new System.Drawing.Point(818, 3);
             this.BtnPlay.Name = "BtnPlay";
             this.BtnPlay.Size = new System.Drawing.Size(102, 22);
             this.BtnPlay.TabIndex = 3;
@@ -152,19 +152,17 @@ namespace cshpdll
             this.CbxFpath.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CbxFpath.FormattingEnabled = true;
             this.CbxFpath.Items.AddRange(new object[] {
-            "E:\\Aprog\\Orien\\FlashC#\\PubliBridge\\Create_Load_Dll_005\\CSharpNET\\cshpdll\\resource" +
-                "s\\",
-            "C:\\Aprog\\Orien\\FlashC#\\PubliBridge\\Create_Load_Dll_005\\CSharpNET\\cshpdll\\resource" +
-                "s\\"});
-            this.CbxFpath.Location = new System.Drawing.Point(59, 3);
+            "E:\\Aprog\\Orien\\FlashC#\\PubliBridge\\Resources\\swf\\",
+            "C:\\Aprog\\Orien\\FlashC#\\PubliBridge\\Resources\\swf\\"});
+            this.CbxFpath.Location = new System.Drawing.Point(58, 3);
             this.CbxFpath.Name = "CbxFpath";
-            this.CbxFpath.Size = new System.Drawing.Size(346, 21);
+            this.CbxFpath.Size = new System.Drawing.Size(345, 21);
             this.CbxFpath.TabIndex = 12;
             // 
             // BtnLoad
             // 
             this.BtnLoad.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnLoad.Location = new System.Drawing.Point(709, 3);
+            this.BtnLoad.Location = new System.Drawing.Point(707, 3);
             this.BtnLoad.Name = "BtnLoad";
             this.BtnLoad.Size = new System.Drawing.Size(105, 22);
             this.BtnLoad.TabIndex = 1;
@@ -176,7 +174,7 @@ namespace cshpdll
             // 
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Location = new System.Drawing.Point(411, 0);
+            this.label2.Location = new System.Drawing.Point(409, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 28);
             this.label2.TabIndex = 13;

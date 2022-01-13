@@ -288,17 +288,11 @@ object Form1: TForm1
       Style = csDropDownList
       ItemIndex = 0
       TabOrder = 4
-      Text = 
-        'E:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_005\CSharpNET' +
-        '\cshpdll\resources\'
+      Text = 'E:\Aprog\Orien\FlashC#\PubliBridge\Resources\swf\'
       OnChange = OnDirectoryChanged
       Items.Strings = (
-        
-          'E:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_005\CSharpNET' +
-          '\cshpdll\resources\'
-        
-          'C:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_005\CSharpNET' +
-          '\cshpdll\resources\')
+        'E:\Aprog\Orien\FlashC#\PubliBridge\Resources\swf\'
+        'C:\Aprog\Orien\FlashC#\PubliBridge\Resources\swf\')
     end
     object BtnBrowseDir: TButton
       Left = 744
