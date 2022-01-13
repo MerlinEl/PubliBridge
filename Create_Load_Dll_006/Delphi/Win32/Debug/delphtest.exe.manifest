@@ -3,7 +3,7 @@
   <assemblyIdentity type="win32" name="delphtest.exe" version="1.0.0.0" />
   <dependency>
     <dependentAssembly>
-      <assemblyIdentity type="win32" name="Flash64_14_0_0_176.ocx" version="1.0.0.0" />
+      <assemblyIdentity type="win32" name="Flash32_14_0_0_176.ocx" version="1.0.0.0" />
     </dependentAssembly>
   </dependency>
 </assembly>

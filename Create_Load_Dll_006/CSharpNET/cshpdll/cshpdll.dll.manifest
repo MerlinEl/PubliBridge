@@ -61,19 +61,34 @@
   -->
 
   <!-- Enable themes for Windows common controls and dialogs (Windows XP and later) -->
-  <!--
   <dependency>
     <dependentAssembly>
       <assemblyIdentity
           type="win32"
           name="Microsoft.Windows.Common-Controls"
-          version="6.0.0.0"
+          version="1.0.0.0"
           processorArchitecture="*"
           publicKeyToken="6595b64144ccf1df"
           language="*"
         />
     </dependentAssembly>
   </dependency>
-  -->
+</assembly>
 
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" 
+  manifestVersion="1.0">
+<assemblyIdentity
+            type = "win32"
+            name = "cshpdll.dll"
+            version = "1.0.0.0" />
+<dependency>
+            <dependentAssembly>
+                        <assemblyIdentity
+                                    type="win32"
+                                    name="Flash32_14_0_0_176.ocx"
+                                    version="1.0.0.0" />
+            </dependentAssembly>
+</dependency>
 </assembly>
