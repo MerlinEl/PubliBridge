@@ -14,3 +14,16 @@ E:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_005\CSharpNET\WPTest\bin\Debu
 E:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_005\CSharpNET\WPTest\bin\Debug\cshpdll.pdb
 E:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_005\CSharpNET\WPTest\obj\Debug\WPTest.WPTestForm.resources
 E:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_005\CSharpNET\WPTest\obj\Debug\WPTest.csproj.CopyComplete
+C:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_006\CSharpNET\WPTest\obj\Debug\WPTest.csproj.AssemblyReference.cache
+C:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_006\CSharpNET\WPTest\obj\Debug\WPTest.WPTestForm.resources
+C:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_006\CSharpNET\WPTest\obj\Debug\WPTest.Properties.Resources.resources
+C:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_006\CSharpNET\WPTest\obj\Debug\WPTest.csproj.GenerateResource.cache
+C:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_006\CSharpNET\WPTest\obj\Debug\WPTest.csproj.CoreCompileInputs.cache
+C:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_006\CSharpNET\WPTest\bin\Debug\WPTest.exe.config
+C:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_006\CSharpNET\WPTest\bin\Debug\WPTest.exe
+C:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_006\CSharpNET\WPTest\bin\Debug\WPTest.pdb
+C:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_006\CSharpNET\WPTest\bin\Debug\cshpdll.dll
+C:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_006\CSharpNET\WPTest\bin\Debug\cshpdll.pdb
+C:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_006\CSharpNET\WPTest\obj\Debug\WPTest.csproj.CopyComplete
+C:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_006\CSharpNET\WPTest\obj\Debug\WPTest.exe
+C:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_006\CSharpNET\WPTest\obj\Debug\WPTest.pdb

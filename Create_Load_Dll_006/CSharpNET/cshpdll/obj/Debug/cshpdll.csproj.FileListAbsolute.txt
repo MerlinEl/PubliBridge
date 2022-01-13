@@ -67,3 +67,13 @@ E:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_005\CSharpNET\cshpdll\bin\Deb
 E:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_005\CSharpNET\cshpdll\bin\Debug\AxInterop.ShockwaveFlashObjects.dll
 E:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_005\CSharpNET\cshpdll\obj\Debug\AxInterop.ShockwaveFlashObjects.dll
 E:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_005\CSharpNET\cshpdll\obj\Debug\cshpdll.WLoader.resources
+C:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_006\CSharpNET\cshpdll\bin\Debug\cshpdll.dll
+C:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_006\CSharpNET\cshpdll\bin\Debug\cshpdll.pdb
+C:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_006\CSharpNET\cshpdll\obj\Debug\cshpdll.csproj.AssemblyReference.cache
+C:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_006\CSharpNET\cshpdll\obj\Debug\cshpdll.ImageGalleryForm.resources
+C:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_006\CSharpNET\cshpdll\obj\Debug\cshpdll.Properties.Resources.resources
+C:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_006\CSharpNET\cshpdll\obj\Debug\cshpdll.WLoader.resources
+C:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_006\CSharpNET\cshpdll\obj\Debug\cshpdll.csproj.GenerateResource.cache
+C:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_006\CSharpNET\cshpdll\obj\Debug\cshpdll.csproj.CoreCompileInputs.cache
+C:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_006\CSharpNET\cshpdll\obj\Debug\cshpdll.dll
+C:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_006\CSharpNET\cshpdll\obj\Debug\cshpdll.pdb
