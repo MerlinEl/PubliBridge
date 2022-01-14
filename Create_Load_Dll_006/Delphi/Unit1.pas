@@ -60,6 +60,7 @@ type
     procedure BtnInstLoadFileClick(Sender: TObject);
     procedure BtnBrowseDirClick(Sender: TObject);
     procedure OnDirectoryChanged(Sender: TObject);
+    procedure OnFormShown(Sender: TObject);
 
   private
     { Private declarations }
@@ -146,7 +147,7 @@ procedure FillSWFList(dir:string);
 var path : string;
 begin
   if not DirectoryExists(dir)then
-    ShowMessage('Directory not found.\n' + dir)
+    ShowMessage('Directory not found at:' + dir)
   else begin
     Log('Fill SWF List from dir:'+dir);
     Form1.CbxSwfNames.Clear();
@@ -240,8 +241,18 @@ end;
 
 procedure TForm1.OnFormCreate(Sender: TObject);
 begin
-  CreateWPlayerInstance();
+
+
   // ShowMessage('From was Created.');
+end;
+
+procedure TForm1.OnFormShown(Sender: TObject);
+begin
+  CreateWPlayerInstance();
+  if DirectoryExists(CbxSwfPaths.Text) then
+  begin
+    FillSWFList(CbxSwfPaths.Text);
+  end;
 end;
 
 procedure TForm1.BtnShowGalleryPanelClick(Sender: TObject);

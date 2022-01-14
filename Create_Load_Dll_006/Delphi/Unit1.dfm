@@ -12,6 +12,7 @@ object Form1: TForm1
   Font.Style = []
   OldCreateOrder = False
   OnCreate = OnFormCreate
+  OnShow = OnFormShown
   PixelsPerInch = 96
   TextHeight = 13
   object GroupBox4: TGroupBox
@@ -266,19 +267,7 @@ object Form1: TForm1
       Width = 121
       Height = 21
       Style = csDropDownList
-      ItemIndex = 0
       TabOrder = 3
-      Text = 'bluebirdie00.swf'
-      Items.Strings = (
-        'bluebirdie00.swf'
-        'Basic_Fire.swf'
-        'Basic_Particles.swf'
-        'Ellipse.swf'
-        'Fibo.swf'
-        'Grass.swf'
-        '68b.swf'
-        '73b.swf'
-        'test_05.swf')
     end
     object CbxSwfPaths: TComboBox
       Left = 106
