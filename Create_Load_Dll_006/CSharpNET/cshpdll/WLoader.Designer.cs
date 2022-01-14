@@ -32,11 +32,11 @@ namespace cshpdll
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WLoader));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.CbxFiles = new System.Windows.Forms.ComboBox();
+            this.CbxSWFFnames = new System.Windows.Forms.ComboBox();
             this.BtnStop = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.BtnPlay = new System.Windows.Forms.Button();
-            this.CbxFpath = new System.Windows.Forms.ComboBox();
+            this.CbxSWFDirs = new System.Windows.Forms.ComboBox();
             this.BtnLoad = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.FLComponent = new AxShockwaveFlashObjects.AxShockwaveFlash();
@@ -75,12 +75,12 @@ namespace cshpdll
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 233F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 111F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 108F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 112F));
-            this.tableLayoutPanel2.Controls.Add(this.CbxFiles, 3, 0);
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 126F));
+            this.tableLayoutPanel2.Controls.Add(this.CbxSWFFnames, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.BtnStop, 6, 0);
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.BtnPlay, 5, 0);
-            this.tableLayoutPanel2.Controls.Add(this.CbxFpath, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.CbxSWFDirs, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.BtnLoad, 4, 0);
             this.tableLayoutPanel2.Controls.Add(this.label2, 2, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -93,32 +93,22 @@ namespace cshpdll
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1036, 28);
             this.tableLayoutPanel2.TabIndex = 14;
             // 
-            // CbxFiles
+            // CbxSWFFnames
             // 
-            this.CbxFiles.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CbxFiles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CbxFiles.FormattingEnabled = true;
-            this.CbxFiles.Items.AddRange(new object[] {
-            "bluebirdie00.swf",
-            "Basic_Fire.swf",
-            "Basic_Particles.swf",
-            "Ellipse.swf",
-            "Fibo.swf",
-            "Grass.swf",
-            "68b.swf",
-            "73b.swf",
-            "test_05.swf"});
-            this.CbxFiles.Location = new System.Drawing.Point(474, 3);
-            this.CbxFiles.Name = "CbxFiles";
-            this.CbxFiles.Size = new System.Drawing.Size(227, 21);
-            this.CbxFiles.TabIndex = 15;
+            this.CbxSWFFnames.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CbxSWFFnames.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CbxSWFFnames.FormattingEnabled = true;
+            this.CbxSWFFnames.Location = new System.Drawing.Point(460, 3);
+            this.CbxSWFFnames.Name = "CbxSWFFnames";
+            this.CbxSWFFnames.Size = new System.Drawing.Size(227, 21);
+            this.CbxSWFFnames.TabIndex = 15;
             // 
             // BtnStop
             // 
             this.BtnStop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnStop.Location = new System.Drawing.Point(926, 3);
+            this.BtnStop.Location = new System.Drawing.Point(912, 3);
             this.BtnStop.Name = "BtnStop";
-            this.BtnStop.Size = new System.Drawing.Size(107, 22);
+            this.BtnStop.Size = new System.Drawing.Size(121, 22);
             this.BtnStop.TabIndex = 4;
             this.BtnStop.Text = "Stop";
             this.BtnStop.UseVisualStyleBackColor = true;
@@ -130,7 +120,7 @@ namespace cshpdll
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 28);
+            this.label1.Size = new System.Drawing.Size(47, 28);
             this.label1.TabIndex = 10;
             this.label1.Text = "SWF Dir:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -138,7 +128,7 @@ namespace cshpdll
             // BtnPlay
             // 
             this.BtnPlay.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnPlay.Location = new System.Drawing.Point(818, 3);
+            this.BtnPlay.Location = new System.Drawing.Point(804, 3);
             this.BtnPlay.Name = "BtnPlay";
             this.BtnPlay.Size = new System.Drawing.Size(102, 22);
             this.BtnPlay.TabIndex = 3;
@@ -146,23 +136,22 @@ namespace cshpdll
             this.BtnPlay.UseVisualStyleBackColor = true;
             this.BtnPlay.Click += new System.EventHandler(this.BtnPlay_Click);
             // 
-            // CbxFpath
+            // CbxSWFDirs
             // 
-            this.CbxFpath.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CbxFpath.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CbxFpath.FormattingEnabled = true;
-            this.CbxFpath.Items.AddRange(new object[] {
-            "E:\\Aprog\\Orien\\FlashC#\\PubliBridge\\Resources\\swf\\",
-            "C:\\Aprog\\Orien\\FlashC#\\PubliBridge\\Resources\\swf\\"});
-            this.CbxFpath.Location = new System.Drawing.Point(58, 3);
-            this.CbxFpath.Name = "CbxFpath";
-            this.CbxFpath.Size = new System.Drawing.Size(345, 21);
-            this.CbxFpath.TabIndex = 12;
+            this.CbxSWFDirs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CbxSWFDirs.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CbxSWFDirs.FormattingEnabled = true;
+            this.CbxSWFDirs.Location = new System.Drawing.Point(56, 3);
+            this.CbxSWFDirs.Name = "CbxSWFDirs";
+            this.CbxSWFDirs.Size = new System.Drawing.Size(333, 21);
+            this.CbxSWFDirs.TabIndex = 12;
+            this.CbxSWFDirs.SelectedIndexChanged += new System.EventHandler(this.OnSWFDirListSelection);
+            this.CbxSWFDirs.KeyUp += new System.Windows.Forms.KeyEventHandler(this.OnSWFDirListKeyUp);
             // 
             // BtnLoad
             // 
             this.BtnLoad.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnLoad.Location = new System.Drawing.Point(707, 3);
+            this.BtnLoad.Location = new System.Drawing.Point(693, 3);
             this.BtnLoad.Name = "BtnLoad";
             this.BtnLoad.Size = new System.Drawing.Size(105, 22);
             this.BtnLoad.TabIndex = 1;
@@ -174,7 +163,7 @@ namespace cshpdll
             // 
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Location = new System.Drawing.Point(409, 0);
+            this.label2.Location = new System.Drawing.Point(395, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 28);
             this.label2.TabIndex = 13;
@@ -199,6 +188,7 @@ namespace cshpdll
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "WLoader";
             this.Text = "WLoader";
+            this.Shown += new System.EventHandler(this.OnFormShown);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
@@ -211,11 +201,11 @@ namespace cshpdll
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.ComboBox CbxFiles;
+        private System.Windows.Forms.ComboBox CbxSWFFnames;
         private System.Windows.Forms.Button BtnStop;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BtnPlay;
-        private System.Windows.Forms.ComboBox CbxFpath;
+        private System.Windows.Forms.ComboBox CbxSWFDirs;
         private System.Windows.Forms.Button BtnLoad;
         private System.Windows.Forms.Label label2;
         private AxShockwaveFlashObjects.AxShockwaveFlash FLComponent;

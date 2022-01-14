@@ -48,7 +48,6 @@ type
     procedure BtnMinClick(Sender: TObject);
     procedure BtnMaxClick(Sender: TObject);
     procedure BtnSayHelloClick(Sender: TObject);
-    procedure OnFormCreate(Sender: TObject);
     procedure BtnShowSWFPanel(Sender: TObject);
     procedure BtnInstPlusClick(Sender: TObject);
     procedure BtnInstAddClick(Sender: TObject);
@@ -239,15 +238,9 @@ begin
   FillSWFList(CbxSwfPaths.Text);
 end;
 
-procedure TForm1.OnFormCreate(Sender: TObject);
-begin
-
-
-  // ShowMessage('From was Created.');
-end;
-
 procedure TForm1.OnFormShown(Sender: TObject);
 begin
+  // ShowMessage('From was shown.');
   CreateWPlayerInstance();
   if DirectoryExists(CbxSwfPaths.Text) then
   begin

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <assembly manifestVersion="1.0" xmlns="urn:schemas-microsoft-com:asm.v1">
-  <assemblyIdentity version="1.0.0.0" name="MyApplication.app"/>
+  <assemblyIdentity type = "win32" version="1.0.0.0" name="cshpdll.dll"/>
   <trustInfo xmlns="urn:schemas-microsoft-com:asm.v2">
     <security>
       <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
@@ -65,7 +65,7 @@
     <dependentAssembly>
       <assemblyIdentity
           type="win32"
-          name="Microsoft.Windows.Common-Controls"
+          name="Flash32_14_0_0_176.ocx"
           version="1.0.0.0"
           processorArchitecture="*"
           publicKeyToken="6595b64144ccf1df"
@@ -73,22 +73,4 @@
         />
     </dependentAssembly>
   </dependency>
-</assembly>
-
-
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<assembly xmlns="urn:schemas-microsoft-com:asm.v1" 
-  manifestVersion="1.0">
-<assemblyIdentity
-            type = "win32"
-            name = "cshpdll.dll"
-            version = "1.0.0.0" />
-<dependency>
-            <dependentAssembly>
-                        <assemblyIdentity
-                                    type="win32"
-                                    name="Flash32_14_0_0_176.ocx"
-                                    version="1.0.0.0" />
-            </dependentAssembly>
-</dependency>
 </assembly>

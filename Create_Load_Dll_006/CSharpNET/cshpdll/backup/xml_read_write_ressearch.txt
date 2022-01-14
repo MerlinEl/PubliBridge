@@ -1,0 +1,122 @@
+﻿    public static XDocument ReadXML(string fpath) {
+
+            if (!File.Exists(fpath)) return null;
+            StringBuilder result = new StringBuilder();
+            XDocument xdoc = XDocument.Load(fpath);
+
+            //Run query
+            var lv1s = from lv1 in xdoc.Descendants("level1")
+                       select new {
+                           Header = lv1.Attribute("name").Value,
+                           Children = lv1.Descendants("level2")
+                       };
+
+            //Loop through results
+            foreach (var lv1 in lv1s) {
+                result.AppendLine(lv1.Header);
+                foreach (var lv2 in lv1.Children)
+                    result.AppendLine("     " + lv2.Attribute("name").Value);
+            }
+
+            Console.WriteLine(result);
+            return result;
+        }
+        /**
+         <SETTINGS> 
+         <row> 
+          <var name="Year" value="&quot;2008&quot;" /> 
+          <var name="person" value="&quot;10202&quot;" /> 
+         </row> 
+         <row> 
+          <var name="Year" value="&quot;2007&quot;" /> 
+          <var name="person" value="&quot;11202&quot;" /> 
+         </row> 
+        </SETTINGS> 
+         */
+        public static Array GetXmlItems(string fpath, string nodeName) {
+
+
+            var rows = XDocument.Load(fpath)
+                    .Root.Elements()
+                    .Select(row => row.Elements()
+                                      .ToDictionary(v => v.Attribute("name").Value,
+                                                    v => v.Attribute("value").Value);
+
+        }
+
+
+        #region Read Data From XML
+        /**
+        <settings>
+        <databasepath>your path to database</databasepath>
+        </settings>
+         */
+        private static string ReadValueFromXML(string settingsFilePath, string pstrValueToRead) {
+            try {
+                //settingsFilePath is a string variable storing the path of the settings file 
+                XPathDocument doc = new XPathDocument(settingsFilePath);
+                XPathNavigator nav = doc.CreateNavigator();
+                // Compile a standard XPath expression
+                XPathExpression expr;
+                expr = nav.Compile(@"/settings/" + pstrValueToRead);
+                XPathNodeIterator iterator = nav.Select(expr);
+                // Iterate on the node set
+                while (iterator.MoveNext()) {
+                    return iterator.Current.Value;
+                }
+                return string.Empty;
+            }
+            catch {
+                //do some error logging here. Leaving for you to do 
+                return string.Empty;
+            }
+        }
+        private static bool WriteValueTOXML(string settingsFilePath, string pstrValueToRead, string pstrValueToWrite) {
+            try {
+                //settingsFilePath is a string variable storing the path of the settings file 
+                XmlTextReader reader = new XmlTextReader(settingsFilePath);
+                XmlDocument doc = new XmlDocument();
+                doc.Load(reader);
+                //we have loaded the XML, so it's time to close the reader.
+                reader.Close();
+                XmlNode oldNode;
+                XmlElement root = doc.DocumentElement;
+                oldNode = root.SelectSingleNode("/settings/" + pstrValueToRead);
+                oldNode.InnerText = pstrValueToWrite;
+                doc.Save(settingsFilePath);
+                return true;
+            }
+            catch {
+                //properly you need to log the exception here. But as this is just an
+                //example, I am not doing that. 
+                return false;
+            }
+        }
+        #endregion
+
+        /*
+            <?xml version="1.0" encoding="utf-8" ?>
+            <configuration>
+                <appSettings>
+                    <add key="Key0" value="0" />
+                    <add key="Key1" value="1" />
+                    <add key="Key2" value="2" />
+                </appSettings>
+            </configuration>
+         */
+        public string Read() {
+
+            // Read a particular key from the config file 
+            string sAttr = ConfigurationManager.AppSettings.Get("Key0");
+            Console.WriteLine("The value of Key0: " + sAttr);
+
+            // Read all the keys from the config file
+            NameValueCollection sAll = ConfigurationManager.AppSettings;
+
+            foreach (string s in sAll.AllKeys)
+                Console.WriteLine("Key: " + s + " Value: " + sAll.Get(s));
+            Console.ReadLine();
+        }
+
+
+        public void SaveSettings
