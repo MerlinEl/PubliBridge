@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32002.261
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Walker", "Walker\Walker.csproj", "{DB8EBE99-6381-4E41-9B53-F624A12295CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPTest", "..\WPTest\WPTest.csproj", "{BD9AF24F-8E84-4997-95D6-C4A6CA82100B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DB8EBE99-6381-4E41-9B53-F624A12295CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB8EBE99-6381-4E41-9B53-F624A12295CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB8EBE99-6381-4E41-9B53-F624A12295CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB8EBE99-6381-4E41-9B53-F624A12295CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD9AF24F-8E84-4997-95D6-C4A6CA82100B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD9AF24F-8E84-4997-95D6-C4A6CA82100B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD9AF24F-8E84-4997-95D6-C4A6CA82100B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD9AF24F-8E84-4997-95D6-C4A6CA82100B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {89E7465F-1071-44AF-86DD-A272B2A527F0}
+	EndGlobalSection
+EndGlobal

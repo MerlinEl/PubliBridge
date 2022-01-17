@@ -1,0 +1,6 @@
+E:\Aprog\Orien\FlashC#\PubliBridge\_WPlayer\win32\CSharp\v0.0.0.1\Walker\Walker\Walker\obj\Debug\Walker.csproj.AssemblyReference.cache
+E:\Aprog\Orien\FlashC#\PubliBridge\_WPlayer\win32\CSharp\v0.0.0.1\Walker\Walker\Walker\obj\Debug\Interop.FlashAccessibility.dll
+E:\Aprog\Orien\FlashC#\PubliBridge\_WPlayer\win32\CSharp\v0.0.0.1\Walker\Walker\Walker\obj\Debug\Walker.csproj.ResolveComReference.cache
+E:\Aprog\Orien\FlashC#\PubliBridge\_WPlayer\win32\CSharp\v0.0.0.1\Walker\Walker\Walker\obj\Debug\Walker.WPlayerForm.resources
+E:\Aprog\Orien\FlashC#\PubliBridge\_WPlayer\win32\CSharp\v0.0.0.1\Walker\Walker\Walker\obj\Debug\Walker.csproj.GenerateResource.cache
+E:\Aprog\Orien\FlashC#\PubliBridge\_WPlayer\win32\CSharp\v0.0.0.1\Walker\Walker\Walker\obj\Debug\Walker.csproj.CoreCompileInputs.cache

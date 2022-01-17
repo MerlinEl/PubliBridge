@@ -1,0 +1,86 @@
+<PAGES>
+	<btn_page_5>
+		<page_5 label="Historie, archeologie, prameny"/>
+		<page_6 label="Měření času, periodizace"/>
+		<page_8 label="Vznik života na Zemi"/>
+		<page_9 label="Opakování – Úvod do studia dějepisu"/>
+	</btn_page_5>
+	
+	<btn_page_10>
+		<page_10 label="Co je pravěk"/>
+		<page_11 label="1. Doba kamenná"/>
+		<page_11 label="A. Starší doba kamenná (paleloit)"/>
+		<page_16 label="B. Mladší doba kamenná (neolit)"/>
+		<page_18 label="C. Pozdní doba kamenná (eneolit)"/>
+		<page_20 label="2. Doba bronzová"/>
+		<page_22 label="3. Doba železná"/>
+		<page_25 label="4. Naše země po odchodu Keltů"/>
+        <page_26 label="Opakování – Pravěk"/>	
+	</btn_page_10>
+	
+	<btn_page_28>
+		<page_28 label ="Co je starověk"/>
+		<page_30 label ="Mezopotámie"/>
+		<page_36 label ="Opakování – Mezopotámie"/>
+		<page_37 label ="Fénicie, Palestina"/>
+		<page_38 label ="Starověká Palestina"/>
+		<page_40 label ="Opakování – Fénicie, Palestina"/>
+		<page_41 label ="Starověký Egypt"/>
+		<page_51 label ="Opakování – starověký Egypt"/>
+		<page_52 label ="Starověká Indie"/>
+		<page_54 label ="Starověká Čína"/>
+		<page_56 label ="Opakování – starověká Indie a Čína"/>
+	</btn_page_28>
+		
+	<btn_page_56>
+		<page_57 label ="Co jsou antické státy"/>
+		<page_58 label ="Přírodní podmínky, zemědělství, řemesla a obchod v Řecku"/>
+		<page_59 label ="Minojská Kréta"/>
+		<page_61 label ="Mykénské Řecko"/>
+		<page_62 label ="Temné období Řecka"/>
+		<page_64 label ="Vznik městských států"/>
+		<page_65 label ="Velká řecká kolonizace"/>
+		<page_66 label ="Městský stát Athény"/>
+		<page_68 label ="Městský stát Sparta"/>
+	</btn_page_56>
+	
+	<btn_page_69>
+		<page_69 label ="Řecko-perské války"/>
+		<page_71 label ="Rozkvět Athén po řecko-perských válkách"/>
+		<page_72 label ="Válka mezi Spartou a Athénami – peloponéská válka"/>
+		<page_73 label ="Řecko pod nadvládou Makedonie"/>
+		<page_75 label ="Život ve starověkém Řecku"/>
+		<page_77 label ="Kultura starověkého Řecka"/>
+		<page_79 label ="Sport a hry"/>
+		<page_79 label ="Počátky vědy"/>
+		<page_80 label ="Opakování – starověké Řecko"/>
+	</btn_page_69>
+	
+	<btn_page_82>
+		<page_82 label ="Starověký Řím"/>
+		<page_82 label ="Přírodní podmínky, zemědělství, řemesla a obchod..."/>
+		<page_84 label ="Řím v době královské"/>
+		<page_86 label ="Řím republikou"/>
+		<page_92 label ="Krize Říma a zánik republiky"/>
+		<page_96 label ="Opakování – Řím královstvím, Řím republikou"/>
+		<page_97 label ="Řím v době císařství"/>
+		<page_103 label ="Rozdělení římské říše"/>
+		<page_104 label ="Opakování – Řím v době císařství"/>
+		<page_105 label ="Život ve starověkém Římě"/>
+		<page_107 label ="Kultura starověkého Říma"/>
+		<page_109 label ="Odkaz římské říše"/>
+		<page_110 label ="Opakování – starověký Řím"/>
+	</btn_page_82>
+	
+	<btn_page_111>
+		<page_111 label ="Závěrečné opakování"/>
+		<page_117 label ="Literární příloha"/>
+		<page_123 label ="Klíčové kompetence"/>
+		<page_124 label ="Učivo a očekávané výstupy"/>
+		<page_126 label ="Klíč k opakovacím cvičením"/>
+		<page_128 label ="Rejstřík"/>
+		<page_130 label ="Slovníček pojmů"/>
+	</btn_page_111>
+	
+</PAGES>
+

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.052,E:\Aprog\Orien\FlashC#\PubliBridge\_WPlayer\win32\Delphi\DPlayer.dfm=E:\Aprog\Orien\FlashC#\PubliBridge\_WPlayer\win32\Delphi\WPlayerTest.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.011,E:\Aprog\Orien\FlashC#\PubliBridge\_WPlayer\win32\Delphi\MainForm.dfm=E:\Aprog\Orien\FlashC#\PubliBridge\_WPlayer\win32\Delphi\DPlayer.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.011,E:\Aprog\Orien\FlashC#\PubliBridge\_WPlayer\win32\Delphi\MainForm.pas=E:\Aprog\Orien\FlashC#\PubliBridge\_WPlayer\win32\Delphi\DPlayer.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.620,C:\Users\Orien Star\Documents\Embarcadero\Studio\Projects\Project1.dproj=E:\Aprog\Orien\FlashC#\WalkerPlayer\CSharpToDelphi\Create_Load_Dll_001\delphtest.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.206,=C:\Users\Orien Star\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.734,E:\Aprog\Orien\FlashC#\PubliBridge\_WPlayer\win32\Delphi\WPlayerTest.dfm=E:\Aprog\Orien\FlashC#\PubliBridge\_WPlayer\win32\Delphi\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.052,E:\Aprog\Orien\FlashC#\PubliBridge\_WPlayer\win32\Delphi\DPlayer.pas=E:\Aprog\Orien\FlashC#\PubliBridge\_WPlayer\win32\Delphi\WPlayerTest.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.734,E:\Aprog\Orien\FlashC#\PubliBridge\_WPlayer\win32\Delphi\WPlayerTest.pas=E:\Aprog\Orien\FlashC#\PubliBridge\_WPlayer\win32\Delphi\Unit1.pas</Transaction>
+  </Transactions>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="MainForm.pas"/>
+    <File Path="MainForm.dfm"/>
+  </ProjectSortOrder>
+</BorlandProject>
