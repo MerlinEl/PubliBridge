@@ -45,6 +45,7 @@ namespace cshpdll {
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(1167, 873);
             this.Controls.Add(this.FLComponent);
+            this.KeyPreview = true;
             this.Name = "WPlayerForm";
             this.Text = "WLoader";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OnFormClosing);

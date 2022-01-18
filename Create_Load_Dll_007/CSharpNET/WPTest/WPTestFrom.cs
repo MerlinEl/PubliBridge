@@ -15,8 +15,13 @@ namespace WPTest {
             string fpath = CbxBookDir.Text + (CbxSWFDir.Text == "root" ? "" : "\\" + CbxSWFDir.Text) + "\\" + LbxFiles.Text;
             Console.WriteLine("Loading SWF:{0}", fpath);
             WPlayer wl = new WPlayer();
-            wl.LoadFile(fpath, true, true);
-            wl.Display(true);
+            var options = new OWPlayer {
+                FilePath = fpath,
+                AutoPlay = true,
+                Hidden = false,
+                FullScreen = false
+            };
+            wl.LoadFile(options);
         }
 
         private void OnFormLoaded(object sender, EventArgs e) {

@@ -2,7 +2,7 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Call CSharpDll Methods:'
-  ClientHeight = 477
+  ClientHeight = 555
   ClientWidth = 842
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -16,7 +16,7 @@ object Form1: TForm1
   TextHeight = 13
   object GroupBox6: TGroupBox
     Left = 8
-    Top = 215
+    Top = 292
     Width = 826
     Height = 255
     Caption = 'Console:'
@@ -34,7 +34,7 @@ object Form1: TForm1
     Left = 8
     Top = 8
     Width = 826
-    Height = 201
+    Height = 278
     Caption = '( DLL ) Walker Player Methods:'
     TabOrder = 1
     object lbl4: TLabel
@@ -134,8 +134,8 @@ object Form1: TForm1
     end
     object ChkAutoPlay: TCheckBox
       Left = 12
-      Top = 113
-      Width = 71
+      Top = 121
+      Width = 141
       Height = 17
       Caption = 'Auto Play'
       Checked = True
@@ -152,13 +152,41 @@ object Form1: TForm1
     end
     object ChkFullScreen: TCheckBox
       Left = 12
-      Top = 136
-      Width = 71
+      Top = 144
+      Width = 141
       Height = 17
       Caption = 'Full Screen'
       Checked = True
       State = cbChecked
       TabOrder = 8
+    end
+    object ChkHidden: TCheckBox
+      Left = 12
+      Top = 167
+      Width = 141
+      Height = 17
+      Caption = 'Hidden'
+      TabOrder = 9
+    end
+    object ChkFitToScreen: TCheckBox
+      Left = 12
+      Top = 189
+      Width = 141
+      Height = 17
+      Caption = 'Fit To Screen'
+      Checked = True
+      State = cbChecked
+      TabOrder = 10
+    end
+    object ChkCenterToScreen: TCheckBox
+      Left = 13
+      Top = 212
+      Width = 141
+      Height = 17
+      Caption = 'Center To Screen'
+      Checked = True
+      State = cbChecked
+      TabOrder = 11
     end
   end
 end

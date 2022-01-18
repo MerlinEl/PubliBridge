@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
@@ -7,20 +8,28 @@ namespace cshpdll {
     public partial class WPlayerForm : Form {
 
         private Size swfStartSize = new Size(1024, 768);
+        private OWPlayer _options;
+        private bool _isLoaded;
+        public WPlayerForm() => InitializeComponent();
 
-        public WPlayerForm() {
-            InitializeComponent();
-        }
+        public void LoadFile(OWPlayer options) {
 
-        public void LoadFile(string fpath, bool play, bool fullScreen) {
-
-            if (!File.Exists(fpath)) throw new FileNotFoundException("This file was not found.\n" + fpath);
-            if (FLComponent.Movie != null) UnloadSWF();
-            FLComponent.Movie = fpath;
-            FLComponent.Playing = play;
-            FitPlayerToMediaSize(fpath);
-            FullScreenMode = fullScreen;
+            _options = options;
+            if (!File.Exists(options.FilePath)) throw new FileNotFoundException("This file was not found.\n" + options.FilePath);
+            MessageBox.Show(
+                "LoadFile >\n\tFullScreen:"+ options.FullScreen +
+                "\n\tFitToScreen:" + options.FitToScreen + 
+                "\n\tHidden:"+ options.Hidden + 
+                "\n\tFilePath:" + options.FilePath, "CSharp MessageBox:"
+            );
+            //if (FLComponent.Movie != null) UnloadSWF();
+            FLComponent.Movie = options.FilePath;
+            FLComponent.Playing = options.AutoPlay;
+            if (options.FitToScreen) FitPlayerToMediaSize(options.FilePath);
+            FullScreenMode = options.FullScreen;
             // FLComponent.AllowFullScreen = fullScreen ? "true" : "false";
+            if (!options.Hidden) Show();
+            _isLoaded = true;
         }
 
         private void FitPlayerToMediaSize(string fpath) {
@@ -104,12 +113,21 @@ namespace cshpdll {
                 Hide();
             }
         }
+        // To enable Form Keyboard Events set KeyPreview = true;
         private void OnFormKeyDown(object sender, KeyEventArgs e) {
-            if (e.Alt && e.KeyCode == Keys.F4) _allowClose = true;
+            if (e.Alt && e.KeyCode == Keys.F4) {
+                
+                _allowClose = true;
+            }
+            else if (e.KeyCode == Keys.Escape) {
+                FullScreenMode = false;
+                // prevent child controls from handling this event as well
+                e.SuppressKeyPress = true;
+            }
         }
-
         private void OnFormResize(object sender, EventArgs e) {
-            
+
+            if (!_options.FitToScreen) return;
             FitPlayerToProportionallyToWindow();
         }
 
@@ -140,13 +158,16 @@ namespace cshpdll {
         public bool FullScreenMode {
             get { return this.fullScreen; }
             set {
-                if (this.fullScreen) {
-                    this.WindowState = FormWindowState.Maximized;
-                    this.FormBorderStyle = FormBorderStyle.Sizable;
-                } else {
+                if (value) {
                     this.WindowState = FormWindowState.Normal;
                     this.FormBorderStyle = FormBorderStyle.None;
                     this.Bounds = Screen.PrimaryScreen.Bounds;
+                } else {
+                    this.WindowState = FormWindowState.Normal;
+                    this.FormBorderStyle = FormBorderStyle.Sizable;
+                    //if (_isLoaded) FitPlayerToMediaSize(_options.FilePath);
+                    this.ClientSize = new Size(swfStartSize.Width, swfStartSize.Height);
+                    CenterToScreen();
                 }
                 this.fullScreen = value;
             }
