@@ -1,0 +1,13 @@
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayer\WalkerPlayer\bin\Debug\WalkerPlayer.dll
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayer\WalkerPlayer\bin\Debug\WalkerPlayer.pdb
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayer\WalkerPlayer\obj\Debug\WalkerPlayer.csproj.CoreCompileInputs.cache
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayer\WalkerPlayer\obj\Debug\WalkerPlayer.dll
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayer\WalkerPlayer\obj\Debug\WalkerPlayer.pdb
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayer\WalkerPlayer\obj\Debug\WalkerPlayer.csproj.AssemblyReference.cache
+C:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayer_002\WalkerPlayer\bin\Debug\WalkerPlayer.dll
+C:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayer_002\WalkerPlayer\bin\Debug\WalkerPlayer.pdb
+C:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayer_002\WalkerPlayer\obj\Debug\WalkerPlayer.csproj.CoreCompileInputs.cache
+C:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayer_002\WalkerPlayer\obj\Debug\WalkerPlayer.dll
+C:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayer_002\WalkerPlayer\obj\Debug\WalkerPlayer.pdb
+C:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayer_002\WalkerPlayer\obj\Debug\WalkerPlayer.Properties.Resources.resources
+C:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayer_002\WalkerPlayer\obj\Debug\WalkerPlayer.csproj.GenerateResource.cache

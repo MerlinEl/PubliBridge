@@ -43,6 +43,7 @@ namespace WPTest {
            
             LbxFiles.Items.Clear();
             string swfDir = CbxBookDir.Text + (CbxSWFDir.Text == "root" ? "" : "\\" + CbxSWFDir.Text);
+            if (!Directory.Exists(swfDir)) return;
             // get files
             var ext = new List<string> { "jpg", "png", "swf", "flv" };
             var files = Directory

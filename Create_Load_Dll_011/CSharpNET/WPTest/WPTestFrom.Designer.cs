@@ -36,9 +36,10 @@ namespace WPTest {
             // 
             // BtnLoadSWF
             // 
-            this.BtnLoadSWF.Location = new System.Drawing.Point(9, 358);
+            this.BtnLoadSWF.Location = new System.Drawing.Point(12, 441);
+            this.BtnLoadSWF.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BtnLoadSWF.Name = "BtnLoadSWF";
-            this.BtnLoadSWF.Size = new System.Drawing.Size(508, 23);
+            this.BtnLoadSWF.Size = new System.Drawing.Size(677, 28);
             this.BtnLoadSWF.TabIndex = 0;
             this.BtnLoadSWF.Text = "LOAD";
             this.BtnLoadSWF.UseVisualStyleBackColor = true;
@@ -47,26 +48,30 @@ namespace WPTest {
             // LbxFiles
             // 
             this.LbxFiles.FormattingEnabled = true;
-            this.LbxFiles.Location = new System.Drawing.Point(9, 127);
+            this.LbxFiles.ItemHeight = 16;
+            this.LbxFiles.Location = new System.Drawing.Point(12, 156);
+            this.LbxFiles.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.LbxFiles.Name = "LbxFiles";
-            this.LbxFiles.Size = new System.Drawing.Size(508, 225);
+            this.LbxFiles.Size = new System.Drawing.Size(676, 276);
             this.LbxFiles.TabIndex = 4;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 9);
+            this.label1.Location = new System.Drawing.Point(12, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 13);
+            this.label1.Size = new System.Drawing.Size(66, 17);
             this.label1.TabIndex = 5;
             this.label1.Text = "Book Dir:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 111);
+            this.label2.Location = new System.Drawing.Point(12, 137);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 13);
+            this.label2.Size = new System.Drawing.Size(75, 17);
             this.label2.TabIndex = 6;
             this.label2.Text = "SWF Files:";
             // 
@@ -75,10 +80,12 @@ namespace WPTest {
             this.CbxBookDir.FormattingEnabled = true;
             this.CbxBookDir.Items.AddRange(new object[] {
             "E:\\Aprog\\Orien\\FlashC#\\PubliBridge\\Interactive\\Dějepis 6",
-            "E:\\Aprog\\Orien\\FlashC#\\PubliBridge\\Resources\\swf"});
-            this.CbxBookDir.Location = new System.Drawing.Point(9, 25);
+            "E:\\Aprog\\Orien\\FlashC#\\PubliBridge\\Resources\\swf",
+            "C:\\Users\\merli\\Dropbox\\PubliBridge\\Interactive\\Dějepis 6"});
+            this.CbxBookDir.Location = new System.Drawing.Point(12, 31);
+            this.CbxBookDir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CbxBookDir.Name = "CbxBookDir";
-            this.CbxBookDir.Size = new System.Drawing.Size(508, 21);
+            this.CbxBookDir.Size = new System.Drawing.Size(676, 24);
             this.CbxBookDir.TabIndex = 7;
             // 
             // CbxSWFDir
@@ -92,18 +99,20 @@ namespace WPTest {
             "audio",
             "video",
             "photos"});
-            this.CbxSWFDir.Location = new System.Drawing.Point(9, 69);
+            this.CbxSWFDir.Location = new System.Drawing.Point(12, 85);
+            this.CbxSWFDir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CbxSWFDir.Name = "CbxSWFDir";
-            this.CbxSWFDir.Size = new System.Drawing.Size(508, 21);
+            this.CbxSWFDir.Size = new System.Drawing.Size(676, 24);
             this.CbxSWFDir.TabIndex = 9;
             this.CbxSWFDir.SelectedIndexChanged += new System.EventHandler(this.OnSwfDirChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 53);
+            this.label3.Location = new System.Drawing.Point(12, 65);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 13);
+            this.label3.Size = new System.Drawing.Size(64, 17);
             this.label3.TabIndex = 8;
             this.label3.Text = "SWF Dir:";
             // 
@@ -112,18 +121,19 @@ namespace WPTest {
             this.ChkSkipWalkerLogo.AutoSize = true;
             this.ChkSkipWalkerLogo.Checked = true;
             this.ChkSkipWalkerLogo.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ChkSkipWalkerLogo.Location = new System.Drawing.Point(12, 397);
+            this.ChkSkipWalkerLogo.Location = new System.Drawing.Point(16, 489);
+            this.ChkSkipWalkerLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ChkSkipWalkerLogo.Name = "ChkSkipWalkerLogo";
-            this.ChkSkipWalkerLogo.Size = new System.Drawing.Size(111, 17);
+            this.ChkSkipWalkerLogo.Size = new System.Drawing.Size(141, 21);
             this.ChkSkipWalkerLogo.TabIndex = 10;
             this.ChkSkipWalkerLogo.Text = "Skip Walker Logo";
             this.ChkSkipWalkerLogo.UseVisualStyleBackColor = true;
             // 
             // WPTestForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(528, 427);
+            this.ClientSize = new System.Drawing.Size(704, 526);
             this.Controls.Add(this.ChkSkipWalkerLogo);
             this.Controls.Add(this.CbxSWFDir);
             this.Controls.Add(this.label3);
@@ -132,6 +142,7 @@ namespace WPTest {
             this.Controls.Add(this.label1);
             this.Controls.Add(this.LbxFiles);
             this.Controls.Add(this.BtnLoadSWF);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "WPTestForm";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.OnFormLoaded);
