@@ -44,8 +44,8 @@ namespace WalkerPlayer {
             axFlash.Name = "axFlash";
             axFlash.TabIndex = 0;
 
-            ComponentResourceManager resources = new ComponentResourceManager(typeof(WPlayerForm));
-            axFlash.OcxState = ((AxHost.State)(resources.GetObject("axFlash.OcxState")));
+            //ComponentResourceManager resources = new ComponentResourceManager(typeof(WPlayerForm));
+            //axFlash.OcxState = ((AxHost.State)(resources.GetObject("axFlash.OcxState")));
             //axFlash.OcxState = ((AxHost.State)(resources.GetObject("Flash32_14_0_0_176_ocx", System.Globalization.CultureInfo.InvariantCulture)));
             //axFlash.OcxState = ((AxHost.State)(resources.GetObject("FLWindow3D.OcxState")));
             axFlash.FlashCall += new _IShockwaveFlashEvents_FlashCallEventHandler(this.OnFlashWalkerCall);

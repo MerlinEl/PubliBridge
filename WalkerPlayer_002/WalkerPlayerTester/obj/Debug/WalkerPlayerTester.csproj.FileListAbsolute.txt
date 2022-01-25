@@ -24,3 +24,16 @@ C:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayer_002\WalkerPlayerTester\obj\Debug
 C:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayer_002\WalkerPlayerTester\obj\Debug\WalkerPlayerTester.csproj.CopyComplete
 C:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayer_002\WalkerPlayerTester\obj\Debug\WalkerPlayerTester.exe
 C:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayer_002\WalkerPlayerTester\obj\Debug\WalkerPlayerTester.pdb
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayer_002\WalkerPlayerTester\bin\Debug\WalkerPlayerTester.exe.config
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayer_002\WalkerPlayerTester\bin\Debug\WalkerPlayerTester.exe
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayer_002\WalkerPlayerTester\bin\Debug\WalkerPlayerTester.pdb
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayer_002\WalkerPlayerTester\obj\Debug\WalkerPlayerTester.WPlayerTesterForm.resources
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayer_002\WalkerPlayerTester\obj\Debug\WalkerPlayerTester.Properties.Resources.resources
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayer_002\WalkerPlayerTester\obj\Debug\WalkerPlayerTester.csproj.GenerateResource.cache
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayer_002\WalkerPlayerTester\obj\Debug\WalkerPlayerTester.csproj.CoreCompileInputs.cache
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayer_002\WalkerPlayerTester\obj\Debug\WalkerPlayerTester.exe
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayer_002\WalkerPlayerTester\obj\Debug\WalkerPlayerTester.pdb
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayer_002\WalkerPlayerTester\bin\Debug\WalkerPlayer.dll
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayer_002\WalkerPlayerTester\bin\Debug\WalkerPlayer.pdb
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayer_002\WalkerPlayerTester\obj\Debug\WalkerPlayerTester.csproj.AssemblyReference.cache
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayer_002\WalkerPlayerTester\obj\Debug\WalkerPlayerTester.csproj.CopyComplete

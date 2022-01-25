@@ -27,31 +27,31 @@ namespace WalkerPlayer {
         /// </summary>
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WPlayerForm));
-            this.FLWindow2D = new AxShockwaveFlashObjects.AxShockwaveFlash();
             this.FLWindow3D = new AxShockwaveFlashObjects.AxShockwaveFlash();
-            ((System.ComponentModel.ISupportInitialize)(this.FLWindow2D)).BeginInit();
+            this.FLWindow2D = new AxShockwaveFlashObjects.AxShockwaveFlash();
             ((System.ComponentModel.ISupportInitialize)(this.FLWindow3D)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FLWindow2D)).BeginInit();
             this.SuspendLayout();
-            // 
-            // FLWindow2D
-            // 
-            this.FLWindow2D.Enabled = true;
-            this.FLWindow2D.Location = new System.Drawing.Point(120, 40);
-            this.FLWindow2D.Name = "FLWindow2D";
-            this.FLWindow2D.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("FLWindow2D.OcxState")));
-            this.FLWindow2D.Size = new System.Drawing.Size(427, 400);
-            this.FLWindow2D.TabIndex = 2;
-            this.FLWindow2D.FlashCall += new AxShockwaveFlashObjects._IShockwaveFlashEvents_FlashCallEventHandler(this.OnFlashWalkerCall);
             // 
             // FLWindow3D
             // 
             this.FLWindow3D.Enabled = true;
-            this.FLWindow3D.Location = new System.Drawing.Point(626, 59);
+            this.FLWindow3D.Location = new System.Drawing.Point(316, 136);
             this.FLWindow3D.Name = "FLWindow3D";
             this.FLWindow3D.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("FLWindow3D.OcxState")));
-            this.FLWindow3D.Size = new System.Drawing.Size(400, 400);
-            this.FLWindow3D.TabIndex = 3;
+            this.FLWindow3D.Size = new System.Drawing.Size(192, 192);
+            this.FLWindow3D.TabIndex = 1;
             this.FLWindow3D.FlashCall += new AxShockwaveFlashObjects._IShockwaveFlashEvents_FlashCallEventHandler(this.OnFlashProjectorCall);
+            // 
+            // FLWindow2D
+            // 
+            this.FLWindow2D.Enabled = true;
+            this.FLWindow2D.Location = new System.Drawing.Point(70, 136);
+            this.FLWindow2D.Name = "FLWindow2D";
+            this.FLWindow2D.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("FLWindow2D.OcxState")));
+            this.FLWindow2D.Size = new System.Drawing.Size(192, 192);
+            this.FLWindow2D.TabIndex = 0;
+            this.FLWindow2D.FlashCall += new AxShockwaveFlashObjects._IShockwaveFlashEvents_FlashCallEventHandler(this.OnFlashWalkerCall);
             // 
             // WPlayerForm
             // 
@@ -68,15 +68,15 @@ namespace WalkerPlayer {
             this.Load += new System.EventHandler(this.OnFormLoad);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.OnFormKeyDown);
             this.Resize += new System.EventHandler(this.OnFormResize);
-            ((System.ComponentModel.ISupportInitialize)(this.FLWindow2D)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FLWindow3D)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FLWindow2D)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        internal AxShockwaveFlashObjects.AxShockwaveFlash FLWindow2D;
-        internal AxShockwaveFlashObjects.AxShockwaveFlash FLWindow3D;
+        public AxShockwaveFlashObjects.AxShockwaveFlash FLWindow2D;
+        public AxShockwaveFlashObjects.AxShockwaveFlash FLWindow3D;
     }
 }

@@ -1,0 +1,16 @@
+E:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_009\CSharpNET\WPConsole\bin\Debug\WalkerPlayerConsole.dll
+E:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_009\CSharpNET\WPConsole\bin\Debug\WalkerPlayerConsole.pdb
+E:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_009\CSharpNET\WPConsole\obj\Debug\WalkerPlayerConsole.WPConsoleForm.resources
+E:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_009\CSharpNET\WPConsole\obj\Debug\WalkerPlayerConsole.WPConsoleAboutForm.resources
+E:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_009\CSharpNET\WPConsole\obj\Debug\WalkerPlayerConsole.csproj.GenerateResource.cache
+E:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_009\CSharpNET\WPConsole\obj\Debug\WalkerPlayerConsole.csproj.CoreCompileInputs.cache
+E:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_009\CSharpNET\WPConsole\obj\Debug\WalkerPlayerConsole.dll
+E:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_009\CSharpNET\WPConsole\obj\Debug\WalkerPlayerConsole.pdb
+E:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_010\CSharpNET\WPConsole\bin\Debug\WalkerPlayerConsole.dll
+E:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_010\CSharpNET\WPConsole\bin\Debug\WalkerPlayerConsole.pdb
+E:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_010\CSharpNET\WPConsole\obj\Debug\WalkerPlayerConsole.ConsoleForm.resources
+E:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_010\CSharpNET\WPConsole\obj\Debug\WalkerPlayerConsole.ConsoleAboutForm.resources
+E:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_010\CSharpNET\WPConsole\obj\Debug\WalkerPlayerConsole.csproj.GenerateResource.cache
+E:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_010\CSharpNET\WPConsole\obj\Debug\WalkerPlayerConsole.csproj.CoreCompileInputs.cache
+E:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_010\CSharpNET\WPConsole\obj\Debug\WalkerPlayerConsole.dll
+E:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_010\CSharpNET\WPConsole\obj\Debug\WalkerPlayerConsole.pdb

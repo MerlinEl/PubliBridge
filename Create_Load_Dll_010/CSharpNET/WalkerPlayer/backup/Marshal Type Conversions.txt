@@ -1,2 +1,0 @@
-﻿
-[MarshalAs(UnmanagedType.IUnknown)] Dictionary<string, string> options  

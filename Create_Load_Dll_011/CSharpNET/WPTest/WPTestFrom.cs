@@ -64,8 +64,8 @@ namespace WPTest {
             }
         }
 
-        private void OnSwfDirChanged(object sender, EventArgs e) {
-            FillFiles();
-        }
+        private void OnSwfDirChanged(object sender, EventArgs e) => FillFiles();
+
+        private void OnBookDirChanged(object sender, EventArgs e) => FillFiles();
     }
 }

@@ -59,25 +59,5 @@ namespace WalkerPlayer.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        public static byte[] Flash32_14_0_0_176 {
-            get {
-                object obj = ResourceManager.GetObject("Flash32_14_0_0_176", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        public static byte[] Flash32_14_0_0_176_ocx {
-            get {
-                object obj = ResourceManager.GetObject("Flash32_14_0_0_176_ocx", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
     }
 }
