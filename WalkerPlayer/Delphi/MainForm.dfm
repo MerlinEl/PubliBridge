@@ -215,14 +215,5 @@ object Form1: TForm1
       Caption = 'Skip Logo'
       TabOrder = 14
     end
-    object BtnLoadFile3D: TButton
-      Left = 12
-      Top = 113
-      Width = 141
-      Height = 25
-      Caption = 'LoadFile3D( fpath )'
-      TabOrder = 15
-      OnClick = BtnLoadFile3DClick
-    end
   end
 end

@@ -13,7 +13,7 @@ using System.Windows.Forms;
 namespace WalkerPlayer {
     public partial class WPlayerForm : Form {
         
-        private AxShockwaveFlashObjects.AxShockwaveFlash axFlash;
+        private AxShockwaveFlash axFlash;
         public WPlayerForm() {
             InitializeComponent();
             InitializeFlash();
@@ -21,7 +21,7 @@ namespace WalkerPlayer {
 
         private void InitializeFlash() {
 
-            axFlash = new AxShockwaveFlashObjects.AxShockwaveFlash();
+            axFlash = new AxShockwaveFlash();
             axFlash.BeginInit();
             axFlash.Location = new Point();
             axFlash.Name = "FLWindow3D";
@@ -30,7 +30,7 @@ namespace WalkerPlayer {
             this.Controls.Add(axFlash);
         }
 
-        public void LoadSWFFile(string fpath) {
+        public void CreateFlashComponentAndLoadMedia(string fpath) {
     
             this.Controls.Remove(axFlash);
             axFlash.Dispose();
@@ -53,12 +53,31 @@ namespace WalkerPlayer {
             axFlash.AllowScriptAccess = "Always";
             axFlash.Quality2 = "High";
             axFlash.BGColor = "0xec9900";
-            
             axFlash.LoadMovie(0, fpath);
         }
 
         private void OnFlashWalkerCall(object sender, _IShockwaveFlashEvents_FlashCallEvent e) {
             throw new NotImplementedException();
+        }
+
+        internal void SetFullScreen(bool state) {
+            throw new NotImplementedException();
+        }
+
+        public void LoadFile(OWPlayer options) {
+
+            Show();
+            CreateFlashComponentAndLoadMedia(options.FilePath);
+        }
+
+        public void LoadFile(string fpath) {
+
+            CreateFlashComponentAndLoadMedia(fpath);
+            Show();
+        }
+
+        internal void ShowPanel(bool state) {
+            Show();
         }
     }
 }

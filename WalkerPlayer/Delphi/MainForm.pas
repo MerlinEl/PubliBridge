@@ -34,14 +34,12 @@ type
         ChkEscapeEnabled: TCheckBox;
     ChkHiddenConsole: TCheckBox;
     ChkSkipLogo: TCheckBox;
-    BtnLoadFile3D: TButton;
         procedure BtnSayHelloClick(Sender: TObject);
         procedure BtnLoadFile2DClick(Sender: TObject);
         procedure BtnBrowseDirClick(Sender: TObject);
         procedure OnBookDirectoryChanged(Sender: TObject);
         procedure OnFormShown(Sender: TObject);
         procedure OnSwfDirectoryChanged(Sender: TObject);
-    procedure BtnLoadFile3DClick(Sender: TObject);
 
     private
         { Private declarations }
@@ -62,7 +60,7 @@ implementation
 // Walker Player Interface (should be found externally, in the dll)
 type
     IWPlayer = interface(IInterface)
-        ['{ab7026b2-02d5-4eea-8f35-6bc69037dba1}']
+        ['{94397bc7-2f0c-4133-8904-9112ea341609}']
         procedure Log(tabName, msg: WideString); safecall;
         procedure SayHello(a: WideString); safecall;
         procedure ShowPanel(state: Boolean); safecall;
@@ -170,33 +168,6 @@ begin
     // Set-Up options
     options.Name := 'Walker Player Options.';
     options.ViewMode := '2D';
-    options.FilePath := fpath;
-    options.RootDir := CbxBookDirs.Text;
-    options.HiddenPlayer := PChar(ChkHiddenPlayer.Checked);
-    options.HiddenConsole := PChar(ChkHiddenConsole.Checked);
-    options.AutoPlay := PChar(ChkAutoPlay.Checked);
-    options.FullScreen := PChar(ChkFullScreen.Checked);
-    options.CenterToScreen := PChar(ChkCenterToScreen.Checked);
-    options.FitToScreen := PChar(ChkFitToScreen.Checked);
-    options.EscapeEnabled := PChar(ChkEscapeEnabled.Checked);
-    options.SkipLogo := PChar(ChkSkipLogo.Checked);
-    WPlayer.Log('Delphi ( MainForm )', WPlayer.OptionsToString(options));
-    //WPlayer.Log('Delphi ( MainForm )', EnumFields(TypeInfo(OWPlayer)));
-    // Load Media File (swf)
-    WPlayer.LoadFile(options);
-end;
-
-procedure TForm1.BtnLoadFile3DClick(Sender: TObject);
-var
-    fpath: WideString;
-    options, Value: OWPlayer;
-begin
-    // Open walker player and load a file in to it
-    fpath := CbxBookDirs.Text + '\' + getSubdir() + '\' + CbxSwfFiles.Text;
-    Log('LoadFile > fpath:' + fpath);
-    // Set-Up options
-    options.Name := 'Walker Player Options.';
-    options.ViewMode := '3D';
     options.FilePath := fpath;
     options.RootDir := CbxBookDirs.Text;
     options.HiddenPlayer := PChar(ChkHiddenPlayer.Checked);
