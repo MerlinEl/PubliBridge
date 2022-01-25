@@ -1,0 +1,2 @@
+﻿xcopy /y /d  "$(ProjectDir)bin\Debug\Walker.dll" "$(ProjectDir)..\..\..\Delphi\Win32\Debug"
+xcopy /y /d  "$(ProjectDir)bin\Debug\Walker.dll" "$(ProjectDir)..\..\..\..\..\Resources\dll\export"

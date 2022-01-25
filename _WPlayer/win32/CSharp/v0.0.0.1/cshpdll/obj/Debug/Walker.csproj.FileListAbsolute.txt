@@ -1,4 +1,0 @@
-E:\Aprog\Orien\FlashC#\PubliBridge\_WPlayer\win32\CSharp\v0.0.0.1\cshpdll\obj\Debug\Walker.Properties.Resources.resources
-E:\Aprog\Orien\FlashC#\PubliBridge\_WPlayer\win32\CSharp\v0.0.0.1\cshpdll\obj\Debug\Walker.WLoader.resources
-E:\Aprog\Orien\FlashC#\PubliBridge\_WPlayer\win32\CSharp\v0.0.0.1\cshpdll\obj\Debug\Walker.csproj.GenerateResource.cache
-E:\Aprog\Orien\FlashC#\PubliBridge\_WPlayer\win32\CSharp\v0.0.0.1\cshpdll\obj\Debug\Walker.csproj.CoreCompileInputs.cache

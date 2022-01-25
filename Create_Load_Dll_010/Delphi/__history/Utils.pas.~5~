@@ -1,0 +1,33 @@
+Utils = class;
+
+ // Declaring metaclass type
+ UtilsClass = class of Utils;
+
+ Utils = class
+ public
+   // Class methods
+   class function add(I, J: Integer): Integer;
+   class function GetClsName: string;
+
+   // Virtual class method
+   class function GetClsNameVirt: string; virtual;
+
+   // Class getter and setter
+   class function GetCount: Integer;
+   class procedure SetCount(I: Integer);
+
+   // Virtual class getter and setter
+   class function GetStrProp: string; virtual;
+   class procedure SetStrProp(N: string); virtual;
+
+   // Class static
+   class function GetStaticCount: Integer; static;
+   class procedure SetStaticCount(I: Integer); static;
+
+   // Class properties
+   property Count: Integer read GetCount write SetCount; // Non-virtual
+   property StrProp: string read GetStrProp write SetStrProp; // Virtual g/setters
+ end;
+
+ // Function that takes a class reference
+ function RegisterTestType(Cls: UtilsClass): boolean;

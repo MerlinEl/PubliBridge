@@ -1,0 +1,2 @@
+DLL je vytvořeno v C#
+Tester je vytvořen v Delphi
