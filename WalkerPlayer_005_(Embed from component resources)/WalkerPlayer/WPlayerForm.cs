@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
-using WalkerPlayer.Properties;
 
 namespace WalkerPlayer {
     public partial class WPlayerForm : Form {
@@ -48,10 +46,6 @@ namespace WalkerPlayer {
             axShockwaveFlash1.LoadMovie(0, options.FilePath);
         }
 
-        private void OnFlashWalkerCall(object sender, _IShockwaveFlashEvents_FlashCallEvent e) {
-            throw new NotImplementedException();
-        }
-
         internal void SetFullScreen(bool state) {
             throw new NotImplementedException();
         }
@@ -72,6 +66,10 @@ namespace WalkerPlayer {
 
         internal void ShowPanel(bool state) {
             Show();
+        }
+
+        private void OnWalkerPlayerCall(object sender, AxShockwaveFlashObjects._IShockwaveFlashEvents_FlashCallEvent e) {
+
         }
     }
 }

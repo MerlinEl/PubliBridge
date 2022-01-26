@@ -29,7 +29,7 @@ namespace WalkerPlayer {
             ((System.ComponentModel.ISupportInitialize)(this.axShockwaveFlash1)).BeginInit();
             this.SuspendLayout();
             // 
-            // axFlash
+            // axShockwaveFlash1
             // 
             this.axShockwaveFlash1.Enabled = true;
             this.axShockwaveFlash1.Location = new System.Drawing.Point(12, 12);
@@ -37,6 +37,7 @@ namespace WalkerPlayer {
             this.axShockwaveFlash1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axShockwaveFlash1.OcxState")));
             this.axShockwaveFlash1.Size = new System.Drawing.Size(192, 192);
             this.axShockwaveFlash1.TabIndex = 0;
+            this.axShockwaveFlash1.FlashCall += new AxShockwaveFlashObjects._IShockwaveFlashEvents_FlashCallEventHandler(this.OnWalkerPlayerCall);
             // 
             // WPlayerForm
             // 
