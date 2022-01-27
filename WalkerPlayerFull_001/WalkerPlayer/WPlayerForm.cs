@@ -72,6 +72,34 @@ namespace WalkerPlayer {
             if (!options.HiddenPlayer) Show();
             _isMediaLoaded = true;
         }
+
+        private void ReloadSwfMedia(AxShockwaveFlash flComponent, string fpath) {
+            
+            //byte[] fileContent = File.ReadAllBytes(Application.StartupPath + @"\yourflashfile.swf");
+            byte[] fileContent = File.ReadAllBytes(fpath);
+
+            if (fileContent != null && fileContent.Length > 0) {
+                using (MemoryStream stm = new MemoryStream()) {
+                    using (BinaryWriter writer = new BinaryWriter(stm)) {
+                        /* Write length of stream for AxHost.State */
+                        writer.Write(8 + fileContent.Length);
+                        /* Write Flash magic 'fUfU' */
+                        writer.Write(0x55665566);
+                        /* Length of swf file */
+                        writer.Write(fileContent.Length);
+                        writer.Write(fileContent);
+                        stm.Seek(0, SeekOrigin.Begin);
+                        /* 1 == IPeristStreamInit */
+                        //Same as LoadMovie()
+                        flComponent.OcxState = new AxHost.State(stm, 1, false, null);
+                    }
+                }
+                fileContent = null;
+                GC.Collect();
+            }
+        }
+
+
         private void FitPlayerToMediaSize(string fpath) {
             Console.WriteLine("LoadFile > w:{0} h:{1}", FLWindow2D.Width, FLWindow2D.Height);
             try {
