@@ -59,15 +59,5 @@ namespace WalkerPlayer.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] Flash {
-            get {
-                object obj = ResourceManager.GetObject("Flash", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
     }
 }

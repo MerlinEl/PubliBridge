@@ -68,10 +68,9 @@ namespace WalkerPlayer {
             //FLWindow2D.OcxState = ((AxHost.State)(resources.GetObject("FLWindow2D.OcxState")));
 
             // loading flash.dll from Project Resources
-            byte[] inputBytes = Resources.Flash;
-            Stream stream = new MemoryStream(inputBytes);
-            FLWindow2D.OcxState = new AxHost.State(stream, 1, false, null);
-
+            //byte[] inputBytes = Resources.Flash;
+            //Stream stream = new MemoryStream(inputBytes);
+            //FLWindow2D.OcxState = new AxHost.State(stream, 1, false, null);
 
             FLWindow2D.FlashCall += new AxWalkerPlayer._IShockwaveFlashEvents_FlashCallEventHandler(OnFlashCall);
 
