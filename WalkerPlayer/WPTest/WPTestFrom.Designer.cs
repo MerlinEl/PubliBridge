@@ -24,7 +24,7 @@ namespace WPTest {
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.BtnLoadSWF = new System.Windows.Forms.Button();
+            this.BtnLoadSwf2D = new System.Windows.Forms.Button();
             this.LbxFiles = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -32,17 +32,18 @@ namespace WPTest {
             this.CbxSWFDir = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.ChkSkipWalkerLogo = new System.Windows.Forms.CheckBox();
+            this.BtnLoadSwf3D = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // BtnLoadSWF
+            // BtnLoadSwf2D
             // 
-            this.BtnLoadSWF.Location = new System.Drawing.Point(9, 358);
-            this.BtnLoadSWF.Name = "BtnLoadSWF";
-            this.BtnLoadSWF.Size = new System.Drawing.Size(508, 23);
-            this.BtnLoadSWF.TabIndex = 0;
-            this.BtnLoadSWF.Text = "LOAD";
-            this.BtnLoadSWF.UseVisualStyleBackColor = true;
-            this.BtnLoadSWF.Click += new System.EventHandler(this.BtnLoadSWF_Click);
+            this.BtnLoadSwf2D.Location = new System.Drawing.Point(9, 358);
+            this.BtnLoadSwf2D.Name = "BtnLoadSwf2D";
+            this.BtnLoadSwf2D.Size = new System.Drawing.Size(508, 23);
+            this.BtnLoadSwf2D.TabIndex = 0;
+            this.BtnLoadSwf2D.Text = "LOAD 2D";
+            this.BtnLoadSwf2D.UseVisualStyleBackColor = true;
+            this.BtnLoadSwf2D.Click += new System.EventHandler(this.BtnLoadSWF_Click);
             // 
             // LbxFiles
             // 
@@ -113,18 +114,29 @@ namespace WPTest {
             this.ChkSkipWalkerLogo.AutoSize = true;
             this.ChkSkipWalkerLogo.Checked = true;
             this.ChkSkipWalkerLogo.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ChkSkipWalkerLogo.Location = new System.Drawing.Point(12, 397);
+            this.ChkSkipWalkerLogo.Location = new System.Drawing.Point(12, 428);
             this.ChkSkipWalkerLogo.Name = "ChkSkipWalkerLogo";
             this.ChkSkipWalkerLogo.Size = new System.Drawing.Size(111, 17);
             this.ChkSkipWalkerLogo.TabIndex = 10;
             this.ChkSkipWalkerLogo.Text = "Skip Walker Logo";
             this.ChkSkipWalkerLogo.UseVisualStyleBackColor = true;
             // 
+            // BtnLoadSwf3D
+            // 
+            this.BtnLoadSwf3D.Location = new System.Drawing.Point(9, 387);
+            this.BtnLoadSwf3D.Name = "BtnLoadSwf3D";
+            this.BtnLoadSwf3D.Size = new System.Drawing.Size(508, 23);
+            this.BtnLoadSwf3D.TabIndex = 11;
+            this.BtnLoadSwf3D.Text = "LOAD 3D";
+            this.BtnLoadSwf3D.UseVisualStyleBackColor = true;
+            this.BtnLoadSwf3D.Click += new System.EventHandler(this.BtnLoadSwf3D_Click);
+            // 
             // WPTestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(528, 427);
+            this.ClientSize = new System.Drawing.Size(528, 578);
+            this.Controls.Add(this.BtnLoadSwf3D);
             this.Controls.Add(this.ChkSkipWalkerLogo);
             this.Controls.Add(this.CbxSWFDir);
             this.Controls.Add(this.label3);
@@ -132,7 +144,7 @@ namespace WPTest {
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.LbxFiles);
-            this.Controls.Add(this.BtnLoadSWF);
+            this.Controls.Add(this.BtnLoadSwf2D);
             this.Name = "WPTestForm";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.OnFormLoaded);
@@ -143,7 +155,7 @@ namespace WPTest {
 
         #endregion
 
-        private System.Windows.Forms.Button BtnLoadSWF;
+        private System.Windows.Forms.Button BtnLoadSwf2D;
         private System.Windows.Forms.ListBox LbxFiles;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -151,6 +163,7 @@ namespace WPTest {
         private System.Windows.Forms.ComboBox CbxSWFDir;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox ChkSkipWalkerLogo;
+        private System.Windows.Forms.Button BtnLoadSwf3D;
     }
 }
 

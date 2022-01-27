@@ -11,14 +11,14 @@
 //[assembly: System.Reflection.AssemblyVersion("1.0.0.0")]
 [assembly: System.Windows.Forms.AxHost.TypeLibraryTimeStamp("10/17/2021 10:47:00")]
 
-namespace AxWalkerPlayer {
+namespace AxShockwaveFlashObjects {
     
     
     [System.Windows.Forms.AxHost.ClsidAttribute("{d27cdb6e-ae6d-11cf-96b8-444553540000}")]
     [System.ComponentModel.DesignTimeVisibleAttribute(true)]
     public class AxShockwaveFlash : System.Windows.Forms.AxHost {
         
-        private WalkerPlayer.IShockwaveFlash ocx;
+        private ShockwaveFlashObjects.IShockwaveFlash ocx;
         
         private AxShockwaveFlashEventMulticaster eventMulticaster;
         
@@ -568,28 +568,6 @@ namespace AxWalkerPlayer {
         
         public event _IShockwaveFlashEvents_FlashCallEventHandler FlashCall;
         
-        public virtual string CallFunction(string request) {
-            if ((this.ocx == null)) {
-                throw new System.Windows.Forms.AxHost.InvalidActiveXStateException("CallFunction", System.Windows.Forms.AxHost.ActiveXInvokeKind.MethodInvoke);
-            }
-            string returnValue = ((string)(this.ocx.CallFunction(request)));
-            return returnValue;
-        }
-        
-        public virtual void SetReturnValue(string returnValue) {
-            if ((this.ocx == null)) {
-                throw new System.Windows.Forms.AxHost.InvalidActiveXStateException("SetReturnValue", System.Windows.Forms.AxHost.ActiveXInvokeKind.MethodInvoke);
-            }
-            this.ocx.SetReturnValue(returnValue);
-        }
-        
-        public virtual void DisableLocalSecurity() {
-            if ((this.ocx == null)) {
-                throw new System.Windows.Forms.AxHost.InvalidActiveXStateException("DisableLocalSecurity", System.Windows.Forms.AxHost.ActiveXInvokeKind.MethodInvoke);
-            }
-            this.ocx.DisableLocalSecurity();
-        }
-        
         public virtual void SetZoomRect(int left, int top, int right, int bottom) {
             if ((this.ocx == null)) {
                 throw new System.Windows.Forms.AxHost.InvalidActiveXStateException("SetZoomRect", System.Windows.Forms.AxHost.ActiveXInvokeKind.MethodInvoke);
@@ -825,10 +803,32 @@ namespace AxWalkerPlayer {
             this.ocx.EnforceLocalSecurity();
         }
         
+        public virtual string CallFunction(string request) {
+            if ((this.ocx == null)) {
+                throw new System.Windows.Forms.AxHost.InvalidActiveXStateException("CallFunction", System.Windows.Forms.AxHost.ActiveXInvokeKind.MethodInvoke);
+            }
+            string returnValue = ((string)(this.ocx.CallFunction(request)));
+            return returnValue;
+        }
+        
+        public virtual void SetReturnValue(string returnValue) {
+            if ((this.ocx == null)) {
+                throw new System.Windows.Forms.AxHost.InvalidActiveXStateException("SetReturnValue", System.Windows.Forms.AxHost.ActiveXInvokeKind.MethodInvoke);
+            }
+            this.ocx.SetReturnValue(returnValue);
+        }
+        
+        public virtual void DisableLocalSecurity() {
+            if ((this.ocx == null)) {
+                throw new System.Windows.Forms.AxHost.InvalidActiveXStateException("DisableLocalSecurity", System.Windows.Forms.AxHost.ActiveXInvokeKind.MethodInvoke);
+            }
+            this.ocx.DisableLocalSecurity();
+        }
+        
         protected override void CreateSink() {
             try {
                 this.eventMulticaster = new AxShockwaveFlashEventMulticaster(this);
-                this.cookie = new System.Windows.Forms.AxHost.ConnectionPointCookie(this.ocx, this.eventMulticaster, typeof(WalkerPlayer._IShockwaveFlashEvents));
+                this.cookie = new System.Windows.Forms.AxHost.ConnectionPointCookie(this.ocx, this.eventMulticaster, typeof(ShockwaveFlashObjects._IShockwaveFlashEvents));
             }
             catch (System.Exception ) {
             }
@@ -844,7 +844,7 @@ namespace AxWalkerPlayer {
         
         protected override void AttachInterfaces() {
             try {
-                this.ocx = ((WalkerPlayer.IShockwaveFlash)(this.GetOcx()));
+                this.ocx = ((ShockwaveFlashObjects.IShockwaveFlash)(this.GetOcx()));
             }
             catch (System.Exception ) {
             }
@@ -923,7 +923,7 @@ namespace AxWalkerPlayer {
     }
     
     [System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.None)]
-    public class AxShockwaveFlashEventMulticaster : WalkerPlayer._IShockwaveFlashEvents {
+    public class AxShockwaveFlashEventMulticaster : ShockwaveFlashObjects._IShockwaveFlashEvents {
         
         private AxShockwaveFlash parent;
         

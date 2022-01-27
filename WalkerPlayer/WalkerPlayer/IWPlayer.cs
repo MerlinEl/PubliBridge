@@ -12,7 +12,7 @@ namespace WalkerPlayer {
     public struct OWPlayer {
         public int Type;
         public string Name;
-        public string ViewMode;
+        public string ViewMode; // 2D or 3D
         [MarshalAs(UnmanagedType.LPWStr)] public string FilePath;// swf file path
         [MarshalAs(UnmanagedType.LPWStr)] public string RootDir; // directory with xml setting
         public bool HiddenPlayer;  // input > 1 = True, 0 = False  
@@ -31,6 +31,22 @@ namespace WalkerPlayer {
                 }
                 return msg;
             }
+        }
+        public OWPlayer SetDefault() {
+
+            Name = "FLOptions";
+            ViewMode = "3D";
+            FilePath = "";
+            RootDir = "";
+            HiddenPlayer = false;
+            HiddenConsole = false;
+            AutoPlay = true;
+            FullScreen = false;
+            FitToScreen = true;
+            CenterToScreen = true;
+            EscapeEnabled = true;
+            SkipLogo = false;
+            return this;
         }
     }
     // Interface

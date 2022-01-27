@@ -1,22 +1,29 @@
-﻿using System;
+﻿using AxShockwaveFlashObjects;
+using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using WalkerPlayer.bridge;
-using WalkerPlayer.Properties;
 using WalkerPlayer.utils;
 
 namespace WalkerPlayer {
     public partial class WPlayerForm : Form {
 
         private Size swfStartSize = new Size(1024, 768);
-        public AxWalkerPlayer.AxShockwaveFlash FLWindow2D;
-        public AxWalkerPlayer.AxShockwaveFlash FLWindow3D;
         private bool _isMediaLoaded;
 
         public WPlayerForm() {
             InitializeComponent();
+
+ // temp setup Move to elsewhere
+            FLWindow3D.Visible = false;
+            FLWindow3D.Location = new Point();
+            FLWindow3D.Size = new Size(800, 800);
+            FLWindow3D.BGColor = "0xec9900";
+            FLWindow3D.AllowScriptAccess = "Always";
+            FLWindow3D.Quality2 = "High";
+            FLWindow2D.Playing = true;
         }
 
         internal void SetFullScreen(bool state) {
@@ -32,20 +39,56 @@ namespace WalkerPlayer {
             }
         }
 
+        /// <summary>
+        /// All Flash Interfaces (AudioPlayer, VideoPlayer, LessonPlayer, Projector3DPlayer, etc..) will be loaded only in FLWindow2D component
+        /// If is 2D will be in mode Window and if is 3D will be in mode Direct
+        /// </summary>
         internal void LoadFile(OWPlayer options) {
 
+            //FlashBridge.FlashOptions = options;
+            //AxShockwaveFlash flComponent = CreateFlControll(options);
+            //flComponent.LoadMovie(0, options.FilePath);
 
             WPGlobal.Log("CSharp", "WPlayerForm > LoadFile >\n\tfpath:{0}", options.FilePath);
             WPGlobal.Log("CSharp", "WPlayerForm > LoadFile >\n\tViewMode:{0}", options.ViewMode);
-
-            if (!File.Exists(options.FilePath)) throw new FileNotFoundException("This file was not found.\n" + options.FilePath);
-
             FlashBridge.FlashOptions = options;
-            AxWalkerPlayer.AxShockwaveFlash flComponent = CreateFlControll(options);
-            flComponent.LoadMovie(0, options.FilePath);
+            if (!File.Exists(options.FilePath)) throw new FileNotFoundException("This file was not found.\n" + options.FilePath);
+            //FLWindow2D.Menu = false;
+            //FLWindow2D.Loop = false;
+            FLWindow2D.WMode = options.ViewMode == "2D" ? "Window" : "Direct";
+            FLWindow2D.AllowScriptAccess = "Always";
+            FLWindow2D.Quality2 = "High";
+            //FLWindow2D.FlashVars = "auto_play=true&channel=adventuretimed&start_volume=25";
+            //FLWindow2D.ControlAdded += new EventHandler(OnControlAdded);
+            //FLWindow2D.FSCommand += FlashMovieFSCommand;
+            //FLWindow2D.FlashCall += FlashMovieFlashCall;
+            //FLWindow2D.LoadMovie(0, swf_Path);
+            FLWindow2D.Movie = options.FilePath;
+            FLWindow2D.Playing = options.AutoPlay;
+            if (options.FitToScreen) FitPlayerToMediaSize(options.FilePath);
+            if (options.CenterToScreen) CenterToScreen();
+            SetFullScreen(options.FullScreen);
+            // FLWindow2D.AllowFullScreen = fullScreen ? "true" : "false";
+            if (!options.HiddenPlayer) Show();
+            _isMediaLoaded = true;
+        }
+        private void FitPlayerToMediaSize(string fpath) {
+            Console.WriteLine("LoadFile > w:{0} h:{1}", FLWindow2D.Width, FLWindow2D.Height);
+            try {
+                SwfParser swfParser = new SwfParser();
+                Rectangle rectangle = swfParser.GetDimensions(fpath);
+                swfStartSize = new Size(rectangle.Width, rectangle.Height);
+                FLWindow2D.Width = swfStartSize.Width;
+                FLWindow2D.Height = swfStartSize.Height;
+                FitPlayerToProportionallyToWindow();
+            }
+            catch (Exception ex) {
+                Console.WriteLine("There is a problem with the swf file. " + ex.Message);
+            }
+            Console.WriteLine("\tw:{0} h:{1}", FLWindow2D.Width, FLWindow2D.Height);
         }
 
-        private AxWalkerPlayer.AxShockwaveFlash CreateFlControll(OWPlayer options) {
+        private AxShockwaveFlash CreateFlControll(OWPlayer options) {
 
             if (FLWindow2D != null) RemoveFLControll();
             //switch (options.ViewMode) {
@@ -56,9 +99,9 @@ namespace WalkerPlayer {
             //    case "3D":
             //        break;
             //}
-
-            FLWindow2D = new AxWalkerPlayer.AxShockwaveFlash();
-            FLWindow2D.BeginInit();
+            ComponentResourceManager resources = new ComponentResourceManager(typeof(WPlayerForm));
+            FLWindow2D = new AxShockwaveFlash();
+            ((ISupportInitialize)(this.FLWindow2D)).BeginInit();
             FLWindow2D.Location = new Point();
             FLWindow2D.Name = "axFlash";
             FLWindow2D.TabIndex = 0;
@@ -72,8 +115,7 @@ namespace WalkerPlayer {
             //Stream stream = new MemoryStream(inputBytes);
             //FLWindow2D.OcxState = new AxHost.State(stream, 1, false, null);
 
-            FLWindow2D.FlashCall += new AxWalkerPlayer._IShockwaveFlashEvents_FlashCallEventHandler(OnFlashCall);
-
+            FLWindow2D.FlashCall += new _IShockwaveFlashEvents_FlashCallEventHandler(this.OnFlashWalkerCall);
             FLWindow2D.Size = ClientSize;
             FLWindow2D.EndInit();
             this.Controls.Add(FLWindow2D);
@@ -93,9 +135,6 @@ namespace WalkerPlayer {
 
             return FLWindow2D;
         }
-        private void OnFlashCall(object sender, AxWalkerPlayer._IShockwaveFlashEvents_FlashCallEvent e) {
-            FlashBridge.OnFlashWalkerCall(FLWindow2D, e);
-        }
 
         private void RemoveFLControll() {
 
@@ -106,6 +145,78 @@ namespace WalkerPlayer {
 
         internal void ShowPanel(bool state) {
             if (state) this.Show(); else this.Hide();
+        }
+
+        private void OnFlashWalkerCall(object sender, _IShockwaveFlashEvents_FlashCallEvent e) {
+            FlashBridge.OnFlashWalkerCall((AxShockwaveFlash)sender, e);
+        }
+
+        private void OnFlashProjectorCall(object sender, _IShockwaveFlashEvents_FlashCallEvent e) {
+            FlashBridge.OnFlashProjectorCall((AxShockwaveFlash)sender, e);
+        }
+        
+        // Disable the context menu on a flash control added to form (by JayJayson)
+        private void OnFormLoad(object sender, System.EventArgs e) {
+            // Assign the handle of your flash control to the ControlWatcher class.  
+            new ControlWatcher(FLWindow2D.Handle);
+        }
+
+        private void OnFormResize(object sender, System.EventArgs e) {
+
+            if (!FlashBridge.FlashOptions.FitToScreen) return;
+            FitPlayerToProportionallyToWindow();
+        }
+
+        private void FitPlayerToProportionallyToWindow() {
+            // Obtain form's inner width and height
+            var maxWidth = this.ClientSize.Width;
+            var maxHeight = this.ClientSize.Height;
+            // Fit component to Winfow Form
+            var ratioX = (double)maxWidth / swfStartSize.Width;
+            var ratioY = (double)maxHeight / swfStartSize.Height;
+            var ratio = Math.Min(ratioX, ratioY);
+            FLWindow2D.Width = (int)(swfStartSize.Width * ratio);
+            FLWindow2D.Height = (int)(swfStartSize.Height * ratio);
+            // Center component to Window Form
+            FLWindow2D.Location = new Point(
+                (maxWidth - FLWindow2D.Width) / 2,
+                (maxHeight - FLWindow2D.Height) / 2
+            );
+        }
+        
+        // X Replacement Removed
+        /// <summary>
+        /// Replace "(X) Close" button function with "Hide"
+        /// </summary>
+        //private bool _allowClose = false;
+        private void OnFormClosing(object sender, FormClosingEventArgs e) {
+            WPGlobal.DisposeConsole();
+            // X Replacement Removed
+            //if (!_allowClose && e.CloseReason == CloseReason.UserClosing) {
+            //    e.Cancel = true;
+            //    Hide();
+            //}
+        }
+
+        // To enable Form Keyboard Events set KeyPreview = true;
+        private void OnFormKeyDown(object sender, KeyEventArgs e) {
+            // X Replacement Removed
+            //if (e.Alt && e.KeyCode == Keys.F4) {
+
+            //    _allowClose = true;
+            //} else 
+
+            if (e.KeyCode == Keys.Escape && FlashBridge.FlashOptions.EscapeEnabled) {
+
+                SetFullScreen(false);
+                WPGlobal.Log("CSharp", "WPlayerForm > OnFormKeyDown > Exit FullScreen.");
+                // prevent child controls from handling this event as well
+                e.SuppressKeyPress = true;
+
+            } else if (e.Control && e.Shift && e.KeyCode == Keys.E) {
+
+                WPGlobal.ShowConsole(true);
+            }
         }
     }
 }

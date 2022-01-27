@@ -16,6 +16,7 @@ namespace WPTest {
             Console.WriteLine("Loading SWF:{0}", fpath);
             WPlayer wl = new WPlayer();
             var options = new OWPlayer {
+                ViewMode = "2D",
                 RootDir = CbxBookDir.Text,
                 FilePath = fpath,
                 AutoPlay = true,
@@ -28,6 +29,23 @@ namespace WPTest {
             wl.LoadFile(options);
         }
 
+        private void BtnLoadSwf3D_Click(object sender, EventArgs e) {
+            string fpath = CbxBookDir.Text + (CbxSWFDir.Text == "root" ? "" : "\\" + CbxSWFDir.Text) + "\\" + LbxFiles.Text;
+            Console.WriteLine("Loading SWF:{0}", fpath);
+            WPlayer wl = new WPlayer();
+            var options = new OWPlayer {
+                ViewMode = "3D",
+                RootDir = CbxBookDir.Text,
+                FilePath = fpath,
+                AutoPlay = true,
+                HiddenPlayer = false,
+                FullScreen = false,
+                CenterToScreen = true,
+                FitToScreen = true,
+                SkipLogo = ChkSkipWalkerLogo.Checked
+            };
+            wl.LoadFile(options);
+        }
         private void OnFormLoaded(object sender, EventArgs e) {
             FillPaths();
             FillFiles();
@@ -67,5 +85,6 @@ namespace WPTest {
         private void OnSwfDirChanged(object sender, EventArgs e) {
             FillFiles();
         }
+
     }
 }

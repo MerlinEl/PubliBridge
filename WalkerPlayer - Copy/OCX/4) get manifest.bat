@@ -1,0 +1,2 @@
+"E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayer\OCX\mt.exe" -managedassemblyname:"E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayer\OCX\Flash.dll" -nodependency -out:"E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayer\OCX\Flash.dll.manifest"
+pause
