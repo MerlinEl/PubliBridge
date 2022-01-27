@@ -1,0 +1,523 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
+using System.Linq;
+using System.Windows.Forms;
+using static WalkerPlayerConsole.ConsoleCommands;
+
+namespace WalkerPlayerConsole {
+    public partial class ConsoleForm : Form {
+        private const int SnapDist = 100;
+        private bool Suppres_Keypress = false;
+
+        #region Constructor
+
+        public ConsoleForm() => Init();
+        public ConsoleForm(Form parent) => Init(parent);
+        public ConsoleForm(Form parent, bool topMost) => Init(parent, topMost);
+        public ConsoleForm(Form parent, bool topMost, bool inivisible) => Init(parent, topMost, inivisible);
+
+        protected void Init(Form parent = null, bool topMost = true, bool inivisible = false) {
+
+            TopMost = topMost;
+            HiddenMode = inivisible;
+            if (parent != null) {
+                this.Owner = parent;
+                parent.FormClosed += new FormClosedEventHandler(OnOwnerClosed);
+            }
+            InitializeComponent();
+        }
+
+        internal void ClearConsole() {
+            CurrentRichTextBox.Text = "";
+        }
+
+        #endregion
+
+        #region Public Methods
+
+        /// <summary>
+        /// CConsole = new WPConsoleForm(form);
+        /// CConsole.Log("hello!"); // main console tab
+        /// CConsole.Log("", "The {0} is {1} years old.", "Tifany", 12); // main console tab
+        /// CConsole.Log("The {0} is {1} years old.", new object[] {"Tifany", 12}); // main console tab
+        /// CConsole.Log("Console", "The {0} is {1} years old.", "Tifany", 12); // main console tab
+        /// CConsole.Log("The {0} is {1} years old.", new object[] {"John", 33});
+        /// CConsole.Log("Personal", "hello Body"); //ok
+        /// CConsole.Log("Formated", "The {0} is {1} years old.", new object[] { "Monika", 22});
+        /// </summary>
+        public void Log(string msg) => AddConsoleText("Console", msg);
+        public void Log(string msg, params object[] args) => AddConsoleText("Console", msg, args);
+        public void Log(string tabName, string msg) => AddConsoleText(tabName, msg);
+        public void Log(string tabName, string msg, params object[] args) => AddConsoleText(tabName, msg, args);
+
+        public void AddCustomCommand(ConsoleExternalCommand customCommand) {
+            ConsoleCommands.AddCustomCommand(customCommand);
+        }
+
+        public void DockTo(ConsoleCommands.DockSide side) {
+
+            Screen scn = Screen.FromPoint(this.Location);
+            switch (side) {
+                case ConsoleCommands.DockSide.Left:
+                    this.Width = scn.WorkingArea.Width / 4;
+                    this.Height = scn.WorkingArea.Height;
+                    SnapTo(ConsoleCommands.DockSide.Top);
+                    SnapTo(ConsoleCommands.DockSide.Left);
+                    break;
+                case ConsoleCommands.DockSide.Right:
+                    this.Width = scn.WorkingArea.Width / 4;
+                    this.Height = scn.WorkingArea.Height;
+                    SnapTo(ConsoleCommands.DockSide.Top);
+                    SnapTo(ConsoleCommands.DockSide.Right);
+                    break;
+                case ConsoleCommands.DockSide.Top:
+                    this.Width = scn.WorkingArea.Width;
+                    this.Height = scn.WorkingArea.Height / 4;
+                    SnapTo(ConsoleCommands.DockSide.Left);
+                    SnapTo(ConsoleCommands.DockSide.Top);
+                    break;
+                case ConsoleCommands.DockSide.Bottom:
+                    this.Width = scn.WorkingArea.Width;
+                    this.Height = scn.WorkingArea.Height / 4;
+                    SnapTo(ConsoleCommands.DockSide.Left);
+                    SnapTo(ConsoleCommands.DockSide.Bottom);
+                    break;
+            }
+        }
+
+        #endregion
+
+        #region Protected Methods
+
+        protected RichTextBox CurrentRichTextBox => GetCurrentTabPage().GetTextBox();
+
+        protected void AddConsoleText(string tabName, string msg, params object[] args) {
+
+            if (args.Length > 0) msg = string.Format(msg, args);
+            //if (!this.Visible &&) this.Visible = true;
+            if (tabName == "Console" || tabName == "") {
+
+                RichTextBox1.AppendText(msg + "\n");
+
+            } else {
+
+                GetOrCreateTab(tabName).AppendText(msg + "\n");
+            }
+            if (!Visible && !HiddenMode) Show();
+        }
+        protected string GetCommand() {
+
+            if (CurrentRichTextBox != null && CurrentRichTextBox.Lines.Any()) {
+                string lastLine = CurrentRichTextBox.Lines[CurrentRichTextBox.Lines.Length - 1];
+                if (lastLine.Length > 0) return lastLine;
+            }
+            return null;
+        }
+
+        #endregion
+
+        #region Virtual Methods
+
+        virtual protected void AutocompleteCheck() {
+
+            string word = GetCommand();
+            if (word == null) return;
+            string[] list = Enum.GetNames(typeof(ConsoleCommands.CMD));
+            // search word in enum list (ignoreCase = true)
+            List<string> localList = list.Where(z => z.StartsWith(word, true)).ToList();
+            if (localList.Any() && !string.IsNullOrEmpty(word)) {
+                Console.WriteLine("Items found:{0}\n", localList.Join("\n\t"));
+                AutoCompleteBox.DataSource = localList;
+                AutoCompleteBox.Show();
+                AutoCompleteBox.Location = new Point(
+
+                    0, RichTextBox1.GetCaretPoint().Y + RichTextBox1.GetLineHeight(word)
+                );
+                //AutoCompleteBox.BringToFront();
+            }
+            RichTextBox1.Focus();
+        }
+        #endregion
+
+        #region Private Methods
+
+        //empty
+
+        #endregion
+
+        #region UI Methods
+
+        public void ClearAllTabs() {
+            foreach (TabPage tp in MainTab.TabPages)
+                tp.GetTextBox().Clear();
+        }
+
+        private bool DoSnap(int pos, int edge) {
+            int delta = pos - edge;
+            return delta > 0 && delta <= SnapDist;
+        }
+
+
+
+        private void SnapTo(ConsoleCommands.DockSide side) {
+
+            Screen scn = Screen.FromPoint(this.Location);
+            switch (side) {
+                case ConsoleCommands.DockSide.Left:
+                    DoSnap(this.Left, scn.WorkingArea.Left);
+                    this.Left = scn.WorkingArea.Left;
+                    break;
+                case ConsoleCommands.DockSide.Right:
+                    DoSnap(this.Top, scn.WorkingArea.Top);
+                    this.Left = scn.WorkingArea.Right - this.Width;
+                    break;
+                case ConsoleCommands.DockSide.Top:
+                    DoSnap(scn.WorkingArea.Right, this.Right);
+                    this.Top = scn.WorkingArea.Top;
+                    break;
+                case ConsoleCommands.DockSide.Bottom:
+                    DoSnap(scn.WorkingArea.Bottom, this.Bottom);
+                    this.Top = scn.WorkingArea.Bottom - this.Height;
+                    break;
+            }
+        }
+
+        protected override void OnResizeEnd(EventArgs e) {
+            base.OnResizeEnd(e);
+            Screen scn = Screen.FromPoint(this.Location);
+            if (DoSnap(this.Left, scn.WorkingArea.Left))
+                this.Left = scn.WorkingArea.Left;
+            if (DoSnap(this.Top, scn.WorkingArea.Top))
+                this.Top = scn.WorkingArea.Top;
+            if (DoSnap(scn.WorkingArea.Right, this.Right))
+                this.Left = scn.WorkingArea.Right - this.Width;
+            if (DoSnap(scn.WorkingArea.Bottom, this.Bottom))
+                this.Top = scn.WorkingArea.Bottom - this.Height;
+        }
+
+        /*private void RemoveTabByName(string tabName) {
+
+            TabPage tp = GetTab(tabName);
+            if (tp != null) MainTab.TabPages.Remove(tp);
+        }*/
+
+        /*public void RemoveAllTabs() {
+            /foreach (TabPage tab in MainTab.TabPages) {
+                if (tab.Name != "Console") MainTab.TabPages.Remove(tab);
+            }
+            TabPage tp = MainTab.TabPages["Console"];
+            this.MainTab.TabPages.Clear();
+            this.MainTab.TabPages.Add(tp);
+        }*/
+
+        protected TabPage GetOrCreateTab(string tabName) {
+
+            TabPage tp = GetTab(tabName);
+            return tp ?? AddTab(tabName);
+        }
+
+        private TabPage GetTab(string tabName) {
+
+            foreach (TabPage tab in this.MainTab.TabPages) {
+                if (tabName.Equals(tab.Name)) {
+                    return tab;
+                }
+            }
+            return null;
+        }
+
+        private TabPage GetCurrentTabPage() {
+            return this.MainTab.TabPages.Count > 0 ? this.MainTab.SelectedTab : null;
+        }
+
+        private TabPage AddTab(string tabName) {
+
+            TabPage tp = new TabPage(tabName) {
+                Name = tabName
+            };
+            RichTextBox rtb = new RichTextBox {
+                AcceptsTab = false,
+                ForeColor = Color.FromArgb(200, 200, 200),
+                BackColor = Color.FromArgb(66, 66, 81),
+                WordWrap = false,
+                ReadOnly = true,
+                Dock = DockStyle.Fill,
+                Name = "rtb"
+            };
+            tp.Controls.Add(rtb);
+            this.MainTab.TabPages.Add(tp);
+            return tp;
+        }
+
+        #endregion
+
+        #region UI Events
+
+        private void BtnTopMost_Click(object sender, EventArgs e) {
+            TopMost = !TopMost;
+        }
+
+        private void OnTitleMouseDown(object sender, MouseEventArgs e) {
+
+            if (e.Button == MouseButtons.Left && e.Clicks == 1) { //single click
+                // Release the mouse capture started by the mouse down.
+                (sender as MenuStrip).Capture = false;
+                // Create and send a WM_NCLBUTTONDOWN message.
+                Message msg =
+                    Message.Create(this.Handle, (int)ConsoleUIMsg.WM.NCLBUTTONDOWN,
+                        new IntPtr((int)ConsoleUIMsg.HT.CAPTION), IntPtr.Zero);
+                this.DefWndProc(ref msg);
+            }
+        }
+
+        private void OnTitleDoubleClick(object sender, MouseEventArgs e) {
+
+            WindowState = WindowState == FormWindowState.Maximized ?
+                FormWindowState.Normal : FormWindowState.Maximized;
+        }
+
+        private void BtnClose_Click(object sender, EventArgs e) {
+            Hide();
+        }
+
+
+        private void BtnMax_Click(object sender, EventArgs e) {
+
+            WindowState =
+                WindowState == FormWindowState.Maximized ?
+                FormWindowState.Normal :
+                FormWindowState.Maximized;
+        }
+
+        // Minimize Replaced > When minimize pressed window will shrink to 100x100;
+        private void BtnMin_Click(object sender, EventArgs e) {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void BtnShrink_Click(object sender, EventArgs e) {
+            WinndowIsShrinked = !WinndowIsShrinked;
+        }
+
+        private bool _isWindowShrinked;
+        private Size _lastWindowSize;
+        private Point _lastWindowLocation;
+        private bool WinndowIsShrinked {
+
+            get { return _isWindowShrinked; }
+            set {
+                if (_isWindowShrinked) { // restore
+
+                    Size = _lastWindowSize;
+                    Location = _lastWindowLocation;
+                    BtnShrink.Text = "> <";
+
+                } else { // shrink
+
+                    _lastWindowSize = Size;
+                    _lastWindowLocation = Location;
+                    Size = new Size(750, 200);
+                    Location = new Point(0, Screen.FromControl(this).Bounds.Height - Size.Height); // snap to bottom left
+                    BtnShrink.Text = "< >";
+                }
+                _isWindowShrinked = value;
+            }
+        }
+
+        protected void OnOwnerClosed(object sender, FormClosedEventArgs e) {
+            Close(); //only here is really closed
+        }
+
+        private void OnConsoleKeyDown(object sender, KeyEventArgs e) {
+
+            e.SuppressKeyPress = Suppres_Keypress;
+            if (e.KeyCode == Keys.Escape) {
+
+                Hide();
+
+            } else if (e.KeyCode == Keys.Enter) {
+
+                string cmd = GetCommand();
+                if (cmd != null) ConsoleCommands.RunCmd(this, cmd);
+
+            } else if (AutoCompleteBox.Visible) {
+
+                if (e.KeyCode == Keys.Tab) {
+
+                    e.SuppressKeyPress = true; //prevent tab to be inserted in textbox
+                    CurrentRichTextBox.ReplaceLastLine(AutoCompleteBox.SelectedItem.ToString());
+
+                } else if ( //prevent popup Autocomplete ListBox in other situations than Typing Letters
+                e.KeyCode == Keys.Up || e.KeyCode == Keys.Down ||
+                e.KeyCode == Keys.Left || e.KeyCode == Keys.Right
+                ) {
+                    e.SuppressKeyPress = true;
+                }
+            }
+        }
+
+        private void OnConsoleKeyUp(object sender, KeyEventArgs e) {
+
+            if (AutoCompleteBox.Visible) {
+                if (e.KeyCode == Keys.Escape) {
+
+                    AutoCompleteBox.Hide();
+
+                } else if (e.KeyCode == Keys.Up) {
+
+                    AutoCompleteBox.SelectPrevItem();
+
+                } else if (e.KeyCode == Keys.Down) {
+
+                    AutoCompleteBox.SelectNextItem();
+
+                } else if (e.KeyCode == Keys.Tab) {
+
+                    AutoCompleteBox.Hide();
+                }
+            } else if ( //prevent popup Autocomplete ListBox in other sitution than Typing Letters
+                e.KeyCode == Keys.Enter || e.KeyCode == Keys.Back ||
+                e.KeyCode == Keys.Up || e.KeyCode == Keys.Down ||
+                e.KeyCode == Keys.Left || e.KeyCode == Keys.Right
+                ) { //do nothing
+                e.SuppressKeyPress = true;
+            } else {
+                AutocompleteCheck();
+            }
+        }
+
+        #endregion
+
+        #region Menu Events
+
+        private void OnexitToolStripMenuItem_Click(object sender, EventArgs e) {
+
+            Hide();
+        }
+
+        private void OnshowHelpToolStripMenuItem_Click(object sender, EventArgs e) {
+
+            Log("\nTODO :-) ...........");
+        }
+
+        private void OnclearCurrentTabToolStripMenuItem1_Click(object sender, EventArgs e) {
+
+            CurrentRichTextBox.Clear();
+        }
+        private void OnclearAllTabsToolStripMenuItem1_Click(object sender, EventArgs e) {
+
+            ClearAllTabs();
+        }
+        private void OncopyCurrentToolStripMenuItem_Click(object sender, EventArgs e) {
+            Clipboard.SetText(CurrentRichTextBox.Text);
+        }
+        private string User_Directory => Path.GetDirectoryName(Environment.GetFolderPath(Environment.SpecialFolder.Personal));
+
+        public bool HiddenMode { get; set; } = false;
+
+        private void OnsaveAsToolStripMenuItem_Click(object sender, EventArgs e) {
+
+            TabPage tab = GetCurrentTabPage();
+            // Initialize the SaveFileDialog to specify the RTF extention for the file.
+            SaveFileDialog.InitialDirectory = User_Directory + "\\" + tab.Text + ".rtf";
+            SaveFileDialog.DefaultExt = "*.rtf";
+            SaveFileDialog.Filter = "RTF bestanden (*.rtf)|*.rtf|" + "Tekst Bestanden|*.txt";
+            SaveFileDialog.FileName = tab.Text;
+            // Determine whether the user selected a file name from the saveFileDialog.
+            SaveFileDialog.ShowDialog();
+        }
+
+        private void OnaboutMcConsoleToolStripMenuItem_Click(object sender, EventArgs e) {
+            ConsoleAboutForm f = new ConsoleAboutForm {
+                StartPosition = FormStartPosition.Manual
+            };
+            f.SetDesktopLocation(Cursor.Position.X, Cursor.Position.Y);
+            f.ShowDialog(this);
+        }
+
+        private const int cGrip = 16;      // Grip size
+        //private const int WM_SYSCOMMAND = 0x0112;
+        //private const int SC_MINIMIZE = 0xf020;
+
+        protected override void WndProc(ref Message m) {
+            if (m.Msg == 0x84) {  // Trap WM_NCHITTEST
+                Point pos = new Point(m.LParam.ToInt32());
+                pos = this.PointToClient(pos);
+                if (pos.Y < this.MainMenu.Height) {
+                    m.Result = (IntPtr)2;  // HTCAPTION
+                    return;
+                }
+                if (pos.X >= this.ClientSize.Width - cGrip && pos.Y >= this.ClientSize.Height - cGrip) {
+                    m.Result = (IntPtr)17; // HTBOTTOMRIGHT
+                    return;
+                }
+            }
+            // Minimize Replaced > When minimize pressed window will shrink to 100x100;
+            //if (m.Msg == WM_SYSCOMMAND) {
+            //    if (m.WParam.ToInt32() == SC_MINIMIZE) {
+            //        m.Result = IntPtr.Zero;
+            //        Width = 100;
+            //        Height = 100;
+            //        return;
+            //    }
+            //}
+            base.WndProc(ref m);
+        }
+
+        #endregion
+
+        #region TEST
+        private void OnacceleratorsSwitchToolStripMenuItem_Click(object sender, EventArgs e) {
+            Suppres_Keypress = !Suppres_Keypress;
+        }
+
+        #endregion
+    }
+
+    #region ListBox Extensions
+
+    internal static class ListBoxExtensions {
+
+        internal static bool SelectNextItem(this ListBox lbx) {
+
+            int next = lbx.SelectedIndex + 1;
+            if (next < lbx.Items.Count) {
+
+                lbx.SelectedIndex = next;
+                return true;
+            };
+            return false;
+        }
+        internal static bool SelectPrevItem(this ListBox lbx) {
+
+            int prev = lbx.SelectedIndex - 1;
+            if (prev >= 0) {
+
+                lbx.SelectedIndex = prev;
+                return true;
+            };
+            return false;
+        }
+    }
+
+    #endregion
+
+    #region Tab Extensions
+
+    internal static class TabExtensions {
+
+        internal static RichTextBox GetTextBox(this TabPage tp) {
+            foreach (Control c in tp.Controls)
+                if (c is RichTextBox)
+                    return c as RichTextBox;
+            return null;
+        }
+        internal static void AppendText(this TabPage tp, string str) {
+
+            tp.GetTextBox().AppendText(str);
+        }
+    }
+
+    #endregion
+}

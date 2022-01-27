@@ -1,83 +1,104 @@
-﻿using AxShockwaveFlashObjects;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using WalkerPlayer.bridge;
+using WalkerPlayer.utils;
 
 namespace WalkerPlayer {
     public partial class WPlayerForm : Form {
-        
-        private AxShockwaveFlash axFlash;
+
+        private Size swfStartSize = new Size(1024, 768);
+        public AxShockwaveFlash FLWindow2D;
+        public AxShockwaveFlash FLWindow3D;
+        private bool _isMediaLoaded;
+
         public WPlayerForm() {
             InitializeComponent();
-            InitializeFlash();
-        }
-
-        private void InitializeFlash() {
-
-            axFlash = new AxShockwaveFlash();
-            axFlash.BeginInit();
-            axFlash.Location = new Point();
-            axFlash.Name = "FLWindow3D";
-            axFlash.TabIndex = 0;
-            axFlash.EndInit();
-            this.Controls.Add(axFlash);
-        }
-
-        public void CreateFlashComponentAndLoadMedia(string fpath) {
-    
-            this.Controls.Remove(axFlash);
-            axFlash.Dispose();
-            
-            if (!File.Exists(fpath)) return;
-
-            axFlash = new AxShockwaveFlash();
-            axFlash.BeginInit();
-            axFlash.Location = new Point();
-            axFlash.Name = "FLWindow3D";
-            axFlash.TabIndex = 0;
-      
-            //System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WPlayerForm));
-            //this.FLWindow3D.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("FLWindow3D.OcxState")));
-            axFlash.FlashCall += new _IShockwaveFlashEvents_FlashCallEventHandler(this.OnFlashWalkerCall);
-            axFlash.Size = ClientSize;
-            axFlash.EndInit();
-            this.Controls.Add(axFlash);
-            axFlash.WMode = "Direct"; // Direct or Window
-            axFlash.AllowScriptAccess = "Always";
-            axFlash.Quality2 = "High";
-            axFlash.BGColor = "0xec9900";
-            axFlash.LoadMovie(0, fpath);
-        }
-
-        private void OnFlashWalkerCall(object sender, _IShockwaveFlashEvents_FlashCallEvent e) {
-            throw new NotImplementedException();
         }
 
         internal void SetFullScreen(bool state) {
-            throw new NotImplementedException();
+            if (state) {
+                this.WindowState = FormWindowState.Normal;
+                this.FormBorderStyle = FormBorderStyle.None;
+                this.Bounds = Screen.PrimaryScreen.Bounds;
+            } else {
+                this.WindowState = FormWindowState.Normal;
+                this.FormBorderStyle = FormBorderStyle.Sizable;
+                if (_isMediaLoaded) this.ClientSize = new Size(swfStartSize.Width, swfStartSize.Height);
+                CenterToScreen(); // TODO  test if wee use 3d window preview in rect
+            }
         }
 
-        public void LoadFile(OWPlayer options) {
+        internal void LoadFile(OWPlayer options) {
 
-            Show();
-            CreateFlashComponentAndLoadMedia(options.FilePath);
+
+            WPGlobal.Log("CSharp", "WPlayerForm > LoadFile >\n\tfpath:{0}", options.FilePath);
+            WPGlobal.Log("CSharp", "WPlayerForm > LoadFile >\n\tViewMode:{0}", options.ViewMode);
+
+            if (!File.Exists(options.FilePath)) throw new FileNotFoundException("This file was not found.\n" + options.FilePath);
+
+            FlashBridge.FlashOptions = options;
+            AxShockwaveFlash flComponent = CreateFlControll(options);
+            flComponent.LoadMovie(0, options.FilePath);
         }
 
-        public void LoadFile(string fpath) {
+        private AxShockwaveFlash CreateFlControll(OWPlayer options) {
 
-            CreateFlashComponentAndLoadMedia(fpath);
-            Show();
+            if (FLWindow2D != null) RemoveFLControll();
+            //switch (options.ViewMode) {
+
+            //    case "2D":
+            //        break;
+
+            //    case "3D":
+            //        break;
+            //}
+
+            FLWindow2D = new AxShockwaveFlash();
+            FLWindow2D.BeginInit();
+            FLWindow2D.Location = new Point();
+            FLWindow2D.Name = "axFlash";
+            FLWindow2D.TabIndex = 0;
+
+            // Get controll which is embeded in to resources WPlayer.resx
+            ComponentResourceManager resources = new ComponentResourceManager(typeof(WPlayerForm));
+            FLWindow2D.OcxState = ((AxHost.State)(resources.GetObject("axFlash.OcxState")));
+            FLWindow2D.FlashCall += new _IShockwaveFlashEvents_FlashCallEventHandler(OnFlashCall);
+
+            FLWindow2D.Size = ClientSize;
+            FLWindow2D.EndInit();
+            this.Controls.Add(FLWindow2D);
+
+            //axFlash.DeviceFont = false;
+            //axFlash.FrameNum = -1;
+            //axFlash.Loop = true;
+            FLWindow2D.Playing = options.AutoPlay;
+            //axFlash.Profile = true;
+            //axFlash.SAlign = "LT";
+            FLWindow2D.WMode = "Direct"; // Direct or Window
+            FLWindow2D.AllowScriptAccess = "Always";
+            FLWindow2D.AllowNetworking = "all";
+            //axFlash.EmbedMovie = false;
+            FLWindow2D.Quality2 = "High";
+            FLWindow2D.BGColor = "0xec9900";
+
+            return FLWindow2D;
+        }
+        private void OnFlashCall(object sender, _IShockwaveFlashEvents_FlashCallEvent e) {
+            FlashBridge.OnFlashWalkerCall(FLWindow2D, e);
+        }
+
+        private void RemoveFLControll() {
+
+            WPGlobal.Log("CSharp", "WPlayerForm > RemoveFLControll >\n\tfpath:{0}", FLWindow2D);
+            this.Controls.Remove(FLWindow2D);
+            FLWindow2D.Dispose();
         }
 
         internal void ShowPanel(bool state) {
-            Show();
+            if (state) this.Show(); else this.Hide();
         }
     }
 }
