@@ -10,7 +10,7 @@ namespace WalkerPlayer.bridge {
         /// <param name="flash">AxShockwaveFlashObjects.AxShockwaveFlash</param>
         /// <param name="e">AxShockwaveFlashObjects._IShockwaveFlashEvents_FlashCallEvent</param>
         /// 
-        public static void OnFlashWalkerCall(AxShockwaveFlash flashWalker, _IShockwaveFlashEvents_FlashCallEvent e) {
+        public static void OnFlashWalkerCall(AxWalkerPlayer.AxShockwaveFlash flashWalker, AxWalkerPlayer._IShockwaveFlashEvents_FlashCallEvent e) {
 
             FlashArgsGet data = FlashBridge.GetCommand(e.request);
             WPGlobal.Log("CSharp", "WPlayerForm > OnFlashWalkerCall >> [ {0} ]", data.ProcessType);
@@ -67,7 +67,7 @@ namespace WalkerPlayer.bridge {
             }
         }
 
-        internal static void OnFlashProjectorCall(object flashProjector, _IShockwaveFlashEvents_FlashCallEvent e) {
+        internal static void OnFlashProjectorCall(object flashProjector, AxWalkerPlayer._IShockwaveFlashEvents_FlashCallEvent e) {
             FlashArgsGet data = FlashBridge.GetCommand(e.request);
             WPGlobal.Log("CSharp", "WPlayerForm > OnFlashProjectorCall >> [ {0} ]", data.ProcessType);
             switch (data.ProcessType) {
@@ -83,7 +83,7 @@ namespace WalkerPlayer.bridge {
             }
         }
 
-        private static void Update(AxShockwaveFlash Fplayer) => Fplayer.Update();
+        private static void Update(AxWalkerPlayer.AxShockwaveFlash Fplayer) => Fplayer.Update();
 
         /// <summary>
         /// Send command in to flash player(container)
@@ -96,7 +96,7 @@ namespace WalkerPlayer.bridge {
             return new FlashArgsGet(xml_str);
         }
 
-        public static void SendCommand(AxShockwaveFlash fPlayer, FlashArgsSend flashArgs) {
+        public static void SendCommand(AxWalkerPlayer.AxShockwaveFlash fPlayer, FlashArgsSend flashArgs) {
 
             fPlayer.CallFunction(flashArgs.ToXML());
         }

@@ -8,7 +8,7 @@ namespace WalkerPlayer.utils {
         /// <summary>
         /// Play 3D Models in FLWindow (flWindow WMode must be Direct)
         /// </summary>
-        internal static void Load3DProjector(AxShockwaveFlash flWindow3D, string rootDir, string[] paramsList) {
+        internal static void Load3DProjector(AxWalkerPlayer.AxShockwaveFlash flWindow3D, string rootDir, string[] paramsList) {
 
             string modelPath = rootDir + "\\projector.swf";
             string displayMode = paramsList[0]; // "FULL_SCREEN" or "IN_WINDOW"

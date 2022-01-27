@@ -10,8 +10,8 @@ namespace WalkerPlayer {
     public partial class WPlayerForm : Form {
 
         private Size swfStartSize = new Size(1024, 768);
-        public AxShockwaveFlash FLWindow2D;
-        public AxShockwaveFlash FLWindow3D;
+        public AxWalkerPlayer.AxShockwaveFlash FLWindow2D;
+        public AxWalkerPlayer.AxShockwaveFlash FLWindow3D;
         private bool _isMediaLoaded;
 
         public WPlayerForm() {
@@ -40,11 +40,11 @@ namespace WalkerPlayer {
             if (!File.Exists(options.FilePath)) throw new FileNotFoundException("This file was not found.\n" + options.FilePath);
 
             FlashBridge.FlashOptions = options;
-            AxShockwaveFlash flComponent = CreateFlControll(options);
+            AxWalkerPlayer.AxShockwaveFlash flComponent = CreateFlControll(options);
             flComponent.LoadMovie(0, options.FilePath);
         }
 
-        private AxShockwaveFlash CreateFlControll(OWPlayer options) {
+        private AxWalkerPlayer.AxShockwaveFlash CreateFlControll(OWPlayer options) {
 
             if (FLWindow2D != null) RemoveFLControll();
             //switch (options.ViewMode) {
@@ -56,7 +56,7 @@ namespace WalkerPlayer {
             //        break;
             //}
 
-            FLWindow2D = new AxShockwaveFlash();
+            FLWindow2D = new AxWalkerPlayer.AxShockwaveFlash();
             FLWindow2D.BeginInit();
             FLWindow2D.Location = new Point();
             FLWindow2D.Name = "axFlash";
@@ -65,7 +65,7 @@ namespace WalkerPlayer {
             // Get controll which is embeded in to resources WPlayer.resx
             ComponentResourceManager resources = new ComponentResourceManager(typeof(WPlayerForm));
             FLWindow2D.OcxState = ((AxHost.State)(resources.GetObject("axFlash.OcxState")));
-            FLWindow2D.FlashCall += new _IShockwaveFlashEvents_FlashCallEventHandler(OnFlashCall);
+            FLWindow2D.FlashCall += new AxWalkerPlayer._IShockwaveFlashEvents_FlashCallEventHandler(OnFlashCall);
 
             FLWindow2D.Size = ClientSize;
             FLWindow2D.EndInit();
@@ -86,7 +86,7 @@ namespace WalkerPlayer {
 
             return FLWindow2D;
         }
-        private void OnFlashCall(object sender, _IShockwaveFlashEvents_FlashCallEvent e) {
+        private void OnFlashCall(object sender, AxWalkerPlayer._IShockwaveFlashEvents_FlashCallEvent e) {
             FlashBridge.OnFlashWalkerCall(FLWindow2D, e);
         }
 
