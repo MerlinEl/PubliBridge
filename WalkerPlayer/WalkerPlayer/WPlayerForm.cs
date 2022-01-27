@@ -4,6 +4,7 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using WalkerPlayer.bridge;
+using WalkerPlayer.Properties;
 using WalkerPlayer.utils;
 
 namespace WalkerPlayer {
@@ -65,6 +66,13 @@ namespace WalkerPlayer {
             // Get controll which is embeded in to resources WPlayer.resx
             //ComponentResourceManager resources = new ComponentResourceManager(typeof(WPlayerForm));
             //FLWindow2D.OcxState = ((AxHost.State)(resources.GetObject("FLWindow2D.OcxState")));
+
+            // loading flash.dll from Project Resources
+            byte[] inputBytes = Resources.Flash;
+            Stream stream = new MemoryStream(inputBytes);
+            FLWindow2D.OcxState = new AxHost.State(stream, 1, false, null);
+
+
             FLWindow2D.FlashCall += new AxWalkerPlayer._IShockwaveFlashEvents_FlashCallEventHandler(OnFlashCall);
 
             FLWindow2D.Size = ClientSize;

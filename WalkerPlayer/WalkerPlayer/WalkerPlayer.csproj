@@ -108,6 +108,9 @@
       <DependentUpon>WPlayerForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Flash.dll" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>xcopy /y /d  "$(ProjectDir)bin\Debug\WalkerPlayer.dll" "$(ProjectDir)..\Delphi\Win32\Debug"
