@@ -63,8 +63,8 @@ namespace WalkerPlayer {
             FLWindow2D.TabIndex = 0;
 
             // Get controll which is embeded in to resources WPlayer.resx
-            ComponentResourceManager resources = new ComponentResourceManager(typeof(WPlayerForm));
-            FLWindow2D.OcxState = ((AxHost.State)(resources.GetObject("axFlash.OcxState")));
+            //ComponentResourceManager resources = new ComponentResourceManager(typeof(WPlayerForm));
+            //FLWindow2D.OcxState = ((AxHost.State)(resources.GetObject("FLWindow2D.OcxState")));
             FLWindow2D.FlashCall += new AxWalkerPlayer._IShockwaveFlashEvents_FlashCallEventHandler(OnFlashCall);
 
             FLWindow2D.Size = ClientSize;
