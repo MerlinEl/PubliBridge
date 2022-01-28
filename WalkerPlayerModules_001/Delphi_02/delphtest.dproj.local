@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.269,E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\Delphi_01\WalkerOptions.pas=E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\Delphi_01\ROptions.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.620,E:\Aprog\Orien\FlashC#\WalkerPlayer\CSharpToDelphi\Create_Load_Dll_001\delphtest.dproj=C:\Users\Orien Star\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.217,E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\Delphi_01\WalkerClass.pas=E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\Delphi_01\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.960,E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\Delphi_01\Options.pas=E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\Delphi_01\Utils.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.872,E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\Delphi_02\Unit1.pas=E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\Delphi_02\FileManager.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.734,E:\Aprog\Orien\FlashC#\PubliBridge\_WPlayer\win32\Delphi\Unit1.pas=E:\Aprog\Orien\FlashC#\PubliBridge\_WPlayer\win32\Delphi\WPlayerTest.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.812,E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\Delphi_01\ROptions.pas=E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\Delphi_01\IOptions.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.387,E:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_010\Delphi\Unit1.pas=E:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_010\Delphi\Utils.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.476,=E:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_010\Delphi\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.734,E:\Aprog\Orien\FlashC#\PubliBridge\_WPlayer\win32\Delphi\Unit1.dfm=E:\Aprog\Orien\FlashC#\PubliBridge\_WPlayer\win32\Delphi\WPlayerTest.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.084,E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\Delphi_01\IOptions.pas=E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\Delphi_01\Options.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.052,E:\Aprog\Orien\FlashC#\PubliBridge\_WPlayer\win32\Delphi\WPlayerTest.pas=E:\Aprog\Orien\FlashC#\PubliBridge\_WPlayer\win32\Delphi\DPlayer.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.011,E:\Aprog\Orien\FlashC#\PubliBridge\_WPlayer\win32\Delphi\DPlayer.pas=E:\Aprog\Orien\FlashC#\PubliBridge\_WPlayer\win32\Delphi\MainForm.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.052,E:\Aprog\Orien\FlashC#\PubliBridge\_WPlayer\win32\Delphi\WPlayerTest.dfm=E:\Aprog\Orien\FlashC#\PubliBridge\_WPlayer\win32\Delphi\DPlayer.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.206,=C:\Users\Orien Star\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.158,=E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\Delphi_02\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.524,E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\Delphi_02\WalkerOptions.pas=E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\Delphi_02\WalkerPlayerOptions.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.889,=E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\Delphi_01\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.644,E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\Delphi_01\WalkerPlayer.pas=E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\Delphi_01\WalkerClass.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.011,E:\Aprog\Orien\FlashC#\PubliBridge\_WPlayer\win32\Delphi\DPlayer.dfm=E:\Aprog\Orien\FlashC#\PubliBridge\_WPlayer\win32\Delphi\MainForm.dfm</Transaction>
+  </Transactions>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="MainForm.pas"/>
+    <File Path="MainForm.dfm"/>
+    <File Path="WalkerPlayerOptions.pas"/>
+    <File Path="WalkerPlayer.pas"/>
+    <File Path="FileManager.pas"/>
+  </ProjectSortOrder>
+</BorlandProject>
