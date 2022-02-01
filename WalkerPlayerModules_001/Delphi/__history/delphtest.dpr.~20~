@@ -1,0 +1,20 @@
+program delphtest;
+
+uses
+  Vcl.Forms,
+  MainForm in 'MainForm.pas' {Form1},
+  WPOptions in 'WPOptions.pas',
+  WalkerPlayer in 'WalkerPlayer.pas',
+  FileManager in 'FileManager.pas',
+  MainFormSettings in 'MainFormSettings.pas',
+  WPCommand in 'WPCommand.pas';
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TForm1, Form1);
+  Application.Run;
+
+end.
