@@ -68,6 +68,7 @@ namespace WalkerPlayer.utils {
         /// <param name="extensions">string[] extensions = new[] { "*.jpg", "*.png", "*.gif" }</param>
         public static string[] GetFiles(string dir, string[] extensions) {
 
+            if (!Directory.Exists(dir)) return new string[] { };
             return extensions.SelectMany(f => Directory.GetFiles(dir, f)).ToArray();
         }
     }

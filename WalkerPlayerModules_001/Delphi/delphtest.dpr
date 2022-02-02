@@ -2,12 +2,12 @@ program delphtest;
 
 uses
   Vcl.Forms,
-  MainForm in 'MainForm.pas' {Form1},
+  MainForm in 'MainForm.pas' {Form1} ,
   WalkerPlayerOptions in 'WalkerPlayerOptions.pas',
   WalkerPlayer in 'WalkerPlayer.pas',
-  FileManager in 'FileManager.pas',
   MainFormSettings in 'MainFormSettings.pas',
-  WalkerPlayerCmd in 'WalkerPlayerCmd.pas';
+  WalkerPlayerCmd in 'WalkerPlayerCmd.pas',
+  WalkerPlayerUtils in 'WalkerPlayerUtils.pas';
 
 {$R *.res}
 

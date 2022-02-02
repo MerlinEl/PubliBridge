@@ -8,18 +8,18 @@ uses
 // Walker Player Options (used by LoadFile(options))
 type
   OWPlayer = record
-    _Type: Integer; // Type is a reserved word in Delphi
-    Name: PAnsiChar;
-    MediaType: PAnsiChar; // AUDIO, VIDEO, IMAGES, LESSON, STAGE3D
-    WindowSize: PAnsiChar;  // Window position size AUTO or 800,600
-    WindowPos: PAnsiChar;  // Window position CENTER or 120,120
-    FilePath: WideString; // swf file path
-    RootDir: WideString; // directory with xml setting
-    HiddenPlayer: Integer; // output > True = 1, False =  0
+    _Type: Integer;         // Type is a reserved word in Delphi
+    Name: AnsiString ;
+    MediaType: AnsiString ; // AUDIO, VIDEO, IMAGES, LESSON, STAGE3D
+    WindowSize: AnsiString ;// Window size FULLSCREEN, PLAYERSIZE, or 800,600
+    WindowPos: AnsiString ; // Window position CENTER or 120,120
+    ButtonID: AnsiString ; // button ID > "01" or "01_01" or "01_01_01"
+    FileName: AnsiString ; // exact file name 20_01_01_meèoun obecný.jpg
+    BookDir: AnsiString ;  // directory with xml setting
+    HiddenPlayer: Integer;// output > True = 1, False =  0
     HiddenConsole: Integer;
     AutoPlay: Integer;
     Resizable: Integer;
-    FitToScreen: Integer;
     EscapeEnabled: Integer;
     SkipLogo: Integer;
     function ToString: String;
@@ -30,15 +30,15 @@ CONST
   OWPlayerDefault: OWPlayer = (
       Name: 'Walker Player Options.';
       MediaType: 'LESSON';
-      WindowSize: 'AUTO';
+      WindowSize: 'PLAYERSIZE';
       WindowPos: 'CENTER';
-      FilePath: '';
-      RootDir: '';
+      ButtonID: '';
+      FileName: '';
+      BookDir: '';
       HiddenPlayer: 0;
       HiddenConsole: 0;
       AutoPlay: 1;
       Resizable: 0;
-      FitToScreen: 1;
       EscapeEnabled: 1;
       SkipLogo: 0
     );

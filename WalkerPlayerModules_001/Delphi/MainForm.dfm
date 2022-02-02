@@ -11,7 +11,6 @@ object Form1: TForm1
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
-  OnClose = OnFormClose
   OnShow = OnFormShown
   PixelsPerInch = 96
   TextHeight = 13
@@ -38,6 +37,13 @@ object Form1: TForm1
     Height = 116
     Caption = 'Options:'
     TabOrder = 1
+    object lbl9: TLabel
+      Left = 13
+      Top = 53
+      Width = 95
+      Height = 13
+      Caption = 'DropBox > BookDir:'
+    end
     object Label4: TLabel
       Left = 13
       Top = 25
@@ -45,88 +51,59 @@ object Form1: TForm1
       Height = 13
       Caption = 'User name:'
     end
-    object lbl9: TLabel
-      Left = 13
-      Top = 53
-      Width = 60
+    object lbl2: TLabel
+      Left = 495
+      Top = 87
+      Width = 64
       Height = 13
-      Caption = 'DropBox dir:'
-    end
-    object ChkFitToScreen: TCheckBox
-      Left = 626
-      Top = 69
-      Width = 121
-      Height = 17
-      Caption = 'Fit To Screen'
-      Checked = True
-      State = cbChecked
-      TabOrder = 0
+      Caption = 'Window Size:'
     end
     object ChkEscapeEnabled: TCheckBox
-      Left = 626
-      Top = 23
-      Width = 121
+      Left = 646
+      Top = 15
+      Width = 95
       Height = 17
       Caption = 'Escape Enabled'
       Checked = True
       State = cbChecked
-      TabOrder = 1
+      TabOrder = 0
     end
     object ChkAutoPlay: TCheckBox
-      Left = 495
-      Top = 23
-      Width = 125
+      Left = 646
+      Top = 61
+      Width = 95
       Height = 17
       Caption = 'Auto Play'
       Checked = True
       State = cbChecked
+      TabOrder = 1
+    end
+    object ChkHiddenPlayer: TCheckBox
+      Left = 495
+      Top = 23
+      Width = 125
+      Height = 17
+      Caption = 'Hidden Player'
       TabOrder = 2
     end
-    object ChkSkipLogo: TCheckBox
+    object ChkHiddenConsole: TCheckBox
       Left = 495
       Top = 46
       Width = 125
       Height = 17
-      Caption = 'Skip Logo'
+      Caption = 'Hidden Console'
+      Checked = True
+      State = cbChecked
       TabOrder = 3
     end
-    object ChkHiddenPlayer: TCheckBox
-      Left = 495
-      Top = 69
-      Width = 125
-      Height = 17
-      Caption = 'Hidden Player'
-      TabOrder = 4
-    end
-    object ChkHiddenConsole: TCheckBox
-      Left = 495
-      Top = 92
-      Width = 125
-      Height = 17
-      Caption = 'Hidden Console'
-      TabOrder = 5
-    end
-    object CbxUserName: TComboBox
-      Left = 93
-      Top = 21
-      Width = 283
-      Height = 21
-      ItemIndex = 0
-      TabOrder = 6
-      Text = 'Orien Star'
-      OnChange = OnUserDirectoryChanged
-      Items.Strings = (
-        'Orien Star'
-        'merli')
-    end
     object CbxBookDir: TComboBox
-      Left = 93
+      Left = 114
       Top = 50
-      Width = 364
+      Width = 343
       Height = 21
       Style = csDropDownList
       ItemIndex = 0
-      TabOrder = 7
+      TabOrder = 4
       Text = 'Dropbox\PubliBridge\Interactive\D'#283'jepis 6'
       OnChange = OnBookDirectoryChanged
       Items.Strings = (
@@ -138,34 +115,39 @@ object Form1: TForm1
       Width = 444
       Height = 25
       Caption = 'SayHello( str )'
-      TabOrder = 8
+      TabOrder = 5
       OnClick = BtnSayHelloClick
     end
-    object BtnAddUser: TButton
-      Left = 382
-      Top = 19
-      Width = 35
-      Height = 25
-      Caption = '+'
-      TabOrder = 9
-      OnClick = BtnAddUserClick
-    end
-    object BtnRemoveUser: TButton
-      Left = 423
-      Top = 19
-      Width = 35
-      Height = 25
-      Caption = '-'
-      TabOrder = 10
-      OnClick = BtnRemoveUserClick
-    end
     object ChkResizable: TCheckBox
-      Left = 626
-      Top = 46
-      Width = 121
+      Left = 646
+      Top = 38
+      Width = 95
       Height = 17
       Caption = 'Resizable'
-      TabOrder = 11
+      TabOrder = 6
+    end
+    object EdtUserName: TEdit
+      Left = 114
+      Top = 23
+      Width = 343
+      Height = 21
+      Enabled = False
+      TabOrder = 7
+      Text = 'Undefined'
+    end
+    object CbxWindowSize: TComboBox
+      Left = 565
+      Top = 84
+      Width = 182
+      Height = 21
+      ItemIndex = 0
+      TabOrder = 8
+      Text = 'PLAYERSIZE'
+      Items.Strings = (
+        'PLAYERSIZE'
+        'FULLSCREEN'
+        '1024,768'
+        '800,600')
     end
   end
   object grpWalkerPlayer: TGroupBox
@@ -287,7 +269,7 @@ object Form1: TForm1
       Style = csDropDownList
       TabOrder = 8
     end
-    object CbxPhotoList: TComboBox
+    object CbxImageList: TComboBox
       Left = 254
       Top = 145
       Width = 496

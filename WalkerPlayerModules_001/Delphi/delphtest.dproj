@@ -106,9 +106,9 @@
         </DCCReference>
         <DCCReference Include="WalkerPlayerOptions.pas"/>
         <DCCReference Include="WalkerPlayer.pas"/>
-        <DCCReference Include="FileManager.pas"/>
         <DCCReference Include="MainFormSettings.pas"/>
         <DCCReference Include="WalkerPlayerCmd.pas"/>
+        <DCCReference Include="WalkerPlayerUtils.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

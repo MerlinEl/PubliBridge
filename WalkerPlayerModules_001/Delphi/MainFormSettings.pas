@@ -1,5 +1,9 @@
 unit MainFormSettings;
-
+ {
+ //@usage
+     OnFormShown > ReadSettings(CbxUserName, Application.ExeName);
+     OnFormClose > SaveSettings(CbxUserName, Application.ExeName);
+ }
 interface
 
 uses inifiles, System.SysUtils, System.Classes, Vcl.StdCtrls, Vcl.Dialogs,

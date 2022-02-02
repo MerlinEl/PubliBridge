@@ -13,15 +13,16 @@ namespace WalkerPlayer {
         public int _Type;           // Type is a reserved word in Delphi  
         public string Name;
         public string MediaType;    // AUDIO, VIDEO, IMAGES, LESSON, STAGE3D
-        public string WindowSize;   // Window position size AUTO or 800,600
+        public string WindowSize;   // Window size FULLSCREEN, PLAYERSIZE, or 800,600
         public string WindowPos;    // Window position CENTER or 120,120
-        [MarshalAs(UnmanagedType.LPWStr)] public string FilePath;// swf file path
-        [MarshalAs(UnmanagedType.LPWStr)] public string RootDir; // directory with xml setting
+        public string ButtonID; // button ID > "01" or "01_01" or "01_01_01" 
+        //[MarshalAs(UnmanagedType.LPWStr)] 
+        public string FileName; // exact file name 20_01_01_mečoun obecný.jpg
+        public string BookDir;  // directory with xml setting
         public bool HiddenPlayer;   // input > 1 = True, 0 = False  
         public bool HiddenConsole;
         public bool AutoPlay;
         public bool Resizable;
-        public bool FitToScreen;
         public bool EscapeEnabled;
         public bool SkipLogo;
         public new string ToString {
@@ -37,15 +38,15 @@ namespace WalkerPlayer {
 
             Name = "FLOptions";
             MediaType = "Lesson";
-            WindowSize = "AUTO"; // or 800,600
+            WindowSize = "PLAYERSIZE"; // or 800,600
             WindowPos = "CENTER"; // or 100,100  
-            FilePath = "";
-            RootDir = "";
+            ButtonID = "";
+            FileName = "";
+            BookDir = "";
             HiddenPlayer = false;
             HiddenConsole = false;
             AutoPlay = true;
             Resizable = false;
-            FitToScreen = true;
             EscapeEnabled = true;
             SkipLogo = false;
             return this;

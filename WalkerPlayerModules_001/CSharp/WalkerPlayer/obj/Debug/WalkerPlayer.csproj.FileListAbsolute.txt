@@ -57,6 +57,7 @@ E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WalkerPlayer\b
 E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WalkerPlayer\bin\Debug\Microsoft.Build.Utilities.Core.pdb
 E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WalkerPlayer\bin\Debug\Microsoft.Build.Utilities.Core.xml
 E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WalkerPlayer\bin\Debug\System.Collections.Immutable.xml
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WalkerPlayer\obj\Debug\WalkerPlayer.csproj.AssemblyReference.cache
 E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WalkerPlayer\obj\Debug\WalkerPlayer.Properties.Resources.resources
 E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WalkerPlayer\obj\Debug\WalkerPlayer.WPlayerForm.resources
 E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WalkerPlayer\obj\Debug\WalkerPlayer.csproj.GenerateResource.cache

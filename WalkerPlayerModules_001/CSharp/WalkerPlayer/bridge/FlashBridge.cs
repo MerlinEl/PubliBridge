@@ -1,6 +1,7 @@
 ﻿using AxShockwaveFlashObjects;
-using System;
+using System.Linq;
 using WalkerPlayer.utils;
+using WalkerPlayerConsole;
 
 namespace WalkerPlayer.bridge {
     internal class FlashBridge {
@@ -14,8 +15,9 @@ namespace WalkerPlayer.bridge {
         public static void OnFlashWalkerCall(AxShockwaveFlash flashWalker, _IShockwaveFlashEvents_FlashCallEvent e) {
 
             FlashArgsGet data = GetCommand(e.request);
-            WPGlobal.Log("CSharp", "WPlayerForm > OnFlashWalkerCall >> [ {0} ]", data.ProcessType);
-            //WPGlobal.Log("CSharp", "WPlayerForm > OnFlashWalkerCall >\n\tsender:{0}\n\tevent:{1}\n\tData:{2}", sender, e, data);
+            WPGlobal.Log("CSharp", "FlashBridge > OnFlashWalkerCall >> [ {0} ]", data.ProcessType);
+            //WPGlobal.Log("CSharp", "FlashBridge > OnFlashWalkerCall >\n\tsender:{0}\n\tevent:{1}\n\tData:{2}", sender, e, data);
+            string[] fl_params;
             switch (data.ProcessType) {
                 case "FLASH_LOG":
                     // Flash debug output displayed in CSharp console
@@ -29,17 +31,38 @@ namespace WalkerPlayer.bridge {
                     WPlayer.wLoader.SetFullScreen(false);
                     break;
                 case "AUDIO_PLAYER_UI_READY":
-                    // When flash AudioPlayer finished, send back commnd to play audio file
-                    WPGlobal.Log("CSharp", "WPlayerForm > OnFlashWalkerCall > filePath:\n\t{0}", FlashOptions.FilePath);
-                    SendCommand(flashWalker, new FlashArgsSend("CSHARP_COMMAND", "flashWalkerCallback", FlashOptions.FilePath));
+                    // When flash Player loaded, send back commnd to play file
+                    WPGlobal.Log("CSharp", "FlashBridge > OnFlashWalkerCall > filePath:\n\t{0}", FlashOptions.ButtonID);
+                    SendCommand(flashWalker, new FlashArgsSend("CSHARP_COMMAND", "flashWalkerCallback", FlashOptions.ButtonID));
                     break;
                 case "LESSON_PLAYER_UI_READY":
-                    // When flash LessonPlayer finished, send back commnd to play lesson file
-                    WPGlobal.Log("CSharp", "WPlayerForm > OnFlashWalkerCall > filePath:\n\t{0}", FlashOptions.FilePath);
-                    string[] fl_params = new string[] {
-                        FlashOptions.FilePath,
+                    // When flash Player loaded, send back commnd to play file
+                    WPGlobal.Log("CSharp", "FlashBridge > OnFlashWalkerCall > filePath:\n\t{0}", FlashOptions.ButtonID);
+                    fl_params = new string[] {
+                        FlashOptions.ButtonID,
                         FlashOptions.WindowSize == "FULLSCREEN" ? "TRUE" : "FALSE"
                     };
+                    SendCommand(flashWalker, new FlashArgsSend("CSHARP_COMMAND", "flashWalkerCallback", fl_params));
+                    break;
+                case "IMAGE_PLAYER_UI_READY":
+                    // When flash Player loaded, send back commnd to play file
+                    string xmlFile = FlashOptions.BookDir + "\\" + data.ParamsList[0]; // "PhotoText.xml"
+                    string imageID = FlashOptions.ButtonID;
+                    WPGlobal.Log("CSharp", "FlashBridge > OnFlashWalkerCall >\n\txmlFile:{0}\n\timageID:{1}", xmlFile, imageID);
+                    // IMAGE_ID ( 24_01_01 ) < 20_01_01_mečoun obecný.jpg
+                    // 24 > page     > number of current page
+                    // 01 > set      > group of images
+                    // 01 > count    > sequence index                                      
+                    string[] imagesSet = WPGlobal.GetImagesByButtonID(FlashOptions);
+                    string[] imagesComment = WPGlobal.GetImagesComments(xmlFile, imagesSet);
+                    fl_params = new string[] {
+                        imagesSet.Join("|"),
+                        imagesComment.Join("|"),
+                        FlashOptions.WindowSize == "FULLSCREEN" ? "TRUE" : "FALSE"
+                    };
+                    WPGlobal.Log("CSharp", "FlashBridge > OnFlashWalkerCall > imageID:\n\t{0}", imageID);
+                    WPGlobal.Log("CSharp", "FlashBridge > OnFlashWalkerCall > imagesSet:\n\t{0}", imagesSet.Join("\n\t"));
+                    WPGlobal.Log("CSharp", "FlashBridge > OnFlashWalkerCall > imagesComment:\n\t{0}", imagesComment.Join("\n\t"));
                     SendCommand(flashWalker, new FlashArgsSend("CSHARP_COMMAND", "flashWalkerCallback", fl_params));
                     break;
                 case "CLOSE_WINDOW":
@@ -78,7 +101,7 @@ namespace WalkerPlayer.bridge {
                         FlashOptions.FullScreen == true ? "TRUE" : "FALSE",
                         FlashOptions.SkipLogo == true ? "TRUE" : "FALSE"
                     };
-                    WPGlobal.Log("CSharp", "WPlayerForm > OnFlashWalkerCall > fl_params:\n\t{0}", String.Join("\n\t", fl_params));
+                    WPGlobal.Log("CSharp", "FlashBridge > OnFlashWalkerCall > fl_params:\n\t{0}", String.Join("\n\t", fl_params));
                     SendCommand(WPlayer.wLoader.FLWindow2D, new FlashArgsSend("CSHARP_UI_READY", "flashWalkerCallback", fl_params));
                     break;
                 case "FLASH_APP_EXIT":
@@ -87,7 +110,7 @@ namespace WalkerPlayer.bridge {
                 case "READ_FILE":
                     // Read a file and send result back to Flash
                     string text = WPFso.ReadFile(data.ParamsList[0]);
-                    //WPGlobal.Log("CSharp", "WPlayerForm > OnFlashWalkerCall > ReadFile > text:\n\t{0}", text);
+                    //WPGlobal.Log("CSharp", "FlashBridge > OnFlashWalkerCall > ReadFile > text:\n\t{0}", text);
                     SendCommand(WPlayer.wLoader.FLWindow2D, new FlashArgsSend(data.ProcessType, "flashCallback", text));
                     break;
                 case "SAVE_FILE":
@@ -95,7 +118,7 @@ namespace WalkerPlayer.bridge {
                     break;
                 case "GET_FILES":
                     string methodName = data.ParamsList[0];
-                    WPGlobal.Log("CSharp", "WPlayerForm > Flash need response from method:", methodName);
+                    WPGlobal.Log("CSharp", "FlashBridge > Flash need response from method:", methodName);
                     string filesDir = data.ParamsList[0];
                     string[] extensions = data.ParamsList[1].Split(',');
                     // convert {"jpg","png","gif"} in to {"*.jpg","*.png","*.gif"}

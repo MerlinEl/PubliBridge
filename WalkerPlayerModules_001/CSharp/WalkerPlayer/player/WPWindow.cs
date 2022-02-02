@@ -1,11 +1,8 @@
 ﻿using AxShockwaveFlashObjects;
-using System;
 using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Windows.Forms;
 using WalkerPlayer.utils;
-using WalkerPlayerConsole;
 
 namespace WalkerPlayer.player {
     class WPWindow {
@@ -17,12 +14,29 @@ namespace WalkerPlayer.player {
             flControll.WMode = "Direct";
         }
 
+        internal static void SetupImagePlayer(WPlayerForm wPlayerForm, AxShockwaveFlash flControll, OWPlayer options) {
+
+            string playerPath = WPGlobal.GetPlayerPath(options.BookDir, options.MediaType);
+            WPGlobal.Log("CSharp", "WPWindow > SetupImagePlayer >\n\tRoot Dir:{0}\n\tPlayer Path:{1}", options.BookDir, playerPath);
+            if (!File.Exists(playerPath)) throw new FileNotFoundException("This file was not found.\n" + playerPath);
+            WPGlobal.Log("CSharp", "\tMedia Path:{0}\n\tButtonId:{1}", options.FileName, options.ButtonID);
+
+            // Setup Flash Component
+            flControll.WMode = "Window";
+            flControll.Location = new Point();
+            flControll.Movie = playerPath;
+            flControll.Playing = options.AutoPlay;
+            wPlayerForm.IsMediaLoaded = true;
+
+            SetupFormWindow(wPlayerForm, flControll, options);
+        }
+
         internal static void SetupLessonPlayer(WPlayerForm wPlayerForm, AxShockwaveFlash flControll, OWPlayer options) {
 
-            string playerPath = options.RootDir + @"\LessonPlayer.swf";
-            WPGlobal.Log("CSharp", "WPWindow > SetupLessonPlayer >\n\tRoot Dir:{0}\n\tPlayer Path:{1}", options.RootDir, playerPath);
+            string playerPath = WPGlobal.GetPlayerPath(options.BookDir, options.MediaType);
+            WPGlobal.Log("CSharp", "WPWindow > SetupLessonPlayer >\n\tRoot Dir:{0}\n\tPlayer Path:{1}", options.BookDir, playerPath);
             if (!File.Exists(playerPath)) throw new FileNotFoundException("This file was not found.\n" + playerPath);
-            WPGlobal.Log("CSharp", "\tMedia Path:{0}\n\tLesson:{1}", playerPath, options.FilePath);
+            WPGlobal.Log("CSharp", "\tMedia Path:{0}\n\tButtonId:{1}", options.FileName, options.ButtonID);
 
             // Setup Flash Component
             flControll.WMode = "Window";
@@ -36,10 +50,10 @@ namespace WalkerPlayer.player {
 
         internal static void SetupAudioPlayer(WPlayerForm wPlayerForm, AxShockwaveFlash flControll, OWPlayer options) {
 
-            string playerPath = options.RootDir + @"\AudioPlayer.swf";
-            WPGlobal.Log("CSharp", "WPWindow > SetupAudioPlayer >\n\tRoot Dir:{0}\n\tPlayer Path:{1}", options.RootDir, playerPath);
+            string playerPath = WPGlobal.GetPlayerPath(options.BookDir, options.MediaType);
+            WPGlobal.Log("CSharp", "WPWindow > SetupAudioPlayer >\n\tRoot Dir:{0}\n\tPlayer Path:{1}", options.BookDir, playerPath);
             if (!File.Exists(playerPath)) throw new FileNotFoundException("This file was not found.\n" + playerPath);
-            WPGlobal.Log("CSharp", "\tMedia Path:{0}\n\tAudio:{1}", playerPath, options.FilePath);
+            WPGlobal.Log("CSharp", "\tMedia Path:{0}\n\tButtonId:{1}", options.FileName, options.ButtonID);
 
             // Setup Flash Component
             flControll.WMode = "Window";
@@ -53,23 +67,25 @@ namespace WalkerPlayer.player {
 
         private static void SetupFormWindow(WPlayerForm wPlayerForm, AxShockwaveFlash flControll, OWPlayer options) {
 
+            WPGlobal.Log("CSharp", "WPWindow > SetupFormWindow >\n\tWindowSize:{0}\n\tWindowPos:{1}", options.WindowSize, options.WindowPos);
             switch (options.WindowSize) {
 
-                case "AUTO":
-                    flControll.Dock = DockStyle.Fill;
-                    // TODO crop form to math controll size
-                    //var cropSize = new Size();
-                    //if (flControll.Size.Width > wPlayerForm.ClientSize.Width) cropSize.Width = flControll.Size.Width;
-                    //if (flControll.Size.Height > wPlayerForm.ClientSize.Height) cropSize.Height = flControll.Size.Height;
-                    //wPlayerForm.ClientSize = cropSize;
-                    wPlayerForm.FormBorderStyle = options.Resizable ? FormBorderStyle.Sizable : FormBorderStyle.FixedSingle;
+                case "PLAYERSIZE": // Fit Form to Player Size and Dock Media
 
+                    Size playerSize = new Size(flControll.Width, flControll.Height);
+                    if (!playerSize.IsEmpty) { 
+                        //WPGlobal.Log("CSharp", "\tcontrolSize w:{0} h:{1}", flControll.Width, flControll.Height);
+                        swfStartSize = new Size(playerSize.Width, playerSize.Height);
+                        wPlayerForm.ClientSize = playerSize;
+                        flControll.Dock = DockStyle.Fill;
+                        wPlayerForm.FormBorderStyle = options.Resizable ? FormBorderStyle.Sizable : FormBorderStyle.FixedSingle;
+                    }
                     break;
-                case "FULLSCREEN":
+                case "FULLSCREEN": // Set Player to FullScreen
                     wPlayerForm.SetFullScreen(true);
                     flControll.Dock = DockStyle.Fill;
                     break;
-                default:  // Set custom size (width, height)
+                default:  // Set Player to custom size
                     Size size = WPString.StringToSize(options.WindowSize);
                     if (size.IsEmpty) return;
                     wPlayerForm.ClientSize = size;

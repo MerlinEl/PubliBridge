@@ -1,0 +1,86 @@
+unit WalkerOptions;
+
+interface
+
+uses
+  System.SysUtils, Rtti, TypInfo;
+
+// Walker Player Options (used by LoadFile(options))
+type
+  OWPlayer = record
+    _Type: Integer; // Type is a reserved word in Delphi
+    Name: PAnsiChar;
+    ViewMode: PAnsiChar; // View mode 2D - 3D
+    FilePath: WideString; // swf file path
+    RootDir: WideString; // directory with xml setting
+    HiddenPlayer: PChar; // output > True = 1, False =  0
+    HiddenConsole: PChar;
+    AutoPlay: PChar;
+    FullScreen: PChar;
+    FitToScreen: PChar;
+    CenterToScreen: PChar;
+    EscapeEnabled: PChar;
+    SkipLogo: PChar;
+    function ToString: String;
+    function ToStringAll: string;
+  end;
+
+  const StrNewLine = AnsiString(#13#10);
+  const StrTab = AnsiString(#9);
+
+implementation
+
+function EscapeQuotes(const S: String): String;
+begin
+  // Easy but not best performance
+  Result := StringReplace(S, '\', '\\', [rfReplaceAll]);
+  Result := StringReplace(Result, '"', '\"', [rfReplaceAll]);
+end;
+
+function OWPlayer.ToString: String;
+var
+  AContext: TRttiContext;
+  AField: TRttiField;
+  ARecord: TRttiRecordType;
+  AFldName: String;
+  AValue: TValue;
+begin
+  Result := '';
+  AContext := TRttiContext.Create;
+  try
+    ARecord := AContext.GetType(TypeInfo(OWPlayer)).AsRecord;
+    for AField in ARecord.GetFields do
+    begin
+      AFldName := AField.Name;
+      AValue := AField.GetValue(@Self);
+      Result := Result + AFldName + '="' + EscapeQuotes(AValue.ToString) + '";';
+    end;
+  finally
+    AContext.Free;
+  end;
+end;
+
+function OWPlayer.ToStringAll(): string;
+var
+  ctx: TRttiContext;
+  t: TRttiType;
+  field: TRttiField;
+  s: WideString;
+begin
+  s := '';
+  ctx := TRttiContext.Create;
+  for field in ctx.GetType(TypeInfo(OWPlayer)).GetFields do
+  begin
+    t := field.FieldType;
+    s := s + Format
+      ('OWPlayer.ToString > Field : %s : Type : %s Value : %s ' ,[
+        field.Name,
+        field.FieldType.Name,
+        field.GetValue(@Self).ToString
+      ]) + StrTab + StrNewLine;
+  end;
+  Result := s;
+end;
+
+end.
+

@@ -1,8 +1,5 @@
 ﻿using AxShockwaveFlashObjects;
-using System;
 using System.Drawing;
-using System.IO;
-using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using WalkerPlayer.bridge;
 using WalkerPlayer.player;
@@ -53,11 +50,11 @@ namespace WalkerPlayer {
 
                 case "AUDIO": WPWindow.SetupAudioPlayer(this, FlControll, options); break;
                 case "LESSONS": WPWindow.SetupLessonPlayer(this, FlControll, options); break;
+                case "IMAGES": WPWindow.SetupImagePlayer(this, FlControll, options); break;
 
-                //case "VIDEO": FlControll.Movie = options.RootDir + @"\VideoPlayer.swf"; break;
-                //case "IMAGES ": FlControll.Movie = options.RootDir + @"\ImagePlayer.swf"; break;
-                //case "LESSON": FlControll.Movie = options.RootDir + @"\LessonPlayer.swf"; break;
-                //case "STAGE3D": FlControll.Movie = options.RootDir + @"\ThreedPlayer.swf"; break;
+                    //case "VIDEO": FlControll.Movie = options.RootDir + @"\VideoPlayer.swf"; break;
+                    //case "LESSON": FlControll.Movie = options.RootDir + @"\LessonPlayer.swf"; break;
+                    //case "STAGE3D": FlControll.Movie = options.RootDir + @"\ThreedPlayer.swf"; break;
             }
         }
 
