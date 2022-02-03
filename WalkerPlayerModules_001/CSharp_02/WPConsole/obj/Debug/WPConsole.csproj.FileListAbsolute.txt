@@ -1,9 +1,0 @@
-E:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_009\CSharpNET\WPConsole\bin\Debug\WPConsole.dll
-E:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_009\CSharpNET\WPConsole\bin\Debug\WPConsole.pdb
-E:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_009\CSharpNET\WPConsole\obj\Debug\WPConsole.WPConsoleForm.resources
-E:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_009\CSharpNET\WPConsole\obj\Debug\WPConsole.WPConsoleAboutForm.resources
-E:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_009\CSharpNET\WPConsole\obj\Debug\WPConsole.csproj.GenerateResource.cache
-E:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_009\CSharpNET\WPConsole\obj\Debug\WPConsole.csproj.CoreCompileInputs.cache
-E:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_009\CSharpNET\WPConsole\obj\Debug\WPConsole.dll
-E:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_009\CSharpNET\WPConsole\obj\Debug\WPConsole.pdb
-E:\Aprog\Orien\FlashC#\PubliBridge\Create_Load_Dll_009\CSharpNET\WPConsole\obj\Debug\WPConsole.csproj.AssemblyReference.cache

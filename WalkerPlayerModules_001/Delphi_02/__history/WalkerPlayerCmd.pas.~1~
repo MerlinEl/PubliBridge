@@ -1,8 +1,0 @@
-unit WPCmd;
-
-interface
-   uses WPOptions;
-
-implementation
-
-end.

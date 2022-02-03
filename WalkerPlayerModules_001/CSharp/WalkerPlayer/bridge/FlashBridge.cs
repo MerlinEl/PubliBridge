@@ -24,6 +24,9 @@ namespace WalkerPlayer.bridge {
                     string[] logArgs = FlashDataParser.GetLogDataFromStringArray(data.ParamsList);
                     WPGlobal.Log(logArgs[0], logArgs[1]);
                     break;
+                case "CLOSE_WINDOW":
+                    WPlayer.wLoader.CloseWindow();
+                    break;
                 case "SWITCH_TO_FULL_SCREEN_MODE":
                     WPlayer.wLoader.SetFullScreen(true);
                     break;
@@ -65,8 +68,17 @@ namespace WalkerPlayer.bridge {
                     WPGlobal.Log("CSharp", "FlashBridge > OnFlashWalkerCall > imagesComment:\n\t{0}", imagesComment.Join("\n\t"));
                     SendCommand(flashWalker, new FlashArgsSend("CSHARP_COMMAND", "flashWalkerCallback", fl_params));
                     break;
-                case "CLOSE_WINDOW":
-                    WPlayer.wLoader.CloseWindow();
+                case "VIDEO_PLAYER_UI_READY":
+                    fl_params = new string[] {
+                        FlashOptions.ButtonID,
+                        FlashOptions.FileName,
+                        FlashOptions.WindowSize == "FULLSCREEN" ? "TRUE" : "FALSE"
+                    };
+                    SendCommand(flashWalker, new FlashArgsSend("CSHARP_COMMAND", "flashWalkerCallback", fl_params));
+                    break;
+                case "3D_PLAYER_UI_READY":
+
+
                     break;
             }
         }

@@ -8,8 +8,8 @@ uses
     Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
     System.Classes, Vcl.Graphics, StrUtils, Math, IOUtils,
     Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls,
-    Vcl.ButtonGroup, Generics.Collections, TypInfo, WalkerPlayer,
-    WalkerPlayerOptions, MainFormSettings, WalkerPlayerUtils,
+    Vcl.ButtonGroup, Generics.Collections, TypInfo, WalkerPlayerCmd,
+    WalkerPlayerOptions, MainFormSettings, WalkerPlayerUtils, WalkerPlayer,
     Data.Bind.EngExt, Vcl.Bind.DBEngExt, Data.Bind.Components;
 
 type
@@ -125,7 +125,26 @@ begin
         FillSWFList(Form1.CbxAudioList, GetFilesDirByType('audio'), 'mp3');
         FillSWFList(Form1.CbxLessonList, GetFilesDirByType('lessons'), 'swf');
         FillSWFList(Form1.CbxImageList, GetFilesDirByType('photos'), 'jpg');
+
+        // 1) Video Local
         FillSWFList(Form1.CbxVideoList, GetFilesDirByType('video'), 'flv');
+
+        // 2) Video Webstream
+        {Dejepis 7 str.55}
+        Form1.CbxVideoList.Items.Add('https://www.ceskatelevize.cz/porady/10169631969-stity-kralovstvi-ceskeho/207562235200001-jak-rostly-hrady/');
+        {Dejepis 7 str.59}
+        Form1.CbxVideoList.Items.Add('https://v11-a.sdn.cz/v_11/vd_10004867_1485859405/h264_aac_720p_mp4/eff19af5.mp4');
+        {Dejepis 7 str.65}
+        Form1.CbxVideoList.Items.Add('https://v11-a.sdn.cz/v_11/vd_627474_1485976697/h264_aac_720p_mp4/c5ef1af2.mp4');
+        {Dejepis 7 str.25} // not used from stream (was downloaded)
+        Form1.CbxVideoList.Items.Add('https://www.youtube.com/watch?v=6ldHiLvbVe0');
+
+        // 3) Video Weblink
+        {Dejepis 7 str.125}
+        Form1.CbxVideoList.Items.Add('https://www.ceskatelevize.cz/ivysilani/10361869257-narodni-klenoty/211563235200002-telc-jezerni-ruze');
+        {Dejepis 7 str.106}
+        Form1.CbxVideoList.Items.Add('https://www.stream.cz/vylety-do-minulosti/kralovnin-korzar-francis-drake-obeplul-svet-26-9-1580-317312');
+
         Log(#9 + '3DList:> ( ' + Form1.Cbx3DList.Items.Count.ToString() + ' )');
         Log(#9 + 'AudioList:> ( ' + Form1.CbxAudioList.Items.Count.ToString
           () + ' )');
@@ -158,75 +177,28 @@ begin
 end;
 
 procedure TForm1.BtnPlayAudioClick(Sender: TObject);
-var
-    options: OWPlayer;
 begin
-    options := GetWPOptions();
-    options.Name := 'Audio Player:';
-    options.MediaType := 'AUDIO';
-    options.FileName := CbxAudioList.Text; // 04_01.swf
-    // Button ID ( 04_01 ) < 04_01.swf
-    // 04 > page     > number of current page
-    // 01 > count    > sequence index
-    options.ButtonID := ExtractFNameWithoutExt(options.FileName);
-    options.WindowSize := '240,140';
-    options.WindowPos := 'CENTER';
-    // center on screen or set pos exam(100,200)
-    WPlayer.Log('Delphi ( MainForm )', WPlayer.OptionsToString(options));
-    WPlayer.LoadFile(options);
+    PlayAudio(GetWPOptions(), CbxAudioList.Text);
 end;
 
 procedure TForm1.BtnPlayImagesClick(Sender: TObject);
-var
-    options: OWPlayer;
-    btnID: string;
 begin
-    options :=  GetWPOptions();
-    options.Name := 'Image Player:';
-    options.MediaType := 'IMAGES';
-    options.FileName := CbxImageList.Text; // 20_01_01_meèoun obecný.jpg
-    // IMAGE_ID ( 24_01_01 ) < 20_01_01_meèoun obecný.jpg
-    // 24 > page     > number of current page
-    // 01 > set      > images group
-    // 01 > count    > sequence index
-    btnID := ExtractFNameWithoutExt(options.FileName); // 20_01_01_meèoun obecný
-    btnID := btnID.SubString(0, btnID.LastIndexOf('_')); // 24_01_01
-    options.ButtonID := btnID.SubString(0, btnID.LastIndexOf('_')); // 24_01
-    // center on screen or set pos exam(100,200)
-    WPlayer.Log('Delphi ( MainForm )', WPlayer.OptionsToString(options));
-    WPlayer.LoadFile(options);
+    PlayImages(GetWPOptions(), CbxImageList.Text);
 end;
 
 procedure TForm1.BtnPlayLessonClick(Sender: TObject);
-var
-    options: OWPlayer;
 begin
-    options := GetWPOptions();
-    options.Name := 'Lesson Player:';
-    options.MediaType := 'LESSONS';
-    options.FileName := CbxLessonList.Text; // 04.swf
-    // Button ID ( 04 ) < 04.swf
-    options.ButtonID := ExtractFNameWithoutExt(options.FileName);
-    WPlayer.Log('Delphi ( MainForm )', WPlayer.OptionsToString(options));
-    WPlayer.LoadFile(options);
+   PlayLesson(GetWPOptions(), CbxLessonList.Text);
 end;
 
 procedure TForm1.BtnPlayVideoClick(Sender: TObject);
 begin
-    // TODO
+    PlayVideo(GetWPOptions(), CbxVideoList.Text);
 end;
 procedure TForm1.BtnPlay3DClick(Sender: TObject);
 // var options: OWPlayer;
 begin
-    // options := GetWPOptions();
-    // options.MediaType := 'STAGE3D';
-    // options.ButtonID := GetFilesDirByType('3d') + '\' + Cbx3DList.Text;
-    // TODO insert newlines and tabs for output
-    // WPlayer.Log('Delphi ( MainForm )', options.ToString());
-    // ShowMessage('Delphi ( MainForm )' + options.ToString());
-    // ShowMessage('Delphi ( MainForm )' + WPlayer.OptionsToString(options));
-    // WPlayer.Log('Delphi ( MainForm )', WPlayer.OptionsToString(options));
-    // WPlayer.LoadFile(options);
+    Play3D(GetWPOptions(), CbxVideoList.Text);
 end;
 
 // ..............................//
@@ -252,5 +224,7 @@ begin
       'Book path was se to >' + #13#10 + '[ ' + dir + ' ]';
     WPlayer.SayHello(msg);
 end;
-
 end.
+
+
+
