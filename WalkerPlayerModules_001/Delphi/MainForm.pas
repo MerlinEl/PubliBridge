@@ -102,13 +102,13 @@ var
 begin
     // Set-Up options
     options := OWPlayerDefault;
-    options.BookDir := AnsiString(GetBookDir());
+    options.BookDir := GetBookDir();
     options.HiddenPlayer := BoolToInt(Form1.ChkHiddenPlayer.Checked);
     options.HiddenConsole := BoolToInt(Form1.ChkHiddenConsole.Checked);
     options.AutoPlay := BoolToInt(Form1.ChkAutoPlay.Checked);
     options.EscapeEnabled := BoolToInt(Form1.ChkEscapeEnabled.Checked);
     options.Resizable := BoolToInt(Form1.ChkResizable.Checked);
-    options.WindowSize := StrToAnsi(Form1.CbxWindowSize.Text);
+    options.WindowSize := Form1.CbxWindowSize.Text;
     Result := options;
 end;
 
@@ -164,11 +164,11 @@ begin
     options := GetWPOptions();
     options.Name := 'Audio Player:';
     options.MediaType := 'AUDIO';
-    options.FileName := StrToAnsi(CbxAudioList.Text); // 04_01.swf
+    options.FileName := CbxAudioList.Text; // 04_01.swf
     // Button ID ( 04_01 ) < 04_01.swf
     // 04 > page     > number of current page
     // 01 > count    > sequence index
-    options.ButtonID := StrToAnsi(ExtractFNameWithoutExt(options.FileName));
+    options.ButtonID := ExtractFNameWithoutExt(options.FileName);
     options.WindowSize := '240,140';
     options.WindowPos := 'CENTER';
     // center on screen or set pos exam(100,200)
@@ -184,14 +184,14 @@ begin
     options :=  GetWPOptions();
     options.Name := 'Image Player:';
     options.MediaType := 'IMAGES';
-    options.FileName := StrToAnsi(CbxImageList.Text); // 20_01_01_meèoun obecný.jpg
+    options.FileName := CbxImageList.Text; // 20_01_01_meèoun obecný.jpg
     // IMAGE_ID ( 24_01_01 ) < 20_01_01_meèoun obecný.jpg
     // 24 > page     > number of current page
     // 01 > set      > images group
     // 01 > count    > sequence index
     btnID := ExtractFNameWithoutExt(options.FileName); // 20_01_01_meèoun obecný
     btnID := btnID.SubString(0, btnID.LastIndexOf('_')); // 24_01_01
-    options.ButtonID := StrToAnsi(btnID.SubString(0, btnID.LastIndexOf('_'))); // 24_01
+    options.ButtonID := btnID.SubString(0, btnID.LastIndexOf('_')); // 24_01
     // center on screen or set pos exam(100,200)
     WPlayer.Log('Delphi ( MainForm )', WPlayer.OptionsToString(options));
     WPlayer.LoadFile(options);
@@ -204,9 +204,9 @@ begin
     options := GetWPOptions();
     options.Name := 'Lesson Player:';
     options.MediaType := 'LESSONS';
-    options.FileName := StrToAnsi(CbxLessonList.Text); // 04.swf
+    options.FileName := CbxLessonList.Text; // 04.swf
     // Button ID ( 04 ) < 04.swf
-    options.ButtonID := StrToAnsi(ExtractFNameWithoutExt(options.FileName));
+    options.ButtonID := ExtractFNameWithoutExt(options.FileName);
     WPlayer.Log('Delphi ( MainForm )', WPlayer.OptionsToString(options));
     WPlayer.LoadFile(options);
 end;

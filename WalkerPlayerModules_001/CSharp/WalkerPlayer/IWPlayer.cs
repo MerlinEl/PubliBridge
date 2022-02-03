@@ -11,14 +11,13 @@ namespace WalkerPlayer {
     [StructLayoutAttribute(LayoutKind.Sequential)]
     public struct OWPlayer {
         public int _Type;           // Type is a reserved word in Delphi  
-        public string Name;
-        public string MediaType;    // AUDIO, VIDEO, IMAGES, LESSON, STAGE3D
-        public string WindowSize;   // Window size FULLSCREEN, PLAYERSIZE, or 800,600
-        public string WindowPos;    // Window position CENTER or 120,120
-        public string ButtonID; // button ID > "01" or "01_01" or "01_01_01" 
-        //[MarshalAs(UnmanagedType.LPWStr)] 
-        public string FileName; // exact file name 20_01_01_mečoun obecný.jpg
-        public string BookDir;  // directory with xml setting
+        [MarshalAs(UnmanagedType.LPWStr)] public string Name;
+        [MarshalAs(UnmanagedType.LPWStr)] public string MediaType;    // AUDIO, VIDEO, IMAGES, LESSON, STAGE3D
+        [MarshalAs(UnmanagedType.LPWStr)] public string WindowSize;   // Window size FULLSCREEN, PLAYERSIZE, or 800,600
+        [MarshalAs(UnmanagedType.LPWStr)] public string WindowPos;    // Window position CENTER or 120,120
+        [MarshalAs(UnmanagedType.LPWStr)] public string ButtonID; // button ID > "01" or "01_01" or "01_01_01" 
+        [MarshalAs(UnmanagedType.LPWStr)] public string FileName; // exact file name 20_01_01_mečoun obecný.jpg
+        [MarshalAs(UnmanagedType.LPWStr)] public string BookDir;  // directory with xml setting
         public bool HiddenPlayer;   // input > 1 = True, 0 = False  
         public bool HiddenConsole;
         public bool AutoPlay;

@@ -4,18 +4,18 @@ interface
 
 uses
   System.SysUtils, Rtti, TypInfo;
-
+// PAnsiChar, WideString, AnsiString
 // Walker Player Options (used by LoadFile(options))
 type
   OWPlayer = record
     _Type: Integer;         // Type is a reserved word in Delphi
-    Name: AnsiString ;
-    MediaType: AnsiString ; // AUDIO, VIDEO, IMAGES, LESSON, STAGE3D
-    WindowSize: AnsiString ;// Window size FULLSCREEN, PLAYERSIZE, or 800,600
-    WindowPos: AnsiString ; // Window position CENTER or 120,120
-    ButtonID: AnsiString ; // button ID > "01" or "01_01" or "01_01_01"
-    FileName: AnsiString ; // exact file name 20_01_01_meèoun obecný.jpg
-    BookDir: AnsiString ;  // directory with xml setting
+    Name: WideString ;
+    MediaType: WideString ; // AUDIO, VIDEO, IMAGES, LESSON, STAGE3D
+    WindowSize: WideString ;// Window size FULLSCREEN, PLAYERSIZE, or 800,600
+    WindowPos: WideString ; // Window position CENTER or 120,120
+    ButtonID: WideString ; // button ID > "01" or "01_01" or "01_01_01"
+    FileName: WideString ; // exact file name 20_01_01_meèoun obecný.jpg
+    BookDir: WideString ;  // directory with xml setting
     HiddenPlayer: Integer;// output > True = 1, False =  0
     HiddenConsole: Integer;
     AutoPlay: Integer;

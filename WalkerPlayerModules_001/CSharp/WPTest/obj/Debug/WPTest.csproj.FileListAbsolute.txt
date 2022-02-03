@@ -127,3 +127,17 @@ E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WPTest\obj\Deb
 E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WPTest\obj\Debug\WPTest.csproj.CopyComplete
 E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WPTest\obj\Debug\WPTest.exe
 E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WPTest\obj\Debug\WPTest.pdb
+C:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WPTest\bin\Debug\WPTest.exe.config
+C:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WPTest\bin\Debug\WPTest.exe
+C:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WPTest\bin\Debug\WPTest.pdb
+C:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WPTest\bin\Debug\WalkerPlayer.dll
+C:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WPTest\bin\Debug\WalkerPlayerConsole.dll
+C:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WPTest\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WPTest\obj\Debug\WPTest.csproj.AssemblyReference.cache
+C:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WPTest\obj\Debug\WPTest.WPTestForm.resources
+C:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WPTest\obj\Debug\WPTest.Properties.Resources.resources
+C:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WPTest\obj\Debug\WPTest.csproj.GenerateResource.cache
+C:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WPTest\obj\Debug\WPTest.csproj.CoreCompileInputs.cache
+C:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WPTest\obj\Debug\WPTest.csproj.CopyComplete
+C:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WPTest\obj\Debug\WPTest.exe
+C:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WPTest\obj\Debug\WPTest.pdb
