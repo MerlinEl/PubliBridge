@@ -55,7 +55,6 @@ namespace WalkerPlayer {
             Close();
         }
 
-
         internal void ShowPanel(bool state) {
             if (state) this.Show(); else this.Hide();
         }

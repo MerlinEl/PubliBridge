@@ -84,4 +84,3 @@ E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WalkerPlayer\o
 E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WalkerPlayer\obj\Debug\WalkerPlayer.csproj.CopyComplete
 E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WalkerPlayer\obj\Debug\WalkerPlayer.dll
 E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WalkerPlayer\obj\Debug\WalkerPlayer.pdb
-E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WalkerPlayer\obj\Debug\WalkerPlayer.csproj.AssemblyReference.cache

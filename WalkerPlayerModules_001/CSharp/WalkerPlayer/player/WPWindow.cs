@@ -76,6 +76,13 @@ namespace WalkerPlayer.player {
             }
         }
 
+        //internal static void ReloadMedia(WPlayerForm wPlayerForm, AxShockwaveFlash flashComponent, OWPlayer flashOptions) {
+
+        //    wPlayerForm.Controls.Remove(flashComponent);
+        //    flashComponent.Dispose();
+
+        //}
+
         //private static void FitWindowToSwfSize(WPlayerForm form, AxShockwaveFlash flControll) {
         //    form.ClientSize = flControll.Size;
         //}

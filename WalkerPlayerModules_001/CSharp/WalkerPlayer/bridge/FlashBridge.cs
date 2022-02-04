@@ -1,5 +1,6 @@
 ﻿using AxShockwaveFlashObjects;
 using System.Linq;
+using WalkerPlayer.player;
 using WalkerPlayer.utils;
 using WalkerPlayerConsole;
 
@@ -12,7 +13,7 @@ namespace WalkerPlayer.bridge {
         /// <param name="flash">AxShockwaveFlashObjects.AxShockwaveFlash</param>
         /// <param name="e">AxShockwaveFlashObjects._IShockwaveFlashEvents_FlashCallEvent</param>
         /// 
-        public static void OnFlashWalkerCall(AxShockwaveFlash flashWalker, _IShockwaveFlashEvents_FlashCallEvent e) {
+        public static void OnFlashWalkerCall(AxShockwaveFlash flashComponent, _IShockwaveFlashEvents_FlashCallEvent e) {
 
             FlashArgsGet data = GetCommand(e.request);
             WPGlobal.Log("CSharp", "FlashBridge > OnFlashWalkerCall >> [ {0} ]", data.ProcessType);
@@ -30,22 +31,32 @@ namespace WalkerPlayer.bridge {
                 case "SWITCH_TO_FULL_SCREEN_MODE":
                     WPlayer.wLoader.SetFullScreen(true);
                     break;
+                case "READ_FILE":
+                    // Read a file and send result back to Flash
+                    string text = WPFso.ReadFile(data.ParamsList[0]);
+                    //WPGlobal.Log("CSharp", "FlashBridge > OnFlashWalkerCall > ReadFile > text:\n\t{0}", text);
+                    SendCommand(flashComponent , new FlashArgsSend(data.ProcessType, "flashCallback", text));
+                    break;
                 case "SWITCH_TO_WINDOW_MODE":
                     WPlayer.wLoader.SetFullScreen(false);
                     break;
+                //case "RELOAD_MEDIA":
+                //    WPWindow.ReloadMedia(WPlayer.wLoader, flashComponent, FlashOptions);
+                //    break;
                 case "AUDIO_PLAYER_UI_READY":
                     // When flash Player loaded, send back commnd to play file
                     WPGlobal.Log("CSharp", "FlashBridge > OnFlashWalkerCall > filePath:\n\t{0}", FlashOptions.ButtonID);
-                    SendCommand(flashWalker, new FlashArgsSend("CSHARP_COMMAND", "flashWalkerCallback", FlashOptions.ButtonID));
+                    SendCommand(flashComponent, new FlashArgsSend("CSHARP_COMMAND", "flashWalkerCallback", FlashOptions.ButtonID));
                     break;
                 case "LESSON_PLAYER_UI_READY":
                     // When flash Player loaded, send back commnd to play file
                     WPGlobal.Log("CSharp", "FlashBridge > OnFlashWalkerCall > filePath:\n\t{0}", FlashOptions.ButtonID);
                     fl_params = new string[] {
                         FlashOptions.ButtonID,
+                        FlashOptions.BookDir,
                         FlashOptions.WindowSize == "FULLSCREEN" ? "TRUE" : "FALSE"
                     };
-                    SendCommand(flashWalker, new FlashArgsSend("CSHARP_COMMAND", "flashWalkerCallback", fl_params));
+                    SendCommand(flashComponent, new FlashArgsSend("CSHARP_COMMAND", "flashWalkerCallback", fl_params));
                     break;
                 case "IMAGE_PLAYER_UI_READY":
                     // When flash Player loaded, send back commnd to play file
@@ -66,7 +77,7 @@ namespace WalkerPlayer.bridge {
                     WPGlobal.Log("CSharp", "FlashBridge > OnFlashWalkerCall > imageID:\n\t{0}", imageID);
                     WPGlobal.Log("CSharp", "FlashBridge > OnFlashWalkerCall > imagesSet:\n\t{0}", imagesSet.Join("\n\t"));
                     WPGlobal.Log("CSharp", "FlashBridge > OnFlashWalkerCall > imagesComment:\n\t{0}", imagesComment.Join("\n\t"));
-                    SendCommand(flashWalker, new FlashArgsSend("CSHARP_COMMAND", "flashWalkerCallback", fl_params));
+                    SendCommand(flashComponent, new FlashArgsSend("CSHARP_COMMAND", "flashWalkerCallback", fl_params));
                     break;
                 case "VIDEO_PLAYER_UI_READY":
                     fl_params = new string[] {
@@ -74,7 +85,7 @@ namespace WalkerPlayer.bridge {
                         FlashOptions.FileName,
                         FlashOptions.WindowSize == "FULLSCREEN" ? "TRUE" : "FALSE"
                     };
-                    SendCommand(flashWalker, new FlashArgsSend("CSHARP_COMMAND", "flashWalkerCallback", fl_params));
+                    SendCommand(flashComponent, new FlashArgsSend("CSHARP_COMMAND", "flashWalkerCallback", fl_params));
                     break;
                 case "3D_PLAYER_UI_READY":
 
@@ -118,12 +129,6 @@ namespace WalkerPlayer.bridge {
                     break;
                 case "FLASH_APP_EXIT":
                     WPlayer.wLoader.Close();
-                    break;
-                case "READ_FILE":
-                    // Read a file and send result back to Flash
-                    string text = WPFso.ReadFile(data.ParamsList[0]);
-                    //WPGlobal.Log("CSharp", "FlashBridge > OnFlashWalkerCall > ReadFile > text:\n\t{0}", text);
-                    SendCommand(WPlayer.wLoader.FLWindow2D, new FlashArgsSend(data.ProcessType, "flashCallback", text));
                     break;
                 case "SAVE_FILE":
 
