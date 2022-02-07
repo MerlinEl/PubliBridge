@@ -7,16 +7,23 @@ uses
   System.IOUtils, Vcl.StdCtrls, System.Math;
 
 // Public static methods declaration
-function BoolToInt(state: Boolean): Integer;
 function ExtractFNameWithoutExt(const FileName: string): string;
+function BoolToInt(b:Boolean) :Integer;
 function GetUserName():string;
+function GetBookDir(): string;
 function StrToAnsi(str: WideString): AnsiString;
 function GetVideoID(str:string ):string;
-procedure FillSWFList(cbx: TComboBox; dir, extension: string);
+procedure FillMediaList(cbx: TComboBox; dir, extension: string);
+procedure FillMediaListByType();
 
 implementation
+  uses MainForm;
 
 // Public static methods
+function BoolToInt(b:Boolean): Integer;
+begin
+  Result := IfThen(b , 1, 0);
+end;
 function ExtractFNameWithoutExt(const FileName: string): string;
 begin
   Result := ChangeFileExt(ExtractFileName(FileName), '');
@@ -37,22 +44,35 @@ begin
    else buttonId := ExtractFNameWithoutExt(str); // play video from hd
    Result := buttonId;
 end;
-function BoolToInt(state: Boolean): Integer;
-begin
-  Result := IfThen(state, 1, 0);
-end;
 
 function GetUserName():string;
 begin
   Result := GetEnvironmentVariable('USERNAME');
 end;
+function GetBookDir(): string;
+var
+    userName, dropboxDir: string;
+begin
+    userName := Form1.EdtUserName.Text;
+    dropboxDir := Form1.CbxBookDir.Text;
+    Result := 'C:\Users\' + userName + '\' + dropboxDir;
+end;
 
-procedure FillSWFList(cbx: TComboBox; dir, extension: string);
+function GetFilesDirByType(swfDir: string): String;
+var
+    filesDir: string;
+begin
+    filesDir := GetBookDir() + '\' + swfDir;
+    Form1.Log('WalkerPlayerUtils > GetFilesDirByType > dir: ( ' + filesDir + ' )');
+    Result := filesDir;
+end;
+
+procedure FillMediaList(cbx: TComboBox; dir, extension: string);
 var
   path: string;
 begin
   if not DirectoryExists(dir) then
-    ShowMessage('FileManager > FillSWFList > Directory not found at:' + dir)
+    ShowMessage('WalkerPlayerUtils > FillSWFList > Directory not found at:' + dir)
   else
   begin
     cbx.Clear();
@@ -63,6 +83,60 @@ begin
     if cbx.Items.Count > 0 then
       cbx.ItemIndex := 0;
   end;
+end;
+procedure FillMediaListByType();
+var
+    dir: string;
+begin
+    dir := GetBookDir();
+    if DirectoryExists(dir) then
+    begin
+        // Fill Lists by Type
+        Form1.Log('MainForm > FillListsByType > BookDir: ( ' + dir + ' )');
+        FillMediaList(Form1.CbxLessonList, GetFilesDirByType('lessons'), 'swf');
+        FillMediaList(Form1.Cbx3DList, GetFilesDirByType('3d'), 'swf');
+
+        // 1) Video Local
+        FillMediaList(Form1.CbxVideoList, GetFilesDirByType('video'), 'flv');
+
+        // 2) Video Webstream
+        {Dejepis 7 str.55}
+        Form1.CbxVideoList.Items.Add('https://www.ceskatelevize.cz/porady/10169631969-stity-kralovstvi-ceskeho/207562235200001-jak-rostly-hrady/');
+        {Dejepis 7 str.59}
+        Form1.CbxVideoList.Items.Add('https://v11-a.sdn.cz/v_11/vd_10004867_1485859405/h264_aac_720p_mp4/eff19af5.mp4');
+        {Dejepis 7 str.65}
+        Form1.CbxVideoList.Items.Add('https://v11-a.sdn.cz/v_11/vd_627474_1485976697/h264_aac_720p_mp4/c5ef1af2.mp4');
+        {Dejepis 7 str.25} // not used from stream (was downloaded)
+        Form1.CbxVideoList.Items.Add('https://www.youtube.com/watch?v=6ldHiLvbVe0');
+
+        // 3) Video Weblink
+        {Dejepis 7 str.125}
+        Form1.CbxVideoList.Items.Add('https://www.ceskatelevize.cz/ivysilani/10361869257-narodni-klenoty/211563235200002-telc-jezerni-ruze');
+        {Dejepis 7 str.106}
+        Form1.CbxVideoList.Items.Add('https://www.stream.cz/vylety-do-minulosti/kralovnin-korzar-francis-drake-obeplul-svet-26-9-1580-317312');
+
+        Form1.Log(#9 + '3DList:> ( ' + Form1.Cbx3DList.Items.Count.ToString() + ' )');
+        Form1.Log(#9 + 'AudioList:> ( ' + Form1.CbxAudioList.Items.Count.ToString
+          () + ' )');
+        Form1.Log(#9 + 'LessonList:> ( ' + Form1.CbxLessonList.Items.Count.ToString
+          () + ' )');
+        Form1.Log(#9 + 'PhotoList:> ( ' + Form1.CbxImageList.Items.Count.ToString
+          () + ' )');
+        Form1.Log(#9 + 'VideoList:> ( ' + Form1.CbxVideoList.Items.Count.ToString
+          () + ' )');
+
+        FillMediaList(Form1.CbxAudioList, GetFilesDirByType('audio'), 'mp3');
+        FillMediaList(Form1.CbxImageList, GetFilesDirByType('photos'), 'jpg');
+    end
+    else
+    begin
+        // Clear All Lists
+        Form1.Cbx3DList.Clear();
+        Form1.CbxAudioList.Clear();
+        Form1.CbxLessonList.Clear();
+        Form1.CbxImageList.Clear();
+        Form1.CbxVideoList.Clear();
+    end;
 end;
 
 // String to AnsiString Conversion

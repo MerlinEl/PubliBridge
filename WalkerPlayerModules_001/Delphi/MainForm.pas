@@ -58,49 +58,36 @@ type
         { Private declarations }
     public
         { Public declarations }
+        procedure Log(Str: string);
+        procedure LogClear();
     end;
 
-var
-    Form1: TForm1;
+var Form1: TForm1;
 
 implementation
 
 {$R *.DFM}
 
 // ..............................//
-// Utility Methods
+// Form Public Methods
 // ..............................//
-procedure Log(Str: String);
+procedure TForm1.Log(Str: String);
 begin
     Form1.TxtConsole.Lines.Append(Str);
 end;
-
-// ..............................//
-// Primary Events
-// ..............................//
-function GetBookDir(): string;
-var
-    userName, dropboxDir: string;
+procedure TForm1.LogClear();
 begin
-    userName := Form1.EdtUserName.Text;
-    dropboxDir := Form1.CbxBookDir.Text;
-    Result := 'C:\Users\' + userName + '\' + dropboxDir;
+  Form1.TxtConsole.Lines.Clear();
 end;
 
-function GetFilesDirByType(swfDir: string): String;
-var
-    filesDir: string;
-begin
-    filesDir := GetBookDir() + '\' + swfDir;
-    Log('MainForm > GetFilesDirByType > dir: ( ' + filesDir + ' )');
-    Result := filesDir;
-end;
-
+// ..............................//
+// Get options from Interface
+// ..............................//
 function GetWPOptions(): OWPlayer;
 var
     options: OWPlayer;
 begin
-    // Set-Up options
+
     options := OWPlayerDefault;
     options.BookDir := GetBookDir();
     options.HiddenPlayer := BoolToInt(Form1.ChkHiddenPlayer.Checked);
@@ -112,68 +99,17 @@ begin
     Result := options;
 end;
 
-procedure FillListsByType();
-var
-    dir: string;
-begin
-    dir := GetBookDir();
-    if DirectoryExists(dir) then
-    begin
-        // Fill Lists by Type
-        Log('MainForm > FillListsByType > BookDir: ( ' + dir + ' )');
-        FillSWFList(Form1.Cbx3DList, GetFilesDirByType('3d'), 'swf');
-        FillSWFList(Form1.CbxAudioList, GetFilesDirByType('audio'), 'mp3');
-        FillSWFList(Form1.CbxLessonList, GetFilesDirByType('lessons'), 'swf');
-        FillSWFList(Form1.CbxImageList, GetFilesDirByType('photos'), 'jpg');
-
-        // 1) Video Local
-        FillSWFList(Form1.CbxVideoList, GetFilesDirByType('video'), 'flv');
-
-        // 2) Video Webstream
-        {Dejepis 7 str.55}
-        Form1.CbxVideoList.Items.Add('https://www.ceskatelevize.cz/porady/10169631969-stity-kralovstvi-ceskeho/207562235200001-jak-rostly-hrady/');
-        {Dejepis 7 str.59}
-        Form1.CbxVideoList.Items.Add('https://v11-a.sdn.cz/v_11/vd_10004867_1485859405/h264_aac_720p_mp4/eff19af5.mp4');
-        {Dejepis 7 str.65}
-        Form1.CbxVideoList.Items.Add('https://v11-a.sdn.cz/v_11/vd_627474_1485976697/h264_aac_720p_mp4/c5ef1af2.mp4');
-        {Dejepis 7 str.25} // not used from stream (was downloaded)
-        Form1.CbxVideoList.Items.Add('https://www.youtube.com/watch?v=6ldHiLvbVe0');
-
-        // 3) Video Weblink
-        {Dejepis 7 str.125}
-        Form1.CbxVideoList.Items.Add('https://www.ceskatelevize.cz/ivysilani/10361869257-narodni-klenoty/211563235200002-telc-jezerni-ruze');
-        {Dejepis 7 str.106}
-        Form1.CbxVideoList.Items.Add('https://www.stream.cz/vylety-do-minulosti/kralovnin-korzar-francis-drake-obeplul-svet-26-9-1580-317312');
-
-        Log(#9 + '3DList:> ( ' + Form1.Cbx3DList.Items.Count.ToString() + ' )');
-        Log(#9 + 'AudioList:> ( ' + Form1.CbxAudioList.Items.Count.ToString
-          () + ' )');
-        Log(#9 + 'LessonList:> ( ' + Form1.CbxLessonList.Items.Count.ToString
-          () + ' )');
-        Log(#9 + 'PhotoList:> ( ' + Form1.CbxImageList.Items.Count.ToString
-          () + ' )');
-        Log(#9 + 'VideoList:> ( ' + Form1.CbxVideoList.Items.Count.ToString
-          () + ' )');
-    end
-    else
-    begin
-        // Clear All Lists
-        Form1.Cbx3DList.Clear();
-        Form1.CbxAudioList.Clear();
-        Form1.CbxLessonList.Clear();
-        Form1.CbxImageList.Clear();
-        Form1.CbxVideoList.Clear();
-    end;
-end;
-
+// ..............................//
+// Button Events
+// ..............................//
 procedure TForm1.OnUserDirectoryChanged(Sender: TObject);
 begin
-    FillListsByType();
+    FillMediaListByType();
 end;
 
 procedure TForm1.OnBookDirectoryChanged(Sender: TObject);
 begin
-    FillListsByType();
+    FillMediaListByType();
 end;
 
 procedure TForm1.BtnPlayAudioClick(Sender: TObject);
@@ -195,10 +131,10 @@ procedure TForm1.BtnPlayVideoClick(Sender: TObject);
 begin
     PlayVideo(GetWPOptions(), CbxVideoList.Text);
 end;
+
 procedure TForm1.BtnPlay3DClick(Sender: TObject);
-// var options: OWPlayer;
 begin
-    Play3D(GetWPOptions(), CbxVideoList.Text);
+    Play3D(GetWPOptions(), Cbx3DList.Text);
 end;
 
 // ..............................//
@@ -209,7 +145,7 @@ begin
     // ShowMessage('From was shown.');
     WalkerPlayer.CreateWPlayerInstance();
     EdtUserName.Text := GetUserName();
-    FillListsByType();
+    FillMediaListByType();
 end;
 
 // ..............................//

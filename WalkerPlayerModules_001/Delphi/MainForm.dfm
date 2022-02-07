@@ -2,7 +2,7 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'WalkerPlayer.dll > CSharp Methods Call:'
-  ClientHeight = 578
+  ClientHeight = 744
   ClientWidth = 770
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -18,14 +18,14 @@ object Form1: TForm1
     Left = 5
     Top = 311
     Width = 757
-    Height = 263
+    Height = 425
     Caption = 'Console:'
     TabOrder = 0
     object TxtConsole: TMemo
       Left = 3
       Top = 21
       Width = 747
-      Height = 239
+      Height = 396
       ReadOnly = True
       TabOrder = 0
     end

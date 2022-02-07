@@ -88,8 +88,12 @@ namespace WalkerPlayer.bridge {
                     SendCommand(flashComponent, new FlashArgsSend("CSHARP_COMMAND", "flashWalkerCallback", fl_params));
                     break;
                 case "3D_PLAYER_UI_READY":
-
-
+                    fl_params = new string[] {
+                        FlashOptions.ButtonID,
+                        FlashOptions.WindowSize == "FULLSCREEN" ? "TRUE" : "FALSE"
+                    };
+                    WPGlobal.Log("CSharp", "FlashBridge > OnFlashWalkerCall > imageID:\n\t{0}", FlashOptions.ButtonID);
+                    SendCommand(flashComponent, new FlashArgsSend("CSHARP_COMMAND", "flashWalkerCallback", fl_params));
                     break;
             }
         }

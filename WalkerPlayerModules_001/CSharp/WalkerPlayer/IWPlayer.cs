@@ -18,24 +18,23 @@ namespace WalkerPlayer {
         [MarshalAs(UnmanagedType.LPWStr)] public string ButtonID; // button ID > "01" or "01_01" or "01_01_01" 
         [MarshalAs(UnmanagedType.LPWStr)] public string FileName; // exact file name 20_01_01_mečoun obecný.jpg
         [MarshalAs(UnmanagedType.LPWStr)] public string BookDir;  // directory with xml setting
-        public bool HiddenPlayer;   // input > 1 = True, 0 = False  
-        public bool HiddenConsole;
-        public bool AutoPlay;
-        public bool Resizable;
-        public bool EscapeEnabled;
-        public bool SkipLogo;
-        public new string ToString {
-            get {
-                string msg = "";
-                foreach (var field in typeof(OWPlayer).GetFields(BindingFlags.Public | BindingFlags.Instance)) {
-                    msg += String.Format("\n\t{0} = {1}", field.Name, field.GetValue(this));
-                }
-                return msg;
+        [MarshalAs(UnmanagedType.Bool)] public bool HiddenPlayer;   // input > 1 = True, 0 = False  
+        [MarshalAs(UnmanagedType.Bool)] public bool HiddenConsole;
+        [MarshalAs(UnmanagedType.Bool)] public bool AutoPlay;
+        [MarshalAs(UnmanagedType.Bool)] public bool Resizable;
+        [MarshalAs(UnmanagedType.Bool)] public bool EscapeEnabled;
+        [MarshalAs(UnmanagedType.Bool)] public bool SkipLogo;
+        public override string ToString() {
+
+            string msg = "";
+            foreach (var field in typeof(OWPlayer).GetFields(BindingFlags.Public | BindingFlags.Instance)) {
+                msg += String.Format(Environment.NewLine + "\t{0} = {1}", field.Name, field.GetValue(this));
             }
+            return msg;
         }
         public OWPlayer GetDefault() {
 
-            Name = "FLOptions";
+            Name = "Player:";
             MediaType = "Lesson";
             WindowSize = "PLAYERSIZE"; // or 800,600
             WindowPos = "CENTER"; // or 100,100  
@@ -51,6 +50,7 @@ namespace WalkerPlayer {
             return this;
         }
     }
+    
     // Interface
     [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public interface IWPlayer {
@@ -102,6 +102,8 @@ namespace WalkerPlayer {
 
         public void FullScreen(bool state) => wLoader?.SetFullScreen(state);
 
+  
+
         /// <summary>
         /// Load a SWF File in to WPlayer
         /// </summary>
@@ -111,9 +113,24 @@ namespace WalkerPlayer {
 
             if (wLoader == null || wLoader.IsDisposed) InitializeInterface();
             ShowPanel(true);
+            // TODO generate default options first, after fill incomming values which is not null
             WPGlobal.ConsoleHiddenMode(options.HiddenConsole);
+            //GetBoolSize();
             wLoader.LoadFile(options);
         }
+
+        // Test Bytes
+        //struct Foo {
+        //    [MarshalAs(UnmanagedType.Bool)] public bool A, B;
+        //}
+
+        //public unsafe void GetBoolSize() {
+
+        //    int i = sizeof(Foo);
+        //    //int u = Marshal.SizeOf(GetType(Foo));
+        //    MessageBox.Show("Bool size:"+ i.ToString());
+        //    //MessageBox.Show("Bool size:" + (u.ToString()));
+        //}
 
         public void Log(string tabName, string msg) {
             WPGlobal.Log(tabName, msg);
@@ -128,7 +145,7 @@ namespace WalkerPlayer {
         }
 
         public string OptionsToString(OWPlayer options) {
-            return options.ToString;
+            return options.ToString();
         }
     }
 }
