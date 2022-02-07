@@ -1,0 +1,30 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32002.261
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UseAxControl", "UseAxControl\UseAxControl.csproj", "{FFBDECE0-835F-4C60-B193-40DE102F6D31}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCalendar", "MyCalendar\MyCalendar.csproj", "{8726B9CC-3BB4-4D40-BBAA-BE7331C5615E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FFBDECE0-835F-4C60-B193-40DE102F6D31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFBDECE0-835F-4C60-B193-40DE102F6D31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFBDECE0-835F-4C60-B193-40DE102F6D31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFBDECE0-835F-4C60-B193-40DE102F6D31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8726B9CC-3BB4-4D40-BBAA-BE7331C5615E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8726B9CC-3BB4-4D40-BBAA-BE7331C5615E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8726B9CC-3BB4-4D40-BBAA-BE7331C5615E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8726B9CC-3BB4-4D40-BBAA-BE7331C5615E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8DE9A5F3-1BAB-437A-AD17-91F8D5F74260}
+	EndGlobalSection
+EndGlobal

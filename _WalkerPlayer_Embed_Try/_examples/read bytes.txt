@@ -1,0 +1,11 @@
+thisExe = System.Reflection.Assembly.GetExecutingAssembly();
+System.IO.Stream file = thisExe.GetManifestResourceStream("Namespace.Filename");
+byte[] data = new byte[file.Length];
+file.Read(data, 0, bytes.Length);
+
+
+Instead of setting the build action, you can open your Properties/Resources.resx and add the file. You can then access directly the resource with:
+
+byte[] data = Properties.Resources.Filename;
+
+

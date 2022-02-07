@@ -1,0 +1,13 @@
+C:\Aprog\Orien\FlashC#\PubliBridge\_WalkerPlayer_Embed_Try\_examples\CustoAxImport\UseAxControl\obj\Debug\UseAxControl.csproj.AssemblyReference.cache
+C:\Aprog\Orien\FlashC#\PubliBridge\_WalkerPlayer_Embed_Try\_examples\CustoAxImport\UseAxControl\bin\UseAxControl.exe
+C:\Aprog\Orien\FlashC#\PubliBridge\_WalkerPlayer_Embed_Try\_examples\CustoAxImport\UseAxControl\bin\UseAxControl.pdb
+C:\Aprog\Orien\FlashC#\PubliBridge\_WalkerPlayer_Embed_Try\_examples\CustoAxImport\UseAxControl\bin\MyCalendar.dll
+C:\Aprog\Orien\FlashC#\PubliBridge\_WalkerPlayer_Embed_Try\_examples\CustoAxImport\UseAxControl\bin\MSACAL.dll
+C:\Aprog\Orien\FlashC#\PubliBridge\_WalkerPlayer_Embed_Try\_examples\CustoAxImport\UseAxControl\bin\stdole.dll
+C:\Aprog\Orien\FlashC#\PubliBridge\_WalkerPlayer_Embed_Try\_examples\CustoAxImport\UseAxControl\bin\MyCalendar.pdb
+C:\Aprog\Orien\FlashC#\PubliBridge\_WalkerPlayer_Embed_Try\_examples\CustoAxImport\UseAxControl\obj\Debug\CustoAxImport.Form1.resources
+C:\Aprog\Orien\FlashC#\PubliBridge\_WalkerPlayer_Embed_Try\_examples\CustoAxImport\UseAxControl\obj\Debug\UseAxControl.csproj.GenerateResource.cache
+C:\Aprog\Orien\FlashC#\PubliBridge\_WalkerPlayer_Embed_Try\_examples\CustoAxImport\UseAxControl\obj\Debug\UseAxControl.csproj.CoreCompileInputs.cache
+C:\Aprog\Orien\FlashC#\PubliBridge\_WalkerPlayer_Embed_Try\_examples\CustoAxImport\UseAxControl\obj\Debug\UseAxControl.csproj.CopyComplete
+C:\Aprog\Orien\FlashC#\PubliBridge\_WalkerPlayer_Embed_Try\_examples\CustoAxImport\UseAxControl\obj\Debug\UseAxControl.exe
+C:\Aprog\Orien\FlashC#\PubliBridge\_WalkerPlayer_Embed_Try\_examples\CustoAxImport\UseAxControl\obj\Debug\UseAxControl.pdb

@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UseAxControl", "UseAxControl\UseAxControl.csproj", "{FFBDECE0-835F-4C60-B193-40DE102F6D31}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCalendar", "MyCalendar\MyCalendar.csproj", "{8726B9CC-3BB4-4D40-BBAA-BE7331C5615E}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{FFBDECE0-835F-4C60-B193-40DE102F6D31}.Debug.ActiveCfg = Debug|.NET
+		{FFBDECE0-835F-4C60-B193-40DE102F6D31}.Debug.Build.0 = Debug|.NET
+		{FFBDECE0-835F-4C60-B193-40DE102F6D31}.Release.ActiveCfg = Release|.NET
+		{FFBDECE0-835F-4C60-B193-40DE102F6D31}.Release.Build.0 = Release|.NET
+		{8726B9CC-3BB4-4D40-BBAA-BE7331C5615E}.Debug.ActiveCfg = Debug|.NET
+		{8726B9CC-3BB4-4D40-BBAA-BE7331C5615E}.Debug.Build.0 = Debug|.NET
+		{8726B9CC-3BB4-4D40-BBAA-BE7331C5615E}.Release.ActiveCfg = Release|.NET
+		{8726B9CC-3BB4-4D40-BBAA-BE7331C5615E}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,24 @@
+Pass IE security control certification
+
+If the client's IE is not enabled to access the ActiveX controls that are not marked with security, browse the ActiveX controls developed by the above steps through IE and find that IE will give a warning:
+
+The ActiveX objects on this page may be unsafe. Do you want to allow it to be initialized and accessed through scripts?
+
+Or prohibit access. This is set by the security rules of the client IE, and we should solve the problem of IE security certification in the control development. First of all, we need to understand how IE judges
+that an ActiveX control is unsafe. See Microsoft Help and Support Documents:
+
+How Internet Explorer Determines If ActiveX Controls Are Safe
+
+There are two ways to mark a control as safe for scripting and initialization: 
+
+1.Implement the IObjectSafety interface. 
+
+2.Provide the following registry keys for the control's CLSID under the Implemented Categories section:
+
+     a.The following key marks the control safe for scripting:
+          {7DD95801-9882-11CF-9FA9-00AA006C42C4}
+
+     b.The following key marks the control safe for initialization from persistent data:
+          {7DD95802-9882-11CF-9FA9-00AA006C42C4} 
+
+Microsoft recommends that you implement IObjectSafety to mark a control as safe or unsafe. This prevents other users from repackaging your control and marking it as safe when it is not

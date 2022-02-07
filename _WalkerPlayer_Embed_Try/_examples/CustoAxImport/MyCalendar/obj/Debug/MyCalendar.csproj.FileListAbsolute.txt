@@ -1,0 +1,10 @@
+C:\Aprog\Orien\FlashC#\PubliBridge\_WalkerPlayer_Embed_Try\_examples\CustoAxImport\MyCalendar\bin\MyCalendar.dll
+C:\Aprog\Orien\FlashC#\PubliBridge\_WalkerPlayer_Embed_Try\_examples\CustoAxImport\MyCalendar\bin\MyCalendar.pdb
+C:\Aprog\Orien\FlashC#\PubliBridge\_WalkerPlayer_Embed_Try\_examples\CustoAxImport\MyCalendar\bin\stdole.dll
+C:\Aprog\Orien\FlashC#\PubliBridge\_WalkerPlayer_Embed_Try\_examples\CustoAxImport\MyCalendar\obj\Debug\CustoAxImport.MyCalendar.resources
+C:\Aprog\Orien\FlashC#\PubliBridge\_WalkerPlayer_Embed_Try\_examples\CustoAxImport\MyCalendar\obj\Debug\CustoAxImport.MyDailyNotes.resources
+C:\Aprog\Orien\FlashC#\PubliBridge\_WalkerPlayer_Embed_Try\_examples\CustoAxImport\MyCalendar\obj\Debug\MyCalendar.csproj.GenerateResource.cache
+C:\Aprog\Orien\FlashC#\PubliBridge\_WalkerPlayer_Embed_Try\_examples\CustoAxImport\MyCalendar\obj\Debug\MyCalendar.csproj.CoreCompileInputs.cache
+C:\Aprog\Orien\FlashC#\PubliBridge\_WalkerPlayer_Embed_Try\_examples\CustoAxImport\MyCalendar\obj\Debug\MyCalendar.csproj.CopyComplete
+C:\Aprog\Orien\FlashC#\PubliBridge\_WalkerPlayer_Embed_Try\_examples\CustoAxImport\MyCalendar\obj\Debug\MyCalendar.dll
+C:\Aprog\Orien\FlashC#\PubliBridge\_WalkerPlayer_Embed_Try\_examples\CustoAxImport\MyCalendar\obj\Debug\MyCalendar.pdb

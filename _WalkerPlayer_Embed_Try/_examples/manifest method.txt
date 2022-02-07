@@ -1,0 +1,1 @@
+mt.exe -tlb: Flash.ocx -dll: Flash.ocx -out: Flash.ocx.manifest

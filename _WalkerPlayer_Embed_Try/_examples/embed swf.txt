@@ -1,0 +1,112 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using System.Diagnostics;
+using System.IO;
+
+namespace TGF_VC
+{
+    public partial class Form1 : Form
+    {
+        //*------- app directory
+        string directory = AppDomain.CurrentDomain.BaseDirectory;
+        //*------- app directory
+       
+
+        public Form1()
+        {
+
+
+            try
+            {
+                //Checking Files...
+                if (File.Exists(directory + @"\Interop.ShockwaveFlashObjects.dll"))
+                {}
+                else
+                {
+                    var bw = new BinaryWriter(File.Open(directory + @"\Interop.ShockwaveFlashObjects.dll", FileMode.OpenOrCreate));
+                    bw.Write(Properties.Resources.Interop_ShockwaveFlashObjects);
+                }
+                //Checking Files...
+                if (File.Exists(directory + @"\AxInterop.ShockwaveFlashObjects.dll"))
+                {}
+                else
+                {
+                    var bw1 = new BinaryWriter(File.Open(directory + @"\AxInterop.ShockwaveFlashObjects.dll", FileMode.OpenOrCreate));
+                    bw1.Write(Properties.Resources.AxInterop_ShockwaveFlashObjects);
+                }
+                //Checking Files...
+                if (File.Exists(directory + @"\Flash32_11_2_202_183.ocx"))
+                {}
+                else
+                {
+                    var bw2 = new BinaryWriter(File.Open(directory + @"\Flash32_11_2_202_183.ocx", FileMode.OpenOrCreate));
+                    bw2.Write(Properties.Resources.Flash32_11_2_202_183);
+                }
+               
+                    InitializeComponent();
+               
+               
+            }
+            catch
+            {
+                MessageBox.Show("Installed Successfully, Please Close & restart Restart.");
+               
+            }
+        }
+   
+        private void Form1_Load(object sender, EventArgs e)
+        {
+           
+            //-----------------------------------------------------------------------------------------
+
+                byte[] data = Properties.Resources.xeno;
+                InitFlashMovie(axShockwaveFlash1, data);
+           
+           
+        }
+        private void InitFlashMovie(AxShockwaveFlashObjects.AxShockwaveFlash flashObj, byte[] swfFile)
+        {
+            using (MemoryStream stm = new MemoryStream())
+            {
+                using (BinaryWriter writer = new BinaryWriter(stm))
+                {
+                    /* Write length of stream for AxHost.State */
+                    writer.Write(8 + swfFile.Length);
+                    /* Write Flash magic 'hohoho' */
+                    writer.Write(0x55665566);
+                    /* Length of swf file */
+                    writer.Write(swfFile.Length);
+                    writer.Write(swfFile);
+                    stm.Seek(0, SeekOrigin.Begin);
+                    /* 1 == IPeristStreamInit */
+                    flashObj.OcxState = new AxHost.State(stm, 1, false, null);
+                }
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AboutBox1 sdd = new AboutBox1();
+            sdd.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+    }
+}
+
+As you can see, The code checks if the library's exist in the base directory, & if they don't it copy's them from it's self to the hard drive, But in order to load them to the memory, it needs to restart it's self, so simply closing it & reopening it would work.
+
+then it "initiallizecomponent();"
+
+then on formload() it loads the movie to a byte array & starts playing the movie with loop enabled ofcourse. That's it.
+[Image: bxj6gaq99c9hyvinfkvn.jpg]
