@@ -1,0 +1,13 @@
+C:\Aprog\Orien\FlashC#\PubliBridge\DelphiCSharpTest\DelphiCsharpTest\DelphiCsharpTest\bin\Debug\DelphiCsharpTest.exe.config
+C:\Aprog\Orien\FlashC#\PubliBridge\DelphiCSharpTest\DelphiCsharpTest\DelphiCsharpTest\bin\Debug\DelphiCsharpTest.exe
+C:\Aprog\Orien\FlashC#\PubliBridge\DelphiCSharpTest\DelphiCsharpTest\DelphiCsharpTest\bin\Debug\DelphiCsharpTest.pdb
+C:\Aprog\Orien\FlashC#\PubliBridge\DelphiCSharpTest\DelphiCsharpTest\DelphiCsharpTest\obj\Debug\DelphiCsharpTest.csproj.AssemblyReference.cache
+C:\Aprog\Orien\FlashC#\PubliBridge\DelphiCSharpTest\DelphiCsharpTest\DelphiCsharpTest\obj\Debug\DelphiCsharpTest.Form1.resources
+C:\Aprog\Orien\FlashC#\PubliBridge\DelphiCSharpTest\DelphiCsharpTest\DelphiCsharpTest\obj\Debug\DelphiCsharpTest.Properties.Resources.resources
+C:\Aprog\Orien\FlashC#\PubliBridge\DelphiCSharpTest\DelphiCsharpTest\DelphiCsharpTest\obj\Debug\DelphiCsharpTest.csproj.GenerateResource.cache
+C:\Aprog\Orien\FlashC#\PubliBridge\DelphiCSharpTest\DelphiCsharpTest\DelphiCsharpTest\obj\Debug\DelphiCsharpTest.csproj.CoreCompileInputs.cache
+C:\Aprog\Orien\FlashC#\PubliBridge\DelphiCSharpTest\DelphiCsharpTest\DelphiCsharpTest\obj\Debug\DelphiCsharpTest.exe
+C:\Aprog\Orien\FlashC#\PubliBridge\DelphiCSharpTest\DelphiCsharpTest\DelphiCsharpTest\obj\Debug\DelphiCsharpTest.pdb
+C:\Aprog\Orien\FlashC#\PubliBridge\DelphiCSharpTest\DelphiCsharpTest\DelphiCsharpTest\bin\Debug\DelphiCSharpTestDll.dll
+C:\Aprog\Orien\FlashC#\PubliBridge\DelphiCSharpTest\DelphiCsharpTest\DelphiCsharpTest\bin\Debug\DelphiCSharpTestDll.pdb
+C:\Aprog\Orien\FlashC#\PubliBridge\DelphiCSharpTest\DelphiCsharpTest\DelphiCsharpTest\obj\Debug\DelphiCsharpTest.csproj.CopyComplete
