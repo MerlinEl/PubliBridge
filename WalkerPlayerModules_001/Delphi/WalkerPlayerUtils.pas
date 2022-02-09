@@ -11,8 +11,8 @@ function ExtractFNameWithoutExt(const FileName: string): string;
 function BoolToInt(b:Boolean) :Integer;
 function GetUserName():string;
 function GetBookDir(): string;
+function GetVideoType(str:string): string;
 function StrToAnsi(str: WideString): AnsiString;
-function GetVideoID(str:string ):string;
 procedure FillMediaList(cbx: TComboBox; dir, extension: string);
 procedure FillMediaListByType();
 
@@ -24,24 +24,28 @@ function BoolToInt(b:Boolean): Integer;
 begin
   Result := IfThen(b , 1, 0);
 end;
+
 function ExtractFNameWithoutExt(const FileName: string): string;
 begin
   Result := ChangeFileExt(ExtractFileName(FileName), '');
 end;
+
 function IsWebStream(str:string): Boolean;
 begin
    Result := string(str).IndexOf('.mp4') > -1;
 end;
+
 function IsWebLink(str:string): Boolean;
 begin
    Result := string(str).IndexOf('://') > -1;
 end;
-function GetVideoID(str:string): string;
+
+function GetVideoType(str:string): string;
 var buttonId: string;
 begin
    if IsWebStream(str) then buttonId := 'WEBSTREAM' // play video embeded
    else if IsWebLink(str) then buttonId := 'WEBLINK' // open video in browser
-   else buttonId := ExtractFNameWithoutExt(str); // play video from hd
+   else buttonId := 'LOCAL'; // play video from hd
    Result := buttonId;
 end;
 
@@ -49,13 +53,17 @@ function GetUserName():string;
 begin
   Result := GetEnvironmentVariable('USERNAME');
 end;
+
 function GetBookDir(): string;
 var
-    userName, dropboxDir: string;
+    userName, dropboxDir, bookDir: string;
 begin
     userName := Form1.EdtUserName.Text;
     dropboxDir := Form1.CbxBookDir.Text;
-    Result := 'C:\Users\' + userName + '\' + dropboxDir;
+    if userName = 'Pan Chcitojinak' then
+      Result := dropboxDir
+    else
+      Result := 'C:\Users\' + userName + '\' + dropboxDir;
 end;
 
 function GetFilesDirByType(swfDir: string): String;

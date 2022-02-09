@@ -8,15 +8,15 @@ uses
 // Walker Player Options (used by LoadFile(options))
 type
   OWPlayer = Packed record
-    _Type: Integer;         // Type is a reserved word in Delphi
+    _Type: Integer;          // Type is a reserved word in Delphi
     Name: WideString ;
-    MediaType: WideString ; // AUDIO, VIDEO, IMAGES, LESSON, STAGE3D
-    WindowSize: WideString ;// Window size FULLSCREEN, PLAYERSIZE, or 800,600
-    WindowPos: WideString ; // Window position CENTER or 120,120
-    ButtonID: WideString ;  // button ID > "01" or "01_01" or "01_01_01"
-    FileName: WideString ;  // exact file name 20_01_01_meèoun obecný.jpg
-    BookDir: WideString ;   // directory with xml setting
-    HiddenPlayer: Integer;  // output > True = 1, False =  0
+    MediaType: WideString ;  // AUDIO, VIDEO, IMAGES, LESSON, STAGE3D
+    WindowSize: WideString ; // Window size FULLSCREEN, PLAYERSIZE, or 800,600
+    WindowPos: WideString ;  // Window position CENTER or 120,120
+    CustomTag: WideString ;  // Any custom parameter
+    FileName: WideString ;   // exact file name 20_01_01_meèoun obecný.jpg
+    BookDir: WideString ;    // directory with xml setting
+    HiddenPlayer: Integer;   // output > True = 1, False =  0
     HiddenConsole: Integer;
     AutoPlay: Integer;
     Resizable: Integer;
@@ -32,7 +32,7 @@ CONST
       MediaType: 'LESSON';
       WindowSize: 'PLAYERSIZE';
       WindowPos: 'CENTER';
-      ButtonID: '';
+      CustomTag: '';
       FileName: '';
       BookDir: '';
       HiddenPlayer: 0;

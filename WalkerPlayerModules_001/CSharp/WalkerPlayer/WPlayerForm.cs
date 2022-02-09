@@ -12,6 +12,7 @@ namespace WalkerPlayer {
         private bool _isMediaLoaded;
 
         public bool IsMediaLoaded { get => _isMediaLoaded; set => _isMediaLoaded = value; }
+        public bool IsFullScreen { get; private set; }
 
         public WPlayerForm() {
             InitializeComponent();
@@ -31,7 +32,10 @@ namespace WalkerPlayer {
                 if (IsMediaLoaded) this.ClientSize = new Size(WPWindow.swfStartSize.Width, WPWindow.swfStartSize.Height);
                 CenterToScreen(); // TODO  test if wee use 3d window preview in rect
             }
+            IsFullScreen = state;
         }
+
+
 
         /// <summary>
         /// All Flash Interfaces (AudioPlayer, VideoPlayer, LessonPlayer, Projector3DPlayer, etc..) will be loaded only in FLWindow2D component
@@ -44,6 +48,7 @@ namespace WalkerPlayer {
             FlashBridge.FlashOptions = options;
             FlControll.AllowScriptAccess = "Always";
             FlControll.Quality2 = "High";
+            FlControll.BackgroundColor = 0x0099CC; // default flash walker background color
             Text = options.Name;
             WPWindow.SetupPlayer(this, FlControll, options);
         }

@@ -21,7 +21,6 @@ namespace WPTest {
             options.WindowSize = WPF.IWindowSize;
             options.BookDir = GetBookDir();
             options.FileName = fname; // 004.swf
-            options.ButtonID = buttonId;
             options.AutoPlay = true;
             options.HiddenPlayer = false;
             options.Resizable = WPF.IResizable;
@@ -40,7 +39,6 @@ namespace WPTest {
             options.WindowSize = WPF.IWindowSize;
             options.BookDir = GetBookDir();
             options.FileName = fname; // 158.swf
-            options.ButtonID = buttonId;
             options.AutoPlay = true;
             options.HiddenPlayer = false;
             options.Resizable = WPF.IResizable;
@@ -50,8 +48,8 @@ namespace WPTest {
         }
         internal static void PlayVideo(string fname) {
             // Button ID ( 158 or WEBLINK or 'WEBSTREAM' ) < 158.swf or https://www...
-            string buttonId = GetVideoID(fname);
-            Console.WriteLine("Loading Button ID:{0}", buttonId);
+            string videoType = GetVideoID(fname);
+            Console.WriteLine("Loading videoTypeD:{0}", videoType);
             WPlayer wl = new WPlayer();
             var options = new OWPlayer().GetDefault();
             options.Name = "Video Player:";
@@ -59,7 +57,7 @@ namespace WPTest {
             options.WindowSize = WPF.IWindowSize;
             options.BookDir = GetBookDir();
             options.FileName = fname; // 158.swf or https://www...
-            options.ButtonID = buttonId;
+            options.CustomTag = videoType;
             options.AutoPlay = true;
             options.HiddenPlayer = false;
             options.Resizable = WPF.IResizable;
@@ -71,8 +69,7 @@ namespace WPTest {
             // Button ID ( 04_01 ) < 04_01.swf
             // 04 > page     > number of current page
             // 01 > count    > sequence index
-            string buttonId = Path.GetFileNameWithoutExtension(fname);
-            Console.WriteLine("Loading Button ID:{0}", buttonId);
+            Console.WriteLine("Loading Button fname:{0}", fname);
             WPlayer wl = new WPlayer();
             var options = new OWPlayer().GetDefault();
             options.Name = "Video Player:";
@@ -81,7 +78,6 @@ namespace WPTest {
             options.WindowPos = "CENTER";
             options.BookDir = GetBookDir();
             options.FileName = fname; // 04_01.swf
-            options.ButtonID = buttonId;
             options.AutoPlay = true;
             options.HiddenPlayer = false;
             options.Resizable = WPF.IResizable;
@@ -105,7 +101,7 @@ namespace WPTest {
             options.WindowSize = WPF.IWindowSize;
             options.BookDir = GetBookDir();
             options.FileName = fname; // 20_01_01_mečoun obecný.jpg
-            options.ButtonID = buttonId;
+            options.CustomTag = buttonId;
             options.AutoPlay = true;
             options.HiddenPlayer = false;
             options.Resizable = WPF.IResizable;
@@ -177,7 +173,7 @@ namespace WPTest {
 
             } else {
 
-                buttonId = Path.GetFileNameWithoutExtension(fname); // play video from hd
+                buttonId = "LOCAL"; // play video from hd
             }
             return buttonId;
         }

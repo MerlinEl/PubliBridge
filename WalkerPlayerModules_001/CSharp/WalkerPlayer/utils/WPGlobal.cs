@@ -113,7 +113,7 @@ namespace WalkerPlayer.utils {
             foreach (string f in images) {
                 string fName = Path.GetFileName(f);
                 string fId = GetIdFromFileName(fName);
-                if (fId == options.ButtonID) imagesSet.Add(fName); // collect fnames
+                if (fId == options.CustomTag) imagesSet.Add(fName); // collect fnames
             }
             return imagesSet.ToArray();
         }

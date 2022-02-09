@@ -23,7 +23,7 @@ namespace WalkerPlayer.player {
             string playerPath = WPGlobal.GetPlayerPath(options.BookDir, options.MediaType);
             WPGlobal.Log("CSharp", "WPWindow > SetupPlayer >\n\tRoot Dir:{0}\n\tPlayer Path:{1}", options.BookDir, playerPath);
             if (!File.Exists(playerPath)) throw new FileNotFoundException("This file was not found.\n" + playerPath);
-            WPGlobal.Log("CSharp", "\tMedia Path:{0}\n\tButtonId:{1}", options.FileName, options.ButtonID);
+            WPGlobal.Log("CSharp", "\tMedia Path:{0}\n\tCustomTag:{1}", options.FileName, options.CustomTag);
 
             // Setup Flash Component
             flControll.WMode = options.MediaType == "STAGE3D" ? "Direct" : "Window";

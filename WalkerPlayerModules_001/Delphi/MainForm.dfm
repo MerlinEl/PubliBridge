@@ -79,17 +79,17 @@ object Form1: TForm1
       TabOrder = 1
     end
     object ChkHiddenPlayer: TCheckBox
-      Left = 495
-      Top = 23
-      Width = 125
+      Left = 543
+      Top = 15
+      Width = 90
       Height = 17
       Caption = 'Hidden Player'
       TabOrder = 2
     end
     object ChkHiddenConsole: TCheckBox
-      Left = 495
-      Top = 46
-      Width = 125
+      Left = 543
+      Top = 38
+      Width = 90
       Height = 17
       Caption = 'Hidden Console'
       Checked = True
@@ -99,7 +99,7 @@ object Form1: TForm1
     object CbxBookDir: TComboBox
       Left = 114
       Top = 50
-      Width = 343
+      Width = 407
       Height = 21
       Style = csDropDownList
       ItemIndex = 0
@@ -112,7 +112,7 @@ object Form1: TForm1
     object Button1: TButton
       Left = 13
       Top = 77
-      Width = 444
+      Width = 121
       Height = 25
       Caption = 'SayHello( str )'
       TabOrder = 5
@@ -128,8 +128,8 @@ object Form1: TForm1
     end
     object EdtUserName: TEdit
       Left = 114
-      Top = 23
-      Width = 343
+      Top = 21
+      Width = 239
       Height = 21
       Enabled = False
       TabOrder = 7
@@ -148,6 +148,15 @@ object Form1: TForm1
         'FULLSCREEN'
         '1024,768'
         '800,600')
+    end
+    object BtnBrowseDir: TButton
+      Left = 359
+      Top = 19
+      Width = 162
+      Height = 25
+      Caption = 'Add Book Dir Manual...'
+      TabOrder = 9
+      OnClick = BtnBrowseDirClick
     end
   end
   object grpWalkerPlayer: TGroupBox

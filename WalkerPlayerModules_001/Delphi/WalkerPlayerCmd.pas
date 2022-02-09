@@ -14,37 +14,27 @@ Vcl.Forms, Vcl.Dialogs, Winapi.Windows;
 implementation
 
   uses MainForm;
-  type tt = record
-    b1:Boolean;
-    b2:Boolean;
 
-  end;
   procedure PlayLesson(options :OWPlayer; fname :string);
    var res:Integer;
   begin
     options.Name := 'Lesson Player:';
     options.MediaType := 'LESSONS';
     options.FileName := fname; // 004.swf
-    // Button ID ( 04 ) < 04.swf
-    options.ButtonID := ExtractFNameWithoutExt(fname);
     WPlayer.LoadFile(options);
 
     // Log
     Form1.LogClear();
     Form1.Log('Lesson Player:'+ WPlayer.OptionsToString(options));
     WPlayer.Log('Delphi ( MainForm )', WPlayer.OptionsToString(options));
-
-    // Test
-    //res := SizeOf(tt);
     end;
 
   procedure Play3D(options :OWPlayer; fname :string);
   begin
     options.Name := '3D Player:';
     options.MediaType := 'STAGE3D';
-    options.FileName := fname; // 158.swf
-    // Button ID ( 158 ) < 158.swf
-    options.ButtonID := ExtractFNameWithoutExt(fname);
+    options.FileName := fname; // 20.swf
+    options.FileName := fname;
     WPlayer.LoadFile(options);
 
     // Log
@@ -58,8 +48,8 @@ implementation
     options.Name := 'Video Player:';
     options.MediaType := 'VIDEO';
     options.FileName := fname; // 158.swf or https://www...
-    // Button ID ( 158 or WEBLINK or 'WEBSTREAM' ) < 158.swf or https://www...
-    options.ButtonID := GetVideoID(fname);
+    // Video Type: ( LOCAL, WEBSTREAM, or WEBLINK)
+    options.CustomTag := GetVideoType(fname);
     WPlayer.LoadFile(options);
 
     // Log
@@ -72,13 +62,12 @@ implementation
   begin
     options.Name := 'Audio Player:';
     options.MediaType := 'AUDIO';
-    options.FileName := fname; // 04_01.swf
-    // Button ID ( 04_01 ) < 04_01.swf
+    // Index Explanation ( 04_01 ) < 04_01.mp3
     // 04 > page     > number of current page
     // 01 > count    > sequence index
-    options.ButtonID := ExtractFNameWithoutExt(fname);
+    options.FileName := fname; // 04_01.swf
     options.WindowSize := '240,140';
-    options.WindowPos := 'CENTER'; // 'CENTER' or pos '100,200'
+    options.WindowPos := 'CENTER'; // 'CENTER' or custom pos '100,200'
     WPlayer.LoadFile(options);
 
     // Log
@@ -93,13 +82,13 @@ implementation
     options.Name := 'Image Player:';
     options.MediaType := 'IMAGES';
     options.FileName := fname; // 20_01_01_meèoun obecný.jpg
-    // IMAGE_ID ( 24_01_01 ) < 20_01_01_meèoun obecný.jpg
+    // Index Explanation ( 24_01_01 ) < 20_01_01_meèoun obecný.jpg
     // 24 > page     > number of current page
     // 01 > set      > images group
     // 01 > count    > sequence index
     btnID := ExtractFNameWithoutExt(options.FileName); // 20_01_01_meèoun obecný
     btnID := btnID.SubString(0, btnID.LastIndexOf('_')); // 24_01_01
-    options.ButtonID := btnID.SubString(0, btnID.LastIndexOf('_')); // 24_01
+    options.CustomTag := btnID.SubString(0, btnID.LastIndexOf('_')); // 24_01
     // center on screen or set pos exam(100,200)
     WPlayer.LoadFile(options);
 

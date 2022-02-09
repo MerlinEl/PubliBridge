@@ -28,8 +28,15 @@ namespace WalkerPlayer.bridge {
                 case "CLOSE_WINDOW":
                     WPlayer.wLoader.CloseWindow();
                     break;
+                case "IS_FULL_SCREEN_MODE":
+                    string is_fullscreen = WPlayer.wLoader.IsFullScreen ? "TRUE" : "FALSE";
+                    SendCommand(flashComponent, new FlashArgsSend(data.ProcessType, "flashCallback", is_fullscreen));
+                    break;
                 case "SWITCH_TO_FULL_SCREEN_MODE":
                     WPlayer.wLoader.SetFullScreen(true);
+                    break;
+                case "SWITCH_TO_WINDOW_MODE":
+                    WPlayer.wLoader.SetFullScreen(false);
                     break;
                 case "READ_FILE":
                     // Read a file and send result back to Flash
@@ -37,22 +44,22 @@ namespace WalkerPlayer.bridge {
                     //WPGlobal.Log("CSharp", "FlashBridge > OnFlashWalkerCall > ReadFile > text:\n\t{0}", text);
                     SendCommand(flashComponent , new FlashArgsSend(data.ProcessType, "flashCallback", text));
                     break;
-                case "SWITCH_TO_WINDOW_MODE":
-                    WPlayer.wLoader.SetFullScreen(false);
-                    break;
                 //case "RELOAD_MEDIA":
                 //    WPWindow.ReloadMedia(WPlayer.wLoader, flashComponent, FlashOptions);
                 //    break;
                 case "AUDIO_PLAYER_UI_READY":
                     // When flash Player loaded, send back commnd to play file
-                    WPGlobal.Log("CSharp", "FlashBridge > OnFlashWalkerCall > filePath:\n\t{0}", FlashOptions.ButtonID);
-                    SendCommand(flashComponent, new FlashArgsSend("CSHARP_COMMAND", "flashWalkerCallback", FlashOptions.ButtonID));
+                    // Index Explanation ( 04_01 ) < 04_01.mp3
+                    // 04 > page     > number of current page
+                    // 01 > count    > sequence index
+                    WPGlobal.Log("CSharp", "FlashBridge > OnFlashWalkerCall > filePath:\n\t{0}", FlashOptions.FileName);
+                    SendCommand(flashComponent, new FlashArgsSend("CSHARP_COMMAND", "flashWalkerCallback", FlashOptions.FileName));
                     break;
                 case "LESSON_PLAYER_UI_READY":
                     // When flash Player loaded, send back commnd to play file
-                    WPGlobal.Log("CSharp", "FlashBridge > OnFlashWalkerCall > filePath:\n\t{0}", FlashOptions.ButtonID);
+                    WPGlobal.Log("CSharp", "FlashBridge > OnFlashWalkerCall > filePath:\n\t{0}", FlashOptions.FileName);
                     fl_params = new string[] {
-                        FlashOptions.ButtonID,
+                        FlashOptions.FileName,  // 004.swf
                         FlashOptions.BookDir,
                         FlashOptions.WindowSize == "FULLSCREEN" ? "TRUE" : "FALSE"
                     };
@@ -61,7 +68,7 @@ namespace WalkerPlayer.bridge {
                 case "IMAGE_PLAYER_UI_READY":
                     // When flash Player loaded, send back commnd to play file
                     string xmlFile = FlashOptions.BookDir + "\\" + data.ParamsList[0]; // "PhotoText.xml"
-                    string imageID = FlashOptions.ButtonID;
+                    string imageID = FlashOptions.CustomTag;
                     WPGlobal.Log("CSharp", "FlashBridge > OnFlashWalkerCall >\n\txmlFile:{0}\n\timageID:{1}", xmlFile, imageID);
                     // IMAGE_ID ( 24_01_01 ) < 20_01_01_mečoun obecný.jpg
                     // 24 > page     > number of current page
@@ -81,18 +88,18 @@ namespace WalkerPlayer.bridge {
                     break;
                 case "VIDEO_PLAYER_UI_READY":
                     fl_params = new string[] {
-                        FlashOptions.ButtonID,
-                        FlashOptions.FileName,
+                        FlashOptions.CustomTag, // Video Type: ( LOCAL, WEBSTREAM, or WEBLINK) 
+                        FlashOptions.FileName,  // 158.swf or https://www...
                         FlashOptions.WindowSize == "FULLSCREEN" ? "TRUE" : "FALSE"
                     };
                     SendCommand(flashComponent, new FlashArgsSend("CSHARP_COMMAND", "flashWalkerCallback", fl_params));
                     break;
                 case "3D_PLAYER_UI_READY":
                     fl_params = new string[] {
-                        FlashOptions.ButtonID,
+                        FlashOptions.FileName,  // 20.swf
                         FlashOptions.WindowSize == "FULLSCREEN" ? "TRUE" : "FALSE"
                     };
-                    WPGlobal.Log("CSharp", "FlashBridge > OnFlashWalkerCall > imageID:\n\t{0}", FlashOptions.ButtonID);
+                    WPGlobal.Log("CSharp", "FlashBridge > OnFlashWalkerCall > FileName:\n\t{0}", FlashOptions.FileName);
                     SendCommand(flashComponent, new FlashArgsSend("CSHARP_COMMAND", "flashWalkerCallback", fl_params));
                     break;
             }
