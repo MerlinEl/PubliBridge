@@ -1,6 +1,0 @@
-C:\Aprog\Orien\FlashC#\PubliBridge\DelphiCSharpTest\DelphiCsharpTest\DelphiCSharpTestDll\bin\Debug\DelphiCSharpTestDll.dll
-C:\Aprog\Orien\FlashC#\PubliBridge\DelphiCSharpTest\DelphiCsharpTest\DelphiCSharpTestDll\bin\Debug\DelphiCSharpTestDll.pdb
-C:\Aprog\Orien\FlashC#\PubliBridge\DelphiCSharpTest\DelphiCsharpTest\DelphiCSharpTestDll\obj\Debug\DelphiCSharpTestDll.csproj.AssemblyReference.cache
-C:\Aprog\Orien\FlashC#\PubliBridge\DelphiCSharpTest\DelphiCsharpTest\DelphiCSharpTestDll\obj\Debug\DelphiCSharpTestDll.csproj.CoreCompileInputs.cache
-C:\Aprog\Orien\FlashC#\PubliBridge\DelphiCSharpTest\DelphiCsharpTest\DelphiCSharpTestDll\obj\Debug\DelphiCSharpTestDll.dll
-C:\Aprog\Orien\FlashC#\PubliBridge\DelphiCSharpTest\DelphiCsharpTest\DelphiCSharpTestDll\obj\Debug\DelphiCSharpTestDll.pdb
