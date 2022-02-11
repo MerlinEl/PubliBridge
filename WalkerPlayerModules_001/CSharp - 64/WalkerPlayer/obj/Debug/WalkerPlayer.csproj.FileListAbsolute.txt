@@ -1,0 +1,108 @@
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayer\WalkerPlayer\WalkerPlayer\bin\Debug\WalkerPlayer.dll
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayer\WalkerPlayer\WalkerPlayer\bin\Debug\WalkerPlayer.pdb
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayer\WalkerPlayer\WalkerPlayer\obj\Debug\WalkerPlayer.csproj.AssemblyReference.cache
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayer\WalkerPlayer\WalkerPlayer\obj\Debug\WalkerPlayer.csproj.CoreCompileInputs.cache
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayer\WalkerPlayer\WalkerPlayer\obj\Debug\WalkerPlayer.dll
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayer\WalkerPlayer\WalkerPlayer\obj\Debug\WalkerPlayer.pdb
+e:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayer\WalkerPlayer\obj\Debug\WalkerPlayer.Properties.Resources.resources
+e:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayer\WalkerPlayer\obj\Debug\WalkerPlayer.WPlayerForm.resources
+e:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayer\WalkerPlayer\obj\Debug\WalkerPlayer.csproj.GenerateResource.cache
+e:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayer\WalkerPlayer\obj\Debug\WalkerPlayer.csproj.CoreCompileInputs.cache
+e:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayer\WalkerPlayer\bin\Debug\WalkerPlayer.dll
+e:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayer\WalkerPlayer\bin\Debug\WalkerPlayer.pdb
+e:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayer\WalkerPlayer\bin\Debug\ICSharpCode.SharpZipLib.dll
+e:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayer\WalkerPlayer\bin\Debug\Microsoft.Build.Framework.dll
+e:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayer\WalkerPlayer\bin\Debug\Microsoft.Build.Utilities.Core.dll
+e:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayer\WalkerPlayer\bin\Debug\RGiesecke.DllExport.Metadata.dll
+e:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayer\WalkerPlayer\bin\Debug\System.Collections.Immutable.dll
+e:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayer\WalkerPlayer\bin\Debug\WalkerPlayerConsole.dll
+e:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayer\WalkerPlayer\bin\Debug\Microsoft.Build.Framework.pdb
+e:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayer\WalkerPlayer\bin\Debug\Microsoft.Build.Framework.xml
+e:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayer\WalkerPlayer\bin\Debug\Microsoft.Build.Utilities.Core.pdb
+e:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayer\WalkerPlayer\bin\Debug\Microsoft.Build.Utilities.Core.xml
+e:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayer\WalkerPlayer\bin\Debug\System.Collections.Immutable.xml
+e:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayer\WalkerPlayer\obj\Debug\WalkerPlayer.csproj.CopyComplete
+e:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayer\WalkerPlayer\obj\Debug\WalkerPlayer.dll
+e:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayer\WalkerPlayer\obj\Debug\WalkerPlayer.pdb
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp_02\WalkerPlayer\bin\Debug\WalkerPlayer.dll
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp_02\WalkerPlayer\bin\Debug\WalkerPlayer.pdb
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp_02\WalkerPlayer\bin\Debug\ICSharpCode.SharpZipLib.dll
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp_02\WalkerPlayer\bin\Debug\Microsoft.Build.Framework.dll
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp_02\WalkerPlayer\bin\Debug\Microsoft.Build.Utilities.Core.dll
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp_02\WalkerPlayer\bin\Debug\RGiesecke.DllExport.Metadata.dll
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp_02\WalkerPlayer\bin\Debug\System.Collections.Immutable.dll
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp_02\WalkerPlayer\bin\Debug\WalkerPlayerConsole.dll
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp_02\WalkerPlayer\bin\Debug\Microsoft.Build.Framework.pdb
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp_02\WalkerPlayer\bin\Debug\Microsoft.Build.Framework.xml
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp_02\WalkerPlayer\bin\Debug\Microsoft.Build.Utilities.Core.pdb
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp_02\WalkerPlayer\bin\Debug\Microsoft.Build.Utilities.Core.xml
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp_02\WalkerPlayer\bin\Debug\System.Collections.Immutable.xml
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp_02\WalkerPlayer\obj\Debug\WalkerPlayer.Properties.Resources.resources
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp_02\WalkerPlayer\obj\Debug\WalkerPlayer.WPlayerForm.resources
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp_02\WalkerPlayer\obj\Debug\WalkerPlayer.csproj.GenerateResource.cache
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp_02\WalkerPlayer\obj\Debug\WalkerPlayer.csproj.CoreCompileInputs.cache
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp_02\WalkerPlayer\obj\Debug\WalkerPlayer.csproj.CopyComplete
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp_02\WalkerPlayer\obj\Debug\WalkerPlayer.dll
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp_02\WalkerPlayer\obj\Debug\WalkerPlayer.pdb
+C:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WalkerPlayer\bin\Debug\WalkerPlayer.dll
+C:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WalkerPlayer\bin\Debug\WalkerPlayer.pdb
+C:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WalkerPlayer\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WalkerPlayer\bin\Debug\Microsoft.Build.Framework.dll
+C:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WalkerPlayer\bin\Debug\Microsoft.Build.Utilities.Core.dll
+C:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WalkerPlayer\bin\Debug\RGiesecke.DllExport.Metadata.dll
+C:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WalkerPlayer\bin\Debug\System.Collections.Immutable.dll
+C:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WalkerPlayer\bin\Debug\WalkerPlayerConsole.dll
+C:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WalkerPlayer\bin\Debug\Microsoft.Build.Framework.pdb
+C:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WalkerPlayer\bin\Debug\Microsoft.Build.Framework.xml
+C:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WalkerPlayer\bin\Debug\Microsoft.Build.Utilities.Core.pdb
+C:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WalkerPlayer\bin\Debug\Microsoft.Build.Utilities.Core.xml
+C:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WalkerPlayer\bin\Debug\System.Collections.Immutable.xml
+C:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WalkerPlayer\obj\Debug\WalkerPlayer.Properties.Resources.resources
+C:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WalkerPlayer\obj\Debug\WalkerPlayer.WPlayerForm.resources
+C:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WalkerPlayer\obj\Debug\WalkerPlayer.csproj.GenerateResource.cache
+C:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WalkerPlayer\obj\Debug\WalkerPlayer.csproj.CoreCompileInputs.cache
+C:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WalkerPlayer\obj\Debug\WalkerPlayer.csproj.CopyComplete
+C:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WalkerPlayer\obj\Debug\WalkerPlayer.dll
+C:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WalkerPlayer\obj\Debug\WalkerPlayer.pdb
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WalkerPlayer\bin\Debug\WalkerPlayer.dll
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WalkerPlayer\bin\Debug\WalkerPlayer.pdb
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WalkerPlayer\bin\Debug\ICSharpCode.SharpZipLib.dll
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WalkerPlayer\bin\Debug\Microsoft.Build.Framework.dll
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WalkerPlayer\bin\Debug\Microsoft.Build.Utilities.Core.dll
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WalkerPlayer\bin\Debug\RGiesecke.DllExport.Metadata.dll
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WalkerPlayer\bin\Debug\System.Collections.Immutable.dll
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WalkerPlayer\bin\Debug\WalkerPlayerConsole.dll
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WalkerPlayer\bin\Debug\Microsoft.Build.Framework.pdb
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WalkerPlayer\bin\Debug\Microsoft.Build.Framework.xml
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WalkerPlayer\bin\Debug\Microsoft.Build.Utilities.Core.pdb
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WalkerPlayer\bin\Debug\Microsoft.Build.Utilities.Core.xml
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WalkerPlayer\bin\Debug\System.Collections.Immutable.xml
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WalkerPlayer\obj\Debug\WalkerPlayer.Properties.Resources.resources
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WalkerPlayer\obj\Debug\WalkerPlayer.WPlayerForm.resources
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WalkerPlayer\obj\Debug\WalkerPlayer.csproj.GenerateResource.cache
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WalkerPlayer\obj\Debug\WalkerPlayer.csproj.CoreCompileInputs.cache
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WalkerPlayer\obj\Debug\WalkerPlayer.csproj.CopyComplete
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WalkerPlayer\obj\Debug\WalkerPlayer.dll
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WalkerPlayer\obj\Debug\WalkerPlayer.pdb
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp\WalkerPlayer\obj\Debug\WalkerPlayer.csproj.AssemblyReference.cache
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp - 64\WalkerPlayer\obj\Debug\WalkerPlayer.Properties.Resources.resources
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp - 64\WalkerPlayer\obj\Debug\WalkerPlayer.WPlayerForm.resources
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp - 64\WalkerPlayer\obj\Debug\WalkerPlayer.csproj.GenerateResource.cache
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp - 64\WalkerPlayer\obj\Debug\WalkerPlayer.csproj.CoreCompileInputs.cache
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp - 64\WalkerPlayer\bin\Debug\WalkerPlayer.dll
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp - 64\WalkerPlayer\bin\Debug\WalkerPlayer.pdb
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp - 64\WalkerPlayer\bin\Debug\ICSharpCode.SharpZipLib.dll
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp - 64\WalkerPlayer\bin\Debug\Microsoft.Build.Framework.dll
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp - 64\WalkerPlayer\bin\Debug\Microsoft.Build.Utilities.Core.dll
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp - 64\WalkerPlayer\bin\Debug\RGiesecke.DllExport.Metadata.dll
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp - 64\WalkerPlayer\bin\Debug\System.Collections.Immutable.dll
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp - 64\WalkerPlayer\bin\Debug\WalkerPlayerConsole.dll
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp - 64\WalkerPlayer\bin\Debug\Microsoft.Build.Framework.pdb
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp - 64\WalkerPlayer\bin\Debug\Microsoft.Build.Framework.xml
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp - 64\WalkerPlayer\bin\Debug\Microsoft.Build.Utilities.Core.pdb
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp - 64\WalkerPlayer\bin\Debug\Microsoft.Build.Utilities.Core.xml
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp - 64\WalkerPlayer\bin\Debug\System.Collections.Immutable.xml
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp - 64\WalkerPlayer\obj\Debug\WalkerPlayer.csproj.CopyComplete
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp - 64\WalkerPlayer\obj\Debug\WalkerPlayer.dll
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp - 64\WalkerPlayer\obj\Debug\WalkerPlayer.pdb
+E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp - 64\WalkerPlayer\obj\Debug\WalkerPlayer.csproj.AssemblyReference.cache
