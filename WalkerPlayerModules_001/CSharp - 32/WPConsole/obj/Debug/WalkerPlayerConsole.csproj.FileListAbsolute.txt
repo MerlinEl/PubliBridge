@@ -47,4 +47,3 @@ E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp - 32\WPConsole
 E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp - 32\WPConsole\obj\Debug\WalkerPlayerConsole.csproj.CoreCompileInputs.cache
 E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp - 32\WPConsole\obj\Debug\WalkerPlayerConsole.dll
 E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp - 32\WPConsole\obj\Debug\WalkerPlayerConsole.pdb
-E:\Aprog\Orien\FlashC#\PubliBridge\WalkerPlayerModules_001\CSharp - 32\WPConsole\obj\Debug\WalkerPlayerConsole.csproj.AssemblyReference.cache
