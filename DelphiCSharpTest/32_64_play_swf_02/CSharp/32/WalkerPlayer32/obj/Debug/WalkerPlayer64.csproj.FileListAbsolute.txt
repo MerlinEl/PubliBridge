@@ -1,0 +1,14 @@
+E:\Aprog\Orien\FlashC#\Ressearch\_Test64Bit\WalkerPlayer64\WalkerPlayer64\bin\Debug\WalkerPlayer64.exe.config
+E:\Aprog\Orien\FlashC#\Ressearch\_Test64Bit\WalkerPlayer64\WalkerPlayer64\bin\Debug\WalkerPlayer64.exe
+E:\Aprog\Orien\FlashC#\Ressearch\_Test64Bit\WalkerPlayer64\WalkerPlayer64\bin\Debug\WalkerPlayer64.pdb
+E:\Aprog\Orien\FlashC#\Ressearch\_Test64Bit\WalkerPlayer64\WalkerPlayer64\bin\Debug\Interop.ShockwaveFlashObjects.dll
+E:\Aprog\Orien\FlashC#\Ressearch\_Test64Bit\WalkerPlayer64\WalkerPlayer64\bin\Debug\AxInterop.ShockwaveFlashObjects.dll
+E:\Aprog\Orien\FlashC#\Ressearch\_Test64Bit\WalkerPlayer64\WalkerPlayer64\obj\Debug\Interop.ShockwaveFlashObjects.dll
+E:\Aprog\Orien\FlashC#\Ressearch\_Test64Bit\WalkerPlayer64\WalkerPlayer64\obj\Debug\AxInterop.ShockwaveFlashObjects.dll
+E:\Aprog\Orien\FlashC#\Ressearch\_Test64Bit\WalkerPlayer64\WalkerPlayer64\obj\Debug\WalkerPlayer64.csproj.ResolveComReference.cache
+E:\Aprog\Orien\FlashC#\Ressearch\_Test64Bit\WalkerPlayer64\WalkerPlayer64\obj\Debug\WalkerPlayer64.Form1.resources
+E:\Aprog\Orien\FlashC#\Ressearch\_Test64Bit\WalkerPlayer64\WalkerPlayer64\obj\Debug\WalkerPlayer64.Properties.Resources.resources
+E:\Aprog\Orien\FlashC#\Ressearch\_Test64Bit\WalkerPlayer64\WalkerPlayer64\obj\Debug\WalkerPlayer64.csproj.GenerateResource.cache
+E:\Aprog\Orien\FlashC#\Ressearch\_Test64Bit\WalkerPlayer64\WalkerPlayer64\obj\Debug\WalkerPlayer64.csproj.CoreCompileInputs.cache
+E:\Aprog\Orien\FlashC#\Ressearch\_Test64Bit\WalkerPlayer64\WalkerPlayer64\obj\Debug\WalkerPlayer64.exe
+E:\Aprog\Orien\FlashC#\Ressearch\_Test64Bit\WalkerPlayer64\WalkerPlayer64\obj\Debug\WalkerPlayer64.pdb

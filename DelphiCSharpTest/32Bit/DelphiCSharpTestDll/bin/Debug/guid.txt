@@ -1,6 +1,0 @@
-add28d70-c4ee-44ef-a640-09c1b7737d77
-
-    public interface IDelphiTest {
-        void SayHello(string msg);
-        TMyRec ModifyRecord(TMyRec rec);
-    }
