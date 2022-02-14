@@ -5,3 +5,6 @@ E:\Aprog\Orien\FlashC#\PubliBridge\DelphiCSharpTest\32_64_play_swf_03\32\obj\Deb
 E:\Aprog\Orien\FlashC#\PubliBridge\DelphiCSharpTest\32_64_play_swf_03\32\obj\Debug\WalkerPlayer.csproj.CoreCompileInputs.cache
 E:\Aprog\Orien\FlashC#\PubliBridge\DelphiCSharpTest\32_64_play_swf_03\32\obj\Debug\WalkerPlayer.dll
 E:\Aprog\Orien\FlashC#\PubliBridge\DelphiCSharpTest\32_64_play_swf_03\32\obj\Debug\WalkerPlayer.pdb
+E:\Aprog\Orien\FlashC#\PubliBridge\DelphiCSharpTest\32_64_play_swf_03\Delphi\Win32\Debug\WalkerPlayer.dll
+E:\Aprog\Orien\FlashC#\PubliBridge\DelphiCSharpTest\32_64_play_swf_03\Delphi\Win32\Debug\WalkerPlayer.pdb
+E:\Aprog\Orien\FlashC#\PubliBridge\DelphiCSharpTest\32_64_play_swf_03\32\obj\Debug\WalkerPlayer.csproj.AssemblyReference.cache

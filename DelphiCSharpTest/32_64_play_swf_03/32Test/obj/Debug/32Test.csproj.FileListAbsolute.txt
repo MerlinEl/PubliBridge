@@ -7,8 +7,10 @@ E:\Aprog\Orien\FlashC#\PubliBridge\DelphiCSharpTest\32_64_play_swf_03\32Test\bin
 E:\Aprog\Orien\FlashC#\PubliBridge\DelphiCSharpTest\32_64_play_swf_03\32Test\bin\Debug\32Test.pdb
 E:\Aprog\Orien\FlashC#\PubliBridge\DelphiCSharpTest\32_64_play_swf_03\32Test\bin\Debug\WalkerPlayer.dll
 E:\Aprog\Orien\FlashC#\PubliBridge\DelphiCSharpTest\32_64_play_swf_03\32Test\bin\Debug\WalkerPlayer.pdb
-E:\Aprog\Orien\FlashC#\PubliBridge\DelphiCSharpTest\32_64_play_swf_03\32Test\bin\Debug\WalkerPlayer.dll.config
 E:\Aprog\Orien\FlashC#\PubliBridge\DelphiCSharpTest\32_64_play_swf_03\32Test\obj\Debug\32Test.csproj.CopyComplete
 E:\Aprog\Orien\FlashC#\PubliBridge\DelphiCSharpTest\32_64_play_swf_03\32Test\obj\Debug\32Test.exe
 E:\Aprog\Orien\FlashC#\PubliBridge\DelphiCSharpTest\32_64_play_swf_03\32Test\obj\Debug\32Test.pdb
 E:\Aprog\Orien\FlashC#\PubliBridge\DelphiCSharpTest\32_64_play_swf_03\32Test\obj\Debug\_32Test.Form1.resources
+E:\Aprog\Orien\FlashC#\PubliBridge\DelphiCSharpTest\32_64_play_swf_03\Delphi\Win32\Debug\32Test.exe.config
+E:\Aprog\Orien\FlashC#\PubliBridge\DelphiCSharpTest\32_64_play_swf_03\Delphi\Win32\Debug\32Test.exe
+E:\Aprog\Orien\FlashC#\PubliBridge\DelphiCSharpTest\32_64_play_swf_03\Delphi\Win32\Debug\32Test.pdb
