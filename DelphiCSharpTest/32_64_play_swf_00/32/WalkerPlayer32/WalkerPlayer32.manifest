@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <assembly manifestVersion="1.0" xmlns="urn:schemas-microsoft-com:asm.v1">
-  <assemblyIdentity version="1.0.0.0" name="WalkerPlayer64.exe"/>
+  <assemblyIdentity version="1.0.0.0" name="WalkerPlayer.exe"/>
   <trustInfo xmlns="urn:schemas-microsoft-com:asm.v2">
     <security>
       <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
@@ -66,12 +66,11 @@
       <assemblyIdentity
           type="win32"
           name="Flash32_32_0_0_344.ocx"
-          version="32.0.0.344"
+          version="1.0.0.0"
           processorArchitecture="*"
           publicKeyToken="6595b64144ccf1df"
           language="*"
         />
     </dependentAssembly>
   </dependency>
-
 </assembly>
