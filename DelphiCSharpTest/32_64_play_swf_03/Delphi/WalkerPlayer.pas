@@ -12,7 +12,7 @@ uses
 // Walker Player Interface (should be found externally, in the dll)
 type
   IWPlayer = interface(IInterface)
-    ['{24291fe6-859d-45a9-90d4-5a866e19725e}']
+    ['{01aa1059-93b4-40a2-b9da-447d8156deb6}']
     procedure Log(tabName, msg: WideString); safecall;
     procedure SayHello(a: WideString); safecall;
     procedure ShowPanel(state: Boolean); safecall;

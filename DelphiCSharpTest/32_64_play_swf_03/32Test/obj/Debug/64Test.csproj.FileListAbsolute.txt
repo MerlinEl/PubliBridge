@@ -1,0 +1,14 @@
+E:\Aprog\Orien\FlashC#\PubliBridge\DelphiCSharpTest\32_64_play_swf_03\64Test\bin\Debug\64Test.exe.config
+E:\Aprog\Orien\FlashC#\PubliBridge\DelphiCSharpTest\32_64_play_swf_03\64Test\bin\Debug\64Test.exe
+E:\Aprog\Orien\FlashC#\PubliBridge\DelphiCSharpTest\32_64_play_swf_03\64Test\bin\Debug\64Test.pdb
+E:\Aprog\Orien\FlashC#\PubliBridge\DelphiCSharpTest\32_64_play_swf_03\64Test\bin\Debug\WalkerPlayer.dll
+E:\Aprog\Orien\FlashC#\PubliBridge\DelphiCSharpTest\32_64_play_swf_03\64Test\bin\Debug\WalkerPlayer.pdb
+E:\Aprog\Orien\FlashC#\PubliBridge\DelphiCSharpTest\32_64_play_swf_03\64Test\bin\Debug\WalkerPlayer.dll.config
+E:\Aprog\Orien\FlashC#\PubliBridge\DelphiCSharpTest\32_64_play_swf_03\64Test\obj\Debug\64Test.csproj.AssemblyReference.cache
+E:\Aprog\Orien\FlashC#\PubliBridge\DelphiCSharpTest\32_64_play_swf_03\64Test\obj\Debug\_64Test.Form1.resources
+E:\Aprog\Orien\FlashC#\PubliBridge\DelphiCSharpTest\32_64_play_swf_03\64Test\obj\Debug\_64Test.Properties.Resources.resources
+E:\Aprog\Orien\FlashC#\PubliBridge\DelphiCSharpTest\32_64_play_swf_03\64Test\obj\Debug\64Test.csproj.GenerateResource.cache
+E:\Aprog\Orien\FlashC#\PubliBridge\DelphiCSharpTest\32_64_play_swf_03\64Test\obj\Debug\64Test.csproj.CoreCompileInputs.cache
+E:\Aprog\Orien\FlashC#\PubliBridge\DelphiCSharpTest\32_64_play_swf_03\64Test\obj\Debug\64Test.csproj.CopyComplete
+E:\Aprog\Orien\FlashC#\PubliBridge\DelphiCSharpTest\32_64_play_swf_03\64Test\obj\Debug\64Test.exe
+E:\Aprog\Orien\FlashC#\PubliBridge\DelphiCSharpTest\32_64_play_swf_03\64Test\obj\Debug\64Test.pdb
