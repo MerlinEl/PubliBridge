@@ -1,0 +1,14 @@
+obj\Debug\Flash_player.exe
+obj\Debug\Flash_player.pdb
+bin\Flash_player.exe
+bin\Flash_player.pdb
+bin\Flash_player.xml
+bin\Interop.ShockwaveFlashObjects.dll
+bin\AxInterop.ShockwaveFlashObjects.dll
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\Interop.ShockwaveFlashObjects.dll
+obj\Debug\AxInterop.ShockwaveFlashObjects.dll
+obj\Debug\Flash_player.vbproj.ResolveComReference.cache
+obj\Debug\Flash_player.Form1.resources
+obj\Debug\Flash_player.vbproj.GenerateResource.Cache
+obj\Debug\Flash_player.xml

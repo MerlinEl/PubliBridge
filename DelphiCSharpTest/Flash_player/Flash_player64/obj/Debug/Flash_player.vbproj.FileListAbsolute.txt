@@ -1,0 +1,15 @@
+E:\Aprog\Orien\FlashC#\tools\Flash_player\522_Flash_player\Flash_player64\bin\Flash_player.exe
+E:\Aprog\Orien\FlashC#\tools\Flash_player\522_Flash_player\Flash_player64\bin\Flash_player.pdb
+E:\Aprog\Orien\FlashC#\tools\Flash_player\522_Flash_player\Flash_player64\bin\Flash_player.xml
+E:\Aprog\Orien\FlashC#\tools\Flash_player\522_Flash_player\Flash_player64\bin\Interop.ShockwaveFlashObjects.dll
+E:\Aprog\Orien\FlashC#\tools\Flash_player\522_Flash_player\Flash_player64\bin\AxInterop.ShockwaveFlashObjects.dll
+E:\Aprog\Orien\FlashC#\tools\Flash_player\522_Flash_player\Flash_player64\obj\Debug\Flash_player.vbproj.AssemblyReference.cache
+E:\Aprog\Orien\FlashC#\tools\Flash_player\522_Flash_player\Flash_player64\obj\Debug\Interop.ShockwaveFlashObjects.dll
+E:\Aprog\Orien\FlashC#\tools\Flash_player\522_Flash_player\Flash_player64\obj\Debug\AxInterop.ShockwaveFlashObjects.dll
+E:\Aprog\Orien\FlashC#\tools\Flash_player\522_Flash_player\Flash_player64\obj\Debug\Flash_player.vbproj.ResolveComReference.cache
+E:\Aprog\Orien\FlashC#\tools\Flash_player\522_Flash_player\Flash_player64\obj\Debug\Flash_player.Form1.resources
+E:\Aprog\Orien\FlashC#\tools\Flash_player\522_Flash_player\Flash_player64\obj\Debug\Flash_player.vbproj.GenerateResource.cache
+E:\Aprog\Orien\FlashC#\tools\Flash_player\522_Flash_player\Flash_player64\obj\Debug\Flash_player.vbproj.CoreCompileInputs.cache
+E:\Aprog\Orien\FlashC#\tools\Flash_player\522_Flash_player\Flash_player64\obj\Debug\Flash_player.exe
+E:\Aprog\Orien\FlashC#\tools\Flash_player\522_Flash_player\Flash_player64\obj\Debug\Flash_player.xml
+E:\Aprog\Orien\FlashC#\tools\Flash_player\522_Flash_player\Flash_player64\obj\Debug\Flash_player.pdb
