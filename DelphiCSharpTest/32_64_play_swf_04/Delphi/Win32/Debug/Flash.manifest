@@ -7,6 +7,7 @@
     <typelib tlbid="{57A0E746-3863-4D20-A811-950C84F1DB9B}" resourceid="2" version="1.1" helpdir="" flags="HASDISKIMAGE"/>
   </file>
   <comInterfaceExternalProxyStub name="IShockwaveFlash" iid="{D27CDB6C-AE6D-11CF-96B8-444553540000}" tlbid="{57A0E746-3863-4D20-A811-950C84F1DB9B}" proxyStubClsid32="{00020424-0000-0000-C000-000000000046}"/>
+  <comInterfaceExternalProxyStub name="ICanHandleException" iid="{C5598E60-B307-11D1-B27D-006008C3FBFB}" tlbid="{57A0E746-3863-4D20-A811-950C84F1DB9B}" proxyStubClsid32="{C5598E60-B307-11D1-B27D-006008C3FBFB}"/>
   <comInterfaceExternalProxyStub name="_IShockwaveFlashEvents" iid="{D27CDB6D-AE6D-11CF-96B8-444553540000}" tlbid="{57A0E746-3863-4D20-A811-950C84F1DB9B}" proxyStubClsid32="{00020420-0000-0000-C000-000000000046}"/>
   <comInterfaceExternalProxyStub name="IFlashFactory" iid="{D27CDB70-AE6D-11CF-96B8-444553540000}" tlbid="{57A0E746-3863-4D20-A811-950C84F1DB9B}" proxyStubClsid32="{D27CDB70-AE6D-11CF-96B8-444553540000}"/>
   <comInterfaceExternalProxyStub name="IFlashObjectInterface" iid="{D27CDB72-AE6D-11CF-96B8-444553540000}" tlbid="{57A0E746-3863-4D20-A811-950C84F1DB9B}" proxyStubClsid32="{D27CDB72-AE6D-11CF-96B8-444553540000}"/>
