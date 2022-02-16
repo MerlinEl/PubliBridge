@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.32126.315
+VisualStudioVersion = 16.0.32002.261
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WalkerPlayer", "64\WalkerPlayer.csproj", "{01AA1059-93B4-40A2-B9DA-447D8156DEB6}"
 EndProject
@@ -13,10 +13,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{01AA1059-93B4-40A2-B9DA-447D8156DEB6}.Debug|Any CPU.ActiveCfg = Debug|x64
-		{01AA1059-93B4-40A2-B9DA-447D8156DEB6}.Debug|Any CPU.Build.0 = Debug|x64
-		{01AA1059-93B4-40A2-B9DA-447D8156DEB6}.Release|Any CPU.ActiveCfg = Release|x64
-		{01AA1059-93B4-40A2-B9DA-447D8156DEB6}.Release|Any CPU.Build.0 = Release|x64
+		{01AA1059-93B4-40A2-B9DA-447D8156DEB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01AA1059-93B4-40A2-B9DA-447D8156DEB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01AA1059-93B4-40A2-B9DA-447D8156DEB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01AA1059-93B4-40A2-B9DA-447D8156DEB6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8DBFE0FA-EF52-4E89-954E-949160D2FCC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8DBFE0FA-EF52-4E89-954E-949160D2FCC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8DBFE0FA-EF52-4E89-954E-949160D2FCC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -26,6 +26,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {47AEEAE2-2B0F-44BB-B63C-E723A230BB51}
+		SolutionGuid = {DC0B298F-A7C9-4B1A-A33D-20DD17B3F63A}
 	EndGlobalSection
 EndGlobal
