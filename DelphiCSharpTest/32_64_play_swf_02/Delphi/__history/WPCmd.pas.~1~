@@ -1,8 +1,0 @@
-unit WPCommand;
-
-interface
-   uses WPOptions;
-
-implementation
-
-end.
