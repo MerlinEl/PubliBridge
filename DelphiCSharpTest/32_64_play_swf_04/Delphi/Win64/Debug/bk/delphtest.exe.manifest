@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0">
+   <assemblyIdentity name="delphtest.exe" version="1.0.0.0" type="win32" processorArchitecture="amd64" />
+   <dependency>
+      <dependentAssembly>
+         <assemblyIdentity name="Flash64_32_0.0.445.ocx" version="32.0.0.445" type="win32" processorArchitecture="amd64" />
+      </dependentAssembly>
+   </dependency>
+</assembly>
